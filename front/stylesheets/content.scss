@@ -1,0 +1,242 @@
+body {
+  font-family: OpenSansRegular;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #000;
+  background-color: #fff;
+}
+header{
+  .navbar{
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    .logo {
+      color: #ffffff;
+      font-family: OpenSansLight;
+      font-size: 48px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      text-align: right;
+      span {
+        display: inline-block;
+        text-align: left;
+        width: 150px;
+      }
+    }
+    .new-count-container-inhead {
+      margin-right: 48px;
+      .payment {
+        color: #fff;
+        font-size: 18px;
+        font-family: OpenSansLight;
+        margin-top: 20px;
+        display: inline-block;
+        margin-right: 55px;
+      }
+    }
+  }
+}
+.wrap_menu{
+  position: relative;
+  &#wrap_menu{
+    height: 100%;
+    padding: 0;
+    border: none;
+  }
+}
+.wrap_content {
+  .find-form {
+    padding-top: 15px;
+    position: relative;
+    & > input[type=text] {
+      background: #76a9c4;
+      border-radius: 7px;
+      padding: 5px 35px 5px 10px;
+      color: #ffffff;
+      border: none;
+      width: 100%;
+      font-size: 16px;
+      margin-left: 5px;
+    }
+    & > button[type=submit] {
+      border: none;
+      position: absolute;
+      right: 15px;
+      top: 23px;
+      background: url(/images/icons2/search.png);
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .ava{
+    &-menu{
+      img{
+        margin: 6px 0;
+        height: 50px;
+        max-width: 51px;
+      }
+    }
+    &-big {
+      text-align: center;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 30px 0px 20px;
+      height: inherit;
+      min-height: inherit;
+      img {
+        max-width: 200px;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+    }
+  }
+  .user_data {
+    h2 {
+      margin: 0;
+      margin-left: 20px;
+      font-family: OpenSansLight;
+      height: 22px;
+      line-height: 22px;
+      font-size: 24px;
+      display: inline-block;
+      .icon.icon-verify {
+        margin-left: 7px;
+        background: url(/images/icons2/verify.png) right center no-repeat;
+        display: inline-block;
+        float: right;
+        width: 18px;
+        height: 20px;
+      }
+    }
+    p {
+      line-height: 42px;
+      height: 42px;
+      margin-bottom: 0;
+      display: inline-block;
+    }
+  }
+}
+
+/* Заливки*/
+.bg{
+  &-blue {
+    background: #91bfd6;
+  }
+
+  &-color1 {
+    background: #afeddb;
+  }
+
+  &-color2 {
+    background: #6ee3e4;
+  }
+
+  &-color3 {
+    background: #bad6f3;
+  }
+
+  &-color4 {
+    background: #b4bcee;
+  }
+
+  &-color5 {
+    background: #d3b4ee;
+  }
+
+  &-color6 {
+    background: #eabdee;
+  }
+
+  &-color7 {
+    background: #eebdd4;
+  }
+
+  &-color8 {
+    background: #f7d2c0;
+  }
+
+  &-color9 {
+    background: #f7e4c0;
+  }
+
+  &-color10 {
+    background: #f7f0c0;
+  }
+
+  &-color11 {
+    background: #dae6aa;
+  }
+
+  &-color12 {
+    background: #a4e0b1;
+  }
+
+  &-color13 {
+    background: #dfebf1;
+  }
+
+  &-header {
+    background: url(/images/bg.jpg) no-repeat center center;
+    background-size: cover;
+    min-height: 336px;
+    margin-left: 1px !important;
+  }
+}
+
+.list-menu{
+  & > a{
+    font-size: 16px;
+    font-family: OpenSansLight;
+    color: #000;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 0;
+    max-height: 42px;
+    min-height: 42px;
+    height: 42px;
+    margin-bottom: 0;
+    border: none;
+    & > span.text {
+      display: inline-block;
+      text-align: left;
+      width: 150px;
+      .num {
+        background: #536177 none repeat scroll 0 0;
+        border-radius: 7px;
+        color: #fff;
+        content: "7";
+        font-family: OpenSansSemiBold;
+        font-size: 14px;
+        font-weight: 400;
+        left: 5px;
+        padding: 0 6px;
+        position: relative;
+        top: -5px;
+      }
+    }
+    i {
+      color: #91bfd6;
+      margin-top: 3px;
+    }
+    &:hover {
+      color: #df703b;
+      i {
+        color: #91bfd6;
+      }
+    }
+  }
+  .settings {
+    position: absolute;
+    top: 6px;
+    right: 13px;
+    z-index: 10;
+    width: 14px;
+    height: 14px;
+    min-height: 14px;
+    max-height: 14px;
+    background: url(/images/icons2/settings.png) top center;
+    &:hover {
+      background-position: bottom center;
+    }
+  }
+}

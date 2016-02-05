@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body ng-controller="Main">
+    <header>
+        <nav class="navbar navbar-default bg-blue">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-3 wrap_menu">
+                        <h2 class="logo"><span>Sin</span></h2>
+                    </div>
+                    <div class="col-xs-8 wrap_content">
+                        <div class="col-xs-3">
+                            <div class="find-form">
+                                <input type="text" />
+                                <button type="submit"></button>
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="new-count-container-inhead"><h3 class="payment">Счёт: 5 600 <i class="fa fa-rub"></i></h3></li>
+                                <li class="dropdown">
+                                <span class="dropdown-toggle ava-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <img src="/images/ava-small.png"  class="img-circle"/>
+                                </span>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Профиль</a></li>
+                                        <li><a href="#">Сменить аккаунт</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>
+                                            <a href="#">
+                                                <div>Сменить статус</div>
+                                                <div class="statusonoff online"></div>
+                                                <div class="emptyblock"></div>
+                                            </a>
+                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Выйти</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="wrap_browser" class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3 bg-color13 wrap_menu" id="wrap_menu">
+                <div class="list-group list-menu">
+                    <a href="#" class="settings"></a>
+                    <a href="#" class="list-group-item bg-color1">
+                        <span class="text">Мой кабинет</span>
+                    </a>
+                    <a href="#" class="list-group-item bg-color2">
+                        <span class="text">Сообщения <span class="num">7</span></span></a>
+                    <a href="#" class="list-group-item bg-color3">
+                        <span class="text">Покупки</span></a>
+                    <a href="#" class="list-group-item bg-color4">
+                        <span class="text">Группы</span></a>
+                    <a href="#" class="list-group-item bg-color5">
+                        <span class="text">Друзья</span></a>
+                    <a href="#" class="list-group-item bg-color6">
+                        <span class="text">Фотографии</span></a>
+                    <a href="#" class="list-group-item bg-color7">
+                        <span class="text">Блокнот</span></a>
+                    <a href="#" class="list-group-item bg-color8">
+                        <span class="text">Голлосариум</span></a>
+                    <a href="#" class="list-group-item bg-color9">
+                        <span class="text">Желания</span></a>
+                    <a href="#" class="list-group-item bg-color10">
+                        <span class="text">Календарь</span></a>
+                    <a href="#" class="list-group-item bg-color11">
+                        <span class="text">Счет</span></a>
+                    <a href="#" class="list-group-item bg-color12">
+                        <span class="text">Настройки</span></a>
+                </div>
+            </div>
+            <div class="col-xs-8 no-padding wrap_content" ui-view="">
+            </div>
+        </div>
+    </div>
+    <footer class="no-margin bg-blue footer container-fluid">
+        <div class="row">
+            <div class="col-xs-3 no-padding text-center">
+                <p>Sin © 2015, <a href="#">Агаджанян Артур</a></p>
+            </div>
+            <div class="col-xs-9 no-padding text-center">
+                <ul class="list-inline">
+                    <li><a href="#">О сайте</a></li>
+                    <li><a href="#">Правила</a></li>
+                    <li><a href="#">Помощь</a></li>
+                    <li><a href="#">Реклама</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="/bower_components/requirejs/require.js" data-main="/javascripts/main.js"></script>
+</body>
+</html>

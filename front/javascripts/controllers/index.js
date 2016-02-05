@@ -1,0 +1,4 @@
+define([
+    './Account',
+    './Main',
+], function () {});
