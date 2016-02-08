@@ -31,7 +31,7 @@ var path = {
         style: 'front/stylesheets/main.scss',
         img: 'front/images/**/*.*',
         fonts: 'front/bower_components/bootstrap-sass/assets/fonts/**/*.*',
-        json: 'front/ajax/'
+        json: 'front/ajax/**/*.json'
     },
     watch:{
         html: 'front/**/*.html',
@@ -39,7 +39,8 @@ var path = {
         bower_components: 'front/bower_components/**/*.js',
         style: 'front/stylesheets/**/*.scss',
         img: 'front/images/**/*.*',
-        fonts: 'front/fonts/**/*.*'
+        fonts: 'front/fonts/**/*.*',
+        json: 'front/ajax/**/*.json'
     }
 };
 
@@ -112,7 +113,7 @@ gulp.task('watch', function(){
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts');
     });
-    watch([path.src.json], function(event, cb) {
+    watch([path.watch['json']], function(event, cb) {
         gulp.start('json');
     });
 });
