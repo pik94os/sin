@@ -1,0 +1,59 @@
+{
+  "err" : 0,
+  "friends" : [
+    {
+      "_id" : 100001,
+      "photo" : "user-ava-1.jpg",
+      "name" : "sin",
+      "status" : 1
+    },
+    {
+      "_id" : 100002,
+      "photo" : "user-ava-2.jpg",
+      "name" : "Максим Походун",
+      "status" : 1
+    },
+    {
+      "_id" : 100003,
+      "photo" : "user-ava-3.jpg",
+      "name" : "Светлана Антипова",
+      "status" : 1
+    },
+    {
+      "_id" : 100004,
+      "photo" : "user-ava-4.jpg",
+      "name" : "Елена Лагунова",
+      "status" : 1
+    },
+    {
+      "_id" : 100005,
+      "photo" : "user-ava-5.jpg",
+      "name" : "Изольда Караванова",
+      "status" : 0
+    },
+    {
+      "_id" : 100006,
+      "photo" : "user-ava-6.jpg",
+      "name" : "Захар Назинов",
+      "status" : 1
+    },
+    {
+      "_id" : 100007,
+      "photo" : "user-ava-7.jpg",
+      "name" : "Елена Назинова",
+      "status" : 0
+    },
+    {
+      "_id" : 100008,
+      "photo" : "user-ava-8.jpg",
+      "name" : "Алёна Лагунова",
+      "status" : 0
+    },
+    {
+      "_id" : 100009,
+      "photo" : "user-ava-9.jpg",
+      "name" : "Светлана Назинова",
+      "status" : 1
+    }
+  ]
+}

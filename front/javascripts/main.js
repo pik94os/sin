@@ -9,7 +9,8 @@ require.config({
         'angular': '../bower_components/angular/angular.min',
         'uiRouter': '../bower_components/angular-ui-router/release/angular-ui-router.min',
         'jquery': '../bower_components/jquery/dist/jquery.min',
-        'bstrap': '../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min'
+        'bstrap': '../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min',
+        'slimScroll': '../bower_components/jquery-slimscroll/jquery.slimscroll.min'
     },
 
     // angular не поддерживает AMD из коробки, поэтому экспортируем перменную angular в глобальную область
@@ -22,6 +23,9 @@ require.config({
             deps: ['angular']
         },
         "bstrap" : {
+            "deps" :['jquery']
+        },
+        "slimScroll" : {
             "deps" :['jquery']
         }
     },

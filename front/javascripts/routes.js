@@ -10,6 +10,16 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/account/list.html",
                 controller: 'Account'
             })
+            .state('message', {
+                url: "/message",
+                templateUrl: "/templates/message/list.html",
+                controller: 'Message'
+            })
+            .state('calendar', {
+                url: "/calendar",
+                templateUrl: "/templates/calendar/list.html",
+                controller: 'Calendar'
+            })
             //Ошибка 404
             .state('err_404', {
                 url: "/err404",

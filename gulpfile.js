@@ -21,7 +21,8 @@ var path = {
         bower_js: 'public/bower_components/',
         css: 'public/stylesheets/',
         img: 'public/images/',
-        fonts: 'public/fonts/'
+        fonts: 'public/fonts/',
+        json: 'public/ajax/'
     },
     src: { //Пути откуда брать исходники
         html: 'front/**/*.html',
@@ -29,7 +30,8 @@ var path = {
         bower_js: 'front/bower_components/**/*.js',
         style: 'front/stylesheets/main.scss',
         img: 'front/images/**/*.*',
-        fonts: 'front/bower_components/bootstrap-sass/assets/fonts/**/*.*'
+        fonts: 'front/bower_components/bootstrap-sass/assets/fonts/**/*.*',
+        json: 'front/ajax/'
     },
     watch:{
         html: 'front/**/*.html',
@@ -59,6 +61,11 @@ gulp.task("js", function () {
 gulp.task("bower_js", function () {
     gulp.src(path.src.bower_js)
         .pipe(gulp.dest(path.build.bower_js))
+});
+
+gulp.task("json", function () {
+    gulp.src(path.src.json)
+        .pipe(gulp.dest(path.build.json))
 });
 
 gulp.task('image', function() {
@@ -105,8 +112,11 @@ gulp.task('watch', function(){
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts');
     });
+    watch([path.src.json], function(event, cb) {
+        gulp.start('json');
+    });
 });
 
 gulp.task('default', function(cb) {
-    runSequence(['fonts', 'js', 'bower_js', 'sass', 'image', 'html','watch'], cb);
+    runSequence(['fonts', 'js', 'bower_js', 'sass', 'image', 'html', 'json','watch'], cb);
 });
