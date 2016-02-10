@@ -35,7 +35,9 @@ h1, .h1, h2, .h2, h3, .h3 {
     top: -12px;
   }
 }
-
+.clr{
+  clear: both;
+}
 html{
   height: 100%;
 }
@@ -48,7 +50,7 @@ body {
   background-color: #fff;
   height: 100%;
   #wrap_browser.html100{
-    height: calc( 100% - 62px - 30px); // - header - footer
+    height: calc( 100% - 62px); // - header
     & > .row{
       height: 100%;
       & > .col-xs-9{

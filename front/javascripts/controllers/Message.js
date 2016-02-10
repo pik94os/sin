@@ -10,17 +10,7 @@ define(['./module','jquery', 'slimScroll'],function(controllers,$){
                 distance: '-5px'
             });
         });
-        $scope.messages = [];
-        $http.get('/ajax/messages.json').then(function (response) {
-            if(response.data.err){
-
-            }else{
-                $scope.messages = response.data.messages;
-            }
-        }, function (response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });
         $rootScope.$broadcast('html100', true);
+        $rootScope.$broadcast('getMessages', true);
     }])
 });

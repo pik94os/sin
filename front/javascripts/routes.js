@@ -15,6 +15,11 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/message/list.html",
                 controller: 'Message'
             })
+            .state('chat', {
+                url: "/chat/:friendId",
+                templateUrl: "/templates/message/chat.html",
+                controller: 'Chat'
+            })
             .state('calendar', {
                 url: "/calendar",
                 templateUrl: "/templates/calendar/list.html",

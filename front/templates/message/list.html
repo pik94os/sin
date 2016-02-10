@@ -39,23 +39,27 @@
 
         <div>
 
-            <div class="row" ng-repeat="message in messages" ng-init="inbox = (message.to._id==user._id)" ng-class="{'inbox':inbox,'outbox':!inbox}">
-                <div class="col-xs-3" ng-init="friend = inbox?message.from:message.to">
-                    <a href="#" class="invite "></a>
+            <div class="row" ng-repeat="message in messages"
+                 ng-init="inbox = (message.to._id==user._id)"
+                 ng-class="{'inbox':inbox,'outbox':!inbox}">
+                <div ng-init="friend = inbox?message.from:message.to" ui-sref="chat({friendId:friend._id})">
+                    <div class="col-xs-3">
+                        <a href="#" class="invite "></a>
 								<span class="wrap_ava ava-small" ng-class="{'network-on':friend.status,'network-off':!friend.status}">
 									<a href="#" class="relative">
-                                        <img ng-src="/images/{{friend.photo}}" alt="Description" class="img-circle" />
+                                        <img ng-src="/images/{{friend.photo}}" alt="{{friend.name}}" class="img-circle" />
                                     </a>
 								</span>
-                    <span class="user-name" ng-bind="friend.name">Sin</span>
-                    <span class="last-message-date">01.03.2015</span>
-                </div>
-                <div class="col-xs-9 no-margin message" ng-class="{'unread':!message.status}">
-                    <div class="col-xs-2" ng-class="{'pull-right':inbox}">
-                        <p class="message-date text-right">20:14</p>
+                        <span class="user-name" ng-bind="friend.name">Sin</span>
+                        <span class="last-message-date">01.03.2015</span>
                     </div>
-                    <div class="col-xs-10" ng-bind="message.text">
-                        Стрелки дайте применим не только к Почте, но и ко всем остальным вкладкам.
+                    <div class="col-xs-9 no-margin message" ng-class="{'unread':!message.status}">
+                        <div class="col-xs-2" ng-class="{'pull-right':inbox}">
+                            <p class="message-date text-right">20:14</p>
+                        </div>
+                        <div class="col-xs-10" ng-bind="message.text">
+                            Стрелки дайте применим не только к Почте, но и ко всем остальным вкладкам.
+                        </div>
                     </div>
                 </div>
             </div>

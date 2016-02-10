@@ -1,0 +1,216 @@
+<div class="row no-margin user_data">
+    <div class="col-xs-8 no-padding ">
+        <h2>Сообщения</h2>
+    </div>
+    <div class="col-xs-4 text-right ">
+        <p><i class="icon icon-clock"></i> <strong>18:15</strong> <i class="icon icon-line"></i> 15 января 2015</p>
+    </div>
+</div>
+
+<div class="row no-margin dialog-open">
+
+    <div class="col-xs-12 dialog-title">
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="find-user-form">
+                    <input type="text" placeholder="Введите имя" />
+                    <button type="submit"></button>
+                </div>
+            </div>
+            <div class="col-xs-9">
+
+                <div class="default-line">
+                    <span class="dialog-name">Максим Походун</span>
+                    <a href="message-doc.html" class="dialog-files">Файлы</a>
+
+                    <a href="#" class="dialog-close pull-right"><i class="icon icon-close"></i></a>
+                    <a href="#" class="editor-window pull-right"></a>
+                    <a href="#" class="dialog-favorites pull-right"><i class="icon icon-fav"></i> Избранное</a>
+                    <a href="#" class="dialog-invite pull-right">Пригласить в чат</a>
+                    <a href="#" class="dialog-cancel pull-right">Отменить</a>
+                    <a href="#" class="dialog-del pull-right">Удалить</a>
+                    <a href="#" class="dialog-resent pull-right">Переслать</a>
+                    <a href="#" class="star-icon-hidden pull-right"></a>
+                </div>
+
+                <div class="invite-dialog-line" style="display: none;">
+
+                    <input type="text" placeholder="Введите название беседы" />
+                    <a href="#" class="make-dialog-invite pull-left">Создать беседу</a>
+                    <a href="#" class="dialog-invite-cancel pull-left">Отменить</a>
+
+                    <a href="#" class="dialog-close pull-right"><i class="icon icon-close"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 my-messages no-padding">
+
+        <div class="col-xs-3 messages-user-list">
+            <div>
+                <div class="row" class="row" ng-repeat="message in messages"
+                     ng-init="inbox = (message.to._id==user._id)"
+                     ng-class="{'inbox':inbox,'outbox':!inbox,'current':(inbox?message.from._id:message.to._id)==currentFriendId}">
+                        <span class="col-xs-12" ng-init="friend = inbox?message.from:message.to" ui-sref="chat({friendId:friend._id})">
+                            <a href="#" class="invite "></a>
+                            <span class="wrap_ava ava-small" ng-class="{'network-on':friend.status,'network-off':!friend.status}">
+                                <a href="#" class="relative">
+                                    <img ng-src="/images/{{friend.photo}}" alt="{{friend.name}}" class="img-circle" />
+                                </a>
+                            </span>
+                            <span class="user-name" ng-bind="friend.name">Sin</span>
+                            <span class="last-message-date">01.03.2015</span>
+                        </span>
+                </div>
+            </div>
+        </div><!-- /Messages-user-list -->
+
+        <div class="col-xs-9 message-list no-padding">
+
+            <div class="wrapper-message-list">
+                <div id="wrap-message-list">
+                    <p class="bot_date">Сегодня, 9 февраля</p>
+                    <hr />
+
+                    <div class="row no-margin message_bot" ng-repeat="message in chat"
+                         ng-init="inbox = (message.to._id==user._id)">
+                        <div class="col-xs-1 no-padding" ng-class="{'pull-right':inbox,'col-xs-offset-1':!inbox}">
+                            <p class="bot_date text-right">20:08</p>
+                        </div>
+                        <div class="col-xs-10 no-padding">
+                            <div class="media">
+                                <div class="media-left" ng-if="inbox">
+                                    <a href="#">
+                                        <img data-holder-rendered="true" ng-src="/images/{{message.from.photo}}" alt="{{message.from.name}}" class="media-object">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <div ng-class="{'unread':!message.status}">
+                                        <span ng-bind="message.text"></span>"
+                                        <div class="resent-del clearfix">
+                                            <a href="#" class="resent-msg">Переслать</a>
+                                            <a href="#" class="delete-msg">Удалить</a>
+                                            <i class="icon-favorite"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media-right" ng-if="!inbox">
+                                    <a href="#">
+                                        <img data-holder-rendered="true" ng-src="/images/{{message.from.photo}}" alt="{{message.from.name}}" class="media-object">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br></div>
+                <textarea name="" id="msg-textarea"></textarea>
+
+                <div class="add-message-wrapper">
+
+                    <textarea class="add-message"></textarea>
+
+                    <div class="message-btns">
+
+                        <div class="pull-left">
+                            <a href="#" class="editor-size-asc"></a>
+                            <a href="#" class="editor-size-desc"></a>
+                                        <span class="custom-color-picker-container relativer">
+                                            <a href="#" class="editor-color"></a>
+                                            <div class="colors-panel">
+                                                <div class="color-row">
+                                                    <div class="color-cell-container"><div style="background-color: #ede4db;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #ead592;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #ebd0b2;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #c7a194;" class="color-cell"></div></div>
+                                                    <div class="last-color-cell-container"><div style="background-color: #b9a37a;" class="color-cell"></div></div>
+                                                </div>
+                                                <div class="color-row">
+                                                    <div class="color-cell-container"><div style="background-color: #c9d2db;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #8bbccd;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #ebc07b;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #f37d73;" class="color-cell"></div></div>
+                                                    <div class="last-color-cell-container"><div style="background-color: #d45242;" class="color-cell"></div></div>
+                                                </div>
+                                                <div class="color-row">
+                                                    <div class="color-cell-container"><div style="background-color: #43608a;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #587d8f;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #b5bb7d;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #6f7c37;" class="color-cell"></div></div>
+                                                    <div class="last-color-cell-container"><div style="background-color: #c32826;" class="color-cell"></div></div>
+                                                </div>
+                                                <div class="last-color-row">
+                                                    <div class="color-cell-container"><div style="background-color: #ff94ab;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #99506e;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #606384;" class="color-cell"></div></div>
+                                                    <div class="color-cell-container"><div style="background-color: #5e3726;" class="color-cell"></div></div>
+                                                    <div class="last-color-cell-container"><div style="background-color: #000000;" class="color-cell turnedon"></div></div>
+                                                </div>
+                                            </div>
+                                        </span>
+                            <a href="#" class="editor-weight"></a>
+                            <a href="#" class="editor-style"></a>
+                            <a href="#" class="editor-underline"></a>
+                            <a href="#" class="editor-throughline"></a>
+                            <a href="#" class="editor-list"></a>
+                            <a href="#" class="editor-reset"></a>
+                            <!--<a href="#" class="editor-window"></a>-->
+                        </div>
+
+                        <div class="pull-right relativer">
+
+                            <div class="expanded_attach_menu">
+                                <div class="line">
+                                    <div class="download_icon"></div>
+                                    <span class="tex">Загрузить</span>
+                                </div>
+                                <div class="line">
+                                    <div class="document_icon"></div>
+                                    <span class="tex">Документ</span>
+                                </div>
+                                <div class="line">
+                                    <div class="photo-icon"></div>
+                                    <span class="tex">Фото</span>
+                                </div>
+                                <div class="line">
+                                    <div class="music-icon"></div>
+                                    <span class="tex">Аудио</span>
+                                </div>
+                            </div>
+
+                            <a class="link attach-button" href="#"><i class="icon icon-link"></i> Прикрепить</a>
+                            <a class="btn btn-primary">Отправить</a>
+                        </div>
+
+                        <div class="clr"></div>
+                    </div>
+
+                    <div class="bott-for-messopen-btns">
+                        <span class="red-custom-check"></span>
+
+                        <span class="sendsms">Отправить СМС/ММС на</span>
+                        <span class="number-title">номер</span>
+                        <span class="phone-num">+7 916 678 65 43</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="wrap-attached">
+                <div class="attached-file clearfix">
+                    <i class="icon-file-text pull-left"></i>
+                    <div class="file-name pull-left">Резюме</div>
+                    <div class="file-size pull-left">12 кБ</div>
+                    <div class="file-type pull-left">Текстовый документ</div>
+                    <i class="icon-close pull-right"></i>
+                    <a href="#" class="file-open pull-right">Открыть</a>
+                    <i class="icon-file pull-right"></i>
+                </div>
+            </div>
+
+        </div><!-- /Message-list -->
+
+    </div><!-- /Dialogs-list -->
+
+</div>

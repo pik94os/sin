@@ -31,5 +31,19 @@ define(['./module','jquery', 'bootstrap'],function(controllers,$){
             // called asynchronously if an error occurs
             // or server returns response with an error status.
         });
+
+        $scope.$on('getMessages', function(){
+
+            $http.get('/ajax/messages.json').then(function (response) {
+                if(response.data.err){
+
+                }else{
+                    $scope.messages = response.data.messages;
+                }
+            }, function (response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        });
     }])
 });
