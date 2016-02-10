@@ -239,7 +239,7 @@ header{
   }
   .btn-panel {
     margin-bottom: 35px;
-    .col-xs-2 {
+    .col-md-6 {
       a {
         margin: 0 -15px;
         height: 252px;
@@ -444,7 +444,6 @@ header{
   &-header {
     background: url(/images/bg.jpg) no-repeat center center;
     background-size: cover;
-    min-height: 336px;
     & > .col-xs-3 {
       height: inherit;
       min-height: inherit;

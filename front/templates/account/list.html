@@ -6,241 +6,227 @@
         <p><i class="icon icon-clock"></i> <strong>18:15</strong> <i class="icon icon-line"></i> 15 января 2015</p>
     </div>
 </div>
-<div class="row no-margin wrap_header bg-header relative">
-    <div class="col-xs-3 bg-ava-big">
-        <div class="wrap_ava ava-big pull-left text-center network-on">
-            <div>
-                <img src="images/ava.jpg"  class="img-circle">
+
+<div class="row btn-panel">
+    <div class="col-xs-3 col-md-12">
+        <div class="row no-margin wrap_header bg-header relative">
+            <div class="col-xs-12 col-md-3 bg-ava-big">
+                <div class="wrap_ava ava-big pull-left text-center network-on">
+                    <div>
+                        <img src="images/ava.jpg"  class="img-circle">
+                    </div>
+                    <a class="btn btn-primary btn-block" id="btn_bot" data-start="Hi, Sin!" data-stop="Bye, Sin!">Hi, Sin!</a>
+                </div>
+
             </div>
-            <a class="btn btn-primary btn-block" id="btn_bot" data-start="Hi, Sin!" data-stop="Bye, Sin!">Hi, Sin!</a>
+            <div class="col-md-9 hidden-sm hidden-xs wrap_soc ">
+
+                <div id="status">
+                    <span>Изменить статус</span> <input type="text" class="hide" name="status" />
+                </div>
+
+                <div id="bot_wrap" >
+                    <div class="row no-margin title_bot">
+                        <div class="col-xs-8">
+                            <p>Sin</p>
+                        </div>
+                        <div class="col-xs-4 text-right">
+                            <a href="#" id="close_bot" class=" pull-right"></a>
+                            <a href="#" class="icon icon-new-window pull-right"></a>
+                        </div>
+                    </div>
+                    <div id="wrap_bot_message">
+                        <p class="bot_date">Сегодня, 9 февраля</p>
+                        <hr />
+                        <div class="row no-margin message_bot">
+                            <div class="col-xs-10">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img data-holder-rendered="true" src="/images/user_bot.jpg"  class="media-object">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="arrow_box_left">
+                                            Привет
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-1 col-xs-offset-1">
+                                <p class="bot_date text-right">20:08</p>
+                            </div>
+                        </div>
+
+                        <div class="row no-margin message_bot">
+                            <div class="col-xs-offset-2 col-xs-9">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <div class="arrow_box_right">
+                                            При переходе Windows на Unicode Alt-символы сохранились. Держите нажатой клавишу Alt. Нажмите клавишу «+» на цифровой клавиатуре.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-1">
+                                <p class="bot_date text-right">20:10</p>
+                            </div>
+                        </div>
+                        <div class="row no-margin message_bot">
+                            <div class="col-xs-10">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img data-holder-rendered="true" src="/images/user_bot.jpg"  class="media-object">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="arrow_box_left">
+                                            Привет
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-1 col-xs-offset-1">
+                                <p class="bot_date text-right">20:08</p>
+                            </div>
+                        </div>
+
+                        <div class="row no-margin message_bot">
+                            <div class="col-xs-offset-2 col-xs-9">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <div class="arrow_box_right">
+                                            При переходе Windows на Unicode Alt-символы сохранились. Держите нажатой клавишу Alt. Нажмите клавишу «+» на цифровой клавиатуре.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-1">
+                                <p class="bot_date text-right">20:10</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <input type="text" />
+                    <div class="row btn-send no-margin">
+                        <div class="col-xs-4 link">
+                            <a href="#" class="pull-left"><i class="icon icon-new-window"></i> Перейти в поиск</a>
+                        </div>
+                        <div class="col-xs-3 col-xs-offset-5">
+                            <a class="btn btn-block btn-primary pull-right">Найти</a>
+                        </div>
+                    </div>
+                    <div id="left_arrow"></div>
+                </div>
+                <!--div class="socials">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a class="soc pull-left" href="#">
+                            <img src="/images/icons2/vk.png" />
+                            <span class="badge bg-badge-1">
+                                98
+                                <span class="bottom_badge"></span>
+                            </span>
+                            </a>
+                            <a class="soc pull-left" href="#">
+                                <img src="/images/icons2/facebook.png" />
+                                <span class="badge bg-badge-1">5<span class="bottom_badge"></span></span>
+
+                            </a>
+                            <a class="soc pull-left" href="#">
+                                <img src="/images/icons2/odk.png" />
+                            </a>
+                            <a class="soc pull-left" href="#">
+                                <img src="/images/icons2/twitter.png" />
+                                <span class="badge bg-badge-1">23<span class="bottom_badge"></span></span>
+
+                            </a>
+                            <a class="soc pull-left" href="#">
+                                <img src="/images/icons2/instagram.png" />
+                            </a>
+                        </div>
+                        <div class="col-sm-6 ">
+                        <a class="soc pull-left" href="#">
+                                <img src="/images/icons2/whatspShapp.png" />
+                                <span class="badge bg-badge-1">76<span class="bottom_badge"></span></span>
+
+                            </a>
+                            <a class="soc pull-left" href="#">
+                                <img src="/images/icons2/skype.png" />
+
+                            </a>
+                            <a class="soc pull-left" href="#">
+                                <img src="/images/icons2/gmail.png" />
+                            </a>
+                            <a class="soc pull-left" href="#">
+                                <img src="/images/icons2/yandex.png" />
+                                <span class="badge bg-badge-1">7<span class="bottom_badge"></span></span>
+
+                            </a>
+                            <a class="soc pull-left" href="#">
+                                <img src="/images/icons2/mail.png" />
+                                <span class="badge bg-badge-1">1<span class="bottom_badge"></span></span>
+
+                            </a>
+                        </div>
+                    </div>
+                </div-->
+            </div>
         </div>
-
     </div>
-    <div class="col-md-9 hidden-xs wrap_soc ">
-
-        <div id="status">
-            <span>Изменить статус</span> <input type="text" class="hide" name="status" />
+    <div class="col-xs-3 col-md-4">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <a href="#">
+                    <img src="/images/icons2/menu1.png" />
+                    Фотография
+                </a>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <a href="#">
+                    <img src="/images/icons2/menu2.png" />
+                    Голлосариум
+                </a>
+            </div>
         </div>
-
-        <div id="bot_wrap" >
-            <div class="row no-margin title_bot">
-                <div class="col-xs-8">
-                    <p>Sin</p>
-                </div>
-                <div class="col-xs-4 text-right">
-                    <a href="#" id="close_bot" class=" pull-right"></a>
-                    <a href="#" class="icon icon-new-window pull-right"></a>
-                </div>
+    </div>
+    <div class="col-xs-3 col-md-4">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <a href="#">
+                    <img src="/images/icons2/menu3.png" />
+                    Мои желания
+                </a>
             </div>
-            <div id="wrap_bot_message">
-                <p class="bot_date">Сегодня, 9 февраля</p>
-                <hr />
-                <div class="row no-margin message_bot">
-                    <div class="col-xs-10">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img data-holder-rendered="true" src="/images/user_bot.jpg"  class="media-object">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <div class="arrow_box_left">
-                                    Привет
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-1 col-xs-offset-1">
-                        <p class="bot_date text-right">20:08</p>
-                    </div>
-                </div>
-
-                <div class="row no-margin message_bot">
-                    <div class="col-xs-offset-2 col-xs-9">
-                        <div class="media">
-                            <div class="media-body">
-                                <div class="arrow_box_right">
-                                    При переходе Windows на Unicode Alt-символы сохранились. Держите нажатой клавишу Alt. Нажмите клавишу «+» на цифровой клавиатуре.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-1">
-                        <p class="bot_date text-right">20:10</p>
-                    </div>
-                </div>
-                <div class="row no-margin message_bot">
-                    <div class="col-xs-10">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img data-holder-rendered="true" src="/images/user_bot.jpg"  class="media-object">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <div class="arrow_box_left">
-                                    Привет
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-1 col-xs-offset-1">
-                        <p class="bot_date text-right">20:08</p>
-                    </div>
-                </div>
-
-                <div class="row no-margin message_bot">
-                    <div class="col-xs-offset-2 col-xs-9">
-                        <div class="media">
-                            <div class="media-body">
-                                <div class="arrow_box_right">
-                                    При переходе Windows на Unicode Alt-символы сохранились. Держите нажатой клавишу Alt. Нажмите клавишу «+» на цифровой клавиатуре.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-1">
-                        <p class="bot_date text-right">20:10</p>
-                    </div>
-                </div>
-
+            <div class="col-xs-12 col-md-6">
+                <a href="#">
+                    <img src="/images/icons2/menu4.png" />
+                    Блокнот
+                </a>
             </div>
-            <input type="text" />
-            <div class="row btn-send no-margin">
-                <div class="col-xs-4 link">
-                    <a href="#" class="pull-left"><i class="icon icon-new-window"></i> Перейти в поиск</a>
-                </div>
-                <div class="col-xs-3 col-xs-offset-5">
-                    <a class="btn btn-block btn-primary pull-right">Найти</a>
-                </div>
-            </div>
-            <div id="left_arrow"></div>
         </div>
-        <!--div class="socials">
-            <div class="row">
-                <div class="col-sm-6">
-                    <a class="soc pull-left" href="#">
-                    <img src="/images/icons2/vk.png" />
-                    <span class="badge bg-badge-1">
-                        98
-                        <span class="bottom_badge"></span>
-                    </span>
-                    </a>
-                    <a class="soc pull-left" href="#">
-                        <img src="/images/icons2/facebook.png" />
-                        <span class="badge bg-badge-1">5<span class="bottom_badge"></span></span>
-
-                    </a>
-                    <a class="soc pull-left" href="#">
-                        <img src="/images/icons2/odk.png" />
-                    </a>
-                    <a class="soc pull-left" href="#">
-                        <img src="/images/icons2/twitter.png" />
-                        <span class="badge bg-badge-1">23<span class="bottom_badge"></span></span>
-
-                    </a>
-                    <a class="soc pull-left" href="#">
-                        <img src="/images/icons2/instagram.png" />
-                    </a>
-                </div>
-                <div class="col-sm-6 ">
-                <a class="soc pull-left" href="#">
-                        <img src="/images/icons2/whatspShapp.png" />
-                        <span class="badge bg-badge-1">76<span class="bottom_badge"></span></span>
-
-                    </a>
-                    <a class="soc pull-left" href="#">
-                        <img src="/images/icons2/skype.png" />
-
-                    </a>
-                    <a class="soc pull-left" href="#">
-                        <img src="/images/icons2/gmail.png" />
-                    </a>
-                    <a class="soc pull-left" href="#">
-                        <img src="/images/icons2/yandex.png" />
-                        <span class="badge bg-badge-1">7<span class="bottom_badge"></span></span>
-
-                    </a>
-                    <a class="soc pull-left" href="#">
-                        <img src="/images/icons2/mail.png" />
-                        <span class="badge bg-badge-1">1<span class="bottom_badge"></span></span>
-
-                    </a>
-                </div>
+    </div>
+    <div class="col-xs-3 col-md-4">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <a href="#">
+                    <img src="/images/icons2/menu5.png" />
+                    Документы
+                </a>
             </div>
-        </div-->
-    </div>
-</div>
+            <div class="col-xs-12 col-md-6">
+                <a href="#">
+                    <img src="/images/icons2/menu6.png" />
+                    Пароли
+                </a>
+            </div>
 
-<div class="row  btn-panel">
-    <div class="col-xs-2">
-        <a href="#">
-            <img src="/images/icons2/menu1.png" />
-            Фотография
-        </a>
+        </div>
     </div>
-    <div class="col-xs-2">
-        <a href="#">
-            <img src="/images/icons2/menu2.png" />
-            Голлосариум
-        </a>
-    </div>
-    <div class="col-xs-2">
-        <a href="#">
-            <img src="/images/icons2/menu3.png" />
-            Мои желания
-        </a>
-    </div>
-    <div class="col-xs-2">
-        <a href="#">
-            <img src="/images/icons2/menu4.png" />
-            Блокнот
-        </a>
-    </div>
-    <div class="col-xs-2">
-        <a href="#">
-            <img src="/images/icons2/menu5.png" />
-            Документы
-        </a>
-    </div>
-    <div class="col-xs-2">
-        <a href="#">
-            <img src="/images/icons2/menu6.png" />
-            Пароли
-        </a>
-    </div>
-
 </div>
 <div class="row">
-    <div class="col-xs-4">
-        <!--Левый блок-->
-        <!--div class="dop_panel">
-            <div class="row">
-                <div class="col-xs-2 ">
-                    <i class="icon icon-l1"></i>
-                </div>
-                <div class="col-xs-10 ">
-                    <a href="#">Сделать подарок</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 ">
-                    <i class="icon icon-l2"></i>
-                </div>
-                <div class="col-xs-10 ">
-                    <a href="#">Заработать</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2 ">
-                    <i class="icon icon-l3"></i>
-                </div>
-                <div class="col-xs-10 ">
-                    <a href="#">Заказать</a>
-                </div>
-            </div>
-        </div>
-        <hr /-->
+    <div class="col-md-4 hidden-sm hidden-xs">
         <div class="user_info">
             <div class="row">
                 <div class="col-xs-12">
@@ -357,61 +343,10 @@
                 <small>89:45</small>
             </div>
         </div>
-        <!--hr />
-        <div class="audio_wrap">
-            <h3 class="header3">Аудиозаписи <span class="badge bg-badge-1">871</span></h3>
-            <div class="row">
-                <div class="col-xs-2">
-                    <img src="/images/audio.jpg" />
-                </div>
-                <div class="col-xs-8 ">
-                    <p>Sebastian Tellier - Look</p>
-                    <small>3:56</small>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2">
-                    <img src="/images/audio.jpg" />
-                </div>
-                <div class="col-xs-8 ">
-                    <p>Bastille – Things We…</p>
-                    <small>7:56</small>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2">
-                    <img src="/images/audio.jpg" />
-                </div>
-                <div class="col-xs-8 ">
-                    <p>David Guetta feat. …</p>
-                    <small>3:56</small>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-2">
-                    <img src="/images/audio.jpg" />
-                </div>
-                <div class="col-xs-8 ">
-                    <p>Tom Jones – Black Betty</p>
-                    <small>7:56</small>
-                </div>
-            </div>
-        </div-->
     </div>
-    <div class="col-xs-8">
+    <div class="col-md-8 col-sm-12">
         <!--Правый блок-->
         <div>
-            <!-- Nav tabs -->
-            <!--ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#wall" aria-controls="home" role="tab" data-toggle="tab">Стена</a></li>
-              <li role="presentation"><a href="#vk" aria-controls="profile" role="tab" data-toggle="tab">Вконтакте</a></li>
-              <li role="presentation"><a href="#face" aria-controls="messages" role="tab" data-toggle="tab">Facebook</a></li>
-              <li role="presentation"><a href="#twitter" aria-controls="settings" role="tab" data-toggle="tab">Twitter</a></li>
-              <li role="presentation"><a href="#odk" aria-controls="settings" role="tab" data-toggle="tab">Одноклассники</a></li>
-              <li role="presentation"><a href="#instag" aria-controls="settings" role="tab" data-toggle="tab">Instagram</a></li>
-            </ul-->
-
-            <!-- Tab panes -->
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="wall">
                     <div class="wrap_question wrap_wall question_hide">
