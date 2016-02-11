@@ -282,6 +282,7 @@
 }
 .my-messages{
   height: calc( 100% - 50px );
+  padding:0;
   .messages-user-list{
     height: 100%;
   }
@@ -960,14 +961,25 @@
 }
 
 #wrap_bot_message {
-  background: #ffffff;
-  height: 320px;
+  background: #fff;
+  height: calc(100% - 147px);
   margin-bottom: 22px;
   padding: 10px 20px;
+  & > div {
+    margin: 0 -15px;
+  }
   hr {
     margin-top: 5px;
     margin-bottom: 5px;
   }
+}
+#left_arrow{
+  width: 16px;
+  height: 21px;
+  position: absolute;
+  background: url('/images/left_dialog.png') no-repeat;
+  bottom: 20px;
+  left: -16px;
 }
 
 .bot_date {
@@ -978,13 +990,6 @@
 }
 
 #bot_wrap {
-  background: #dfebf1;
-  padding: 10px 15px;
-  height: 425px;
-  position: absolute;
-  z-index: 200;
-  width: 100%;
-  display: none;
   textarea {
     width: 100%;
     border: 2px solid #91bfd6;
