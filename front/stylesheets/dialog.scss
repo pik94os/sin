@@ -224,6 +224,9 @@
     margin-top: 14px;
   }
 }
+.wrap_ava{
+  position: relative;
+}
 .dialogs-list{
 
   .row .col-xs-3 .last-message-date {
@@ -327,17 +330,20 @@
   margin-right: 20px;
   margin-top: 20px;
 }
-.message-btns .pull-right .btn {
-  min-width: 160px;
-}
-.message-btns .pull-right .link {
-  line-height: 29px;
-  height: 29px;
-  padding: 5px 10px;
-  margin-right: 20px;
-}
-.message-btns .pull-right .link:hover {
-  background: #f3f8fa;
+.message-btns .pull-right{
+  position: relative;
+  .btn {
+    min-width: 160px;
+  }
+  .link {
+    line-height: 29px;
+    height: 29px;
+    padding: 5px 10px;
+    margin-right: 20px;
+    &:hover {
+      background: #f3f8fa;
+    }
+  }
 }
 
 .editor-size {
@@ -859,7 +865,6 @@
   padding-top: 15px;
 }
 .expanded_attach_menu {
-  display: none;
   position: absolute;
   width: 125px;
   background-color: #dfebf1;
@@ -962,8 +967,7 @@
 
 #wrap_bot_message {
   background: #fff;
-  height: calc(100% - 147px);
-  margin-bottom: 22px;
+  height: calc(100% - 127px);
   padding: 10px 20px;
   & > div {
     margin: 0 -15px;
@@ -972,14 +976,79 @@
     margin-top: 5px;
     margin-bottom: 5px;
   }
+  .arrow_box_left {
+    margin-left: 10px;
+  }
+  .arrow_box_right {
+    margin-right: 10px;
+  }
 }
+
+.arrow_box_left {
+  position: relative;
+  background: #f3fafe;
+  border: 1px solid #f3fafe;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: OpenSansLight;
+}
+
+.arrow_box_right {
+  position: relative;
+  background: #cde5f1;
+  border: 1px solid #cde5f1;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: OpenSansLight;
+}
+
+.arrow_box_right:after, .arrow_box_right:before {
+  left: 100%;
+  top: 10px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border:{
+    top-color: rgba(205, 229, 241, 0);
+    bottom-color: rgba(205, 229, 241, 0);
+    left-color: #cde5f1;
+    right-color: rgba(205, 229, 241, 0);
+    width: 11px;
+  }
+  margin-top: 0px;
+}
+
+.arrow_box_left:after, .arrow_box_left:before {
+  right: 100%;
+  top: 10px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border:{
+    top-color: rgba(243, 250, 254, 0);
+    bottom-color: rgba(243, 250, 254, 0);
+    left-color: rgba(243, 250, 254, 0);
+    right-color: #f3fafe;
+    width: 11px;
+  }
+  margin-top: 0px;
+}
+
 #left_arrow{
   width: 16px;
   height: 21px;
   position: absolute;
   background: url('/images/left_dialog.png') no-repeat;
   bottom: 20px;
-  left: -16px;
+  right: 0;
 }
 
 .bot_date {
@@ -1026,8 +1095,12 @@
     }
   }
 }
-.message_bot .bot_date {
-  margin-top: 15px;
+.message_bot{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  .bot_date {
+   margin-top: 15px;
+ }
 }
 
 #close_bot {

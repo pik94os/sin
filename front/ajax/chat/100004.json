@@ -6,12 +6,12 @@
       "status" : 0,
       "from":{
         "_id":1000,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "1.jpg",
         "name" : "Елена Поливайченко"
       },
       "to":{
         "_id" : 100004,
-        "photo" : "user-ava-4.jpg",
+        "photo" : "4.jpg",
         "name" : "Елена Лагунова",
         "status" : 1
       },

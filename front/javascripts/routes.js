@@ -10,13 +10,18 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/account/list.html",
                 controller: 'Account'
             })
+            .state('friend', {
+                url: "/id{id}",
+                templateUrl: "/templates/account/list.html",
+                controller: 'Account'
+            })
             .state('message', {
                 url: "/message",
                 templateUrl: "/templates/message/list.html",
                 controller: 'Message'
             })
             .state('chat', {
-                url: "/chat/:friendId",
+                url: "/chat/id{friendId}",
                 templateUrl: "/templates/message/chat.html",
                 controller: 'Chat'
             })

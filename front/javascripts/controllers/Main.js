@@ -46,8 +46,39 @@ define(['./module','jquery', 'slimScroll', 'bootstrap'],function(controllers,$){
             });
         });
 
+        $scope.activeUser = null;
+
+        $scope.$on('getUser', function(event,data){
+
+            $http.get('/ajax/user/'+data.id+'.json').then(function (response) {
+                if(response.data.err){
+                    $scope.activeUser = null;
+                }else{
+                    $scope.activeUser = response.data.user;
+                }
+            }, function (response) {
+                $scope.activeUser = null;
+            });
+        });
+
+        $scope.chat = [];
+
+        $scope.$on('getChat', function(event,currentFriendId){
+
+            $http.get('/ajax/chat/'+currentFriendId+'.json').then(function (response) {
+                if(response.data.err){
+
+                }else{
+                    $scope.chat = response.data.chat;
+                }
+            }, function (response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        });
+
         function wrap_soc(){
-            $('.wrap_soc').height($('.bg-ava-big').height()+'px');
+            $('.wrap_soc').height($('.btn-panel').height()+'px');
         }
 
         $(window).resize( function(){

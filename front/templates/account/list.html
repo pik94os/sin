@@ -1,6 +1,6 @@
 <div class="row user_data">
     <div class="col-xs-8 ">
-        <h2>Елена Поливайченко <i class="icon icon-verify" title="Пользователь верифицирован"></i></h2>
+        <h2 ng-bind="activeUser==user?user.name:activeUser.name"> <i class="icon icon-verify" title="Пользователь верифицирован"></i></h2>
     </div>
     <div class="col-xs-4 text-right ">
         <p><i class="icon icon-clock"></i> <strong>18:15</strong> <i class="icon icon-line"></i> 15 января 2015</p>
@@ -11,24 +11,32 @@
     <div class="col-xs-3 col-md-12">
         <div class="row no-margin wrap_header bg-header relative" ng-init="hi = false">
             <div class="col-xs-12 col-md-3 bg-ava-big">
-                <div class="wrap_ava ava-big pull-left text-center network-on">
+                <div class="wrap_ava ava-big pull-left text-center" ng-class="{'network-on':(activeUser==user || activeUser.status), 'network-off':!activeUser.status}">
                     <div>
-                        <img src="images/ava.jpg"  class="img-circle">
+                        <img ng-src="images/500x500/{{activeUser==user?user.photo:activeUser.photo}}"  class="img-circle">
                     </div>
-                    <a class="btn btn-primary btn-block" id="btn_bot" ng-bind="hi?'Bye, Sin!':'Hi, Sin!'" ng-click="hi=!hi">Hi, Sin!</a>
+                    <a class="btn btn-primary btn-block" id="btn_bot" ng-click="hi=!hi">
+                        <span ng-if="activeUser==user" ng-bind="hi?'Bye, Sin!':'Hi, Sin!'" ></span>
+                        <span ng-if="activeUser!=user" ng-bind="hi?'Закрыть':'Написать'" ></span>
+                        <div id="left_arrow" ng-show="hi"></div>
+                    </a>
                 </div>
 
             </div>
             <div class="col-md-9 hidden-sm hidden-xs wrap_soc ">
 
-                <div id="status" ng-hide="hi">
+                <div id="status" ng-hide="hi" ng-if="activeUser==user">
                     <span>Изменить статус</span> <input type="text" class="hide" name="status" />
+                </div>
+                <div id="friend-status" ng-hide="hi" ng-if="activeUser!=user">
+                    Я в отпуске. По рабочим вопросам пишите смс.
                 </div>
 
                 <div id="bot_wrap" ng-show="hi">
                     <div class="row no-margin title_bot">
                         <div class="col-xs-8">
-                            <p>Sin</p>
+                            <p ng-if="activeUser==user">Sin</p>
+                            <p ng-if="activeUser!=user" ng-bind="activeUser.name"></p>
                         </div>
                         <div class="col-xs-4 text-right">
                             <a href="#" id="close_bot" class=" pull-right"></a>
@@ -37,7 +45,7 @@
                     </div>
                     <div id="wrap_bot_message">
                         <div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12" ng-if="activeUser==user">
                                 <p class="bot_date">Сегодня, 9 февраля</p>
                                 <hr />
                                 <div class="row no-margin message_bot">
@@ -108,72 +116,47 @@
                                     </div>
                                 </div>
                             </div>
+                            <div ng-if="activeUser!=user">
+                                <div class="row no-margin message_bot" ng-repeat="message in chat"
+                                     ng-init="inbox = (message.to._id==user._id)">
+                                    <div class="" ng-class="{'col-xs-offset-2 col-xs-9':!inbox,'col-xs-10':inbox}">
+                                        <div class="media">
+                                            <div class="media-left" ng-if="inbox" ui-sref="friend({id:message.from._id})">
+                                                <a href="#">
+                                                    <img data-holder-rendered="true" ng-src="/images/75x75/{{message.from.photo}}" alt="{{message.from.name}}" class="media-object">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div ng-class="{'arrow_box_right':!inbox,'arrow_box_left':inbox}">
+                                                    <span ng-bind="message.text"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1" ng-class="{'col-xs-offset-1':inbox}">
+                                        <p class="bot_date text-right">20:08</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <input type="text" />
                     <div class="row btn-send no-margin">
                         <div class="col-xs-4 link">
-                            <a href="#" class="pull-left"><i class="icon icon-new-window"></i> Перейти в поиск</a>
+                            <a href="#" class="pull-left" ng-if="activeUser==user"><i class="icon icon-new-window"></i> Перейти в поиск</a>
+                            <a href="#" class="pull-left" ng-if="activeUser!=user" ui-sref="chat({friendId:activeUser._id})"><i class="icon icon-link-mail"></i> Перейти в сообщение</a>
                         </div>
-                        <div class="col-xs-3 col-xs-offset-5">
+                        <div class="col-xs-3 col-xs-offset-5" ng-if="activeUser==user">
                             <a class="btn btn-block btn-primary pull-right">Найти</a>
                         </div>
+                        <div class="col-xs-4 link" ng-if="activeUser!=user">
+                            <a href="#" class="pull-right"><i class="icon icon-link"></i> Прикрепить</a>
+                        </div>
+                        <div class="col-xs-4 no-padding" ng-if="activeUser!=user">
+                            <a class="btn btn-block btn-primary pull-right">Отправить</a>
+                        </div>
                     </div>
-                    <div id="left_arrow"></div>
                 </div>
-                <!--div class="socials">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <a class="soc pull-left" href="#">
-                            <img src="/images/icons2/vk.png" />
-                            <span class="badge bg-badge-1">
-                                98
-                                <span class="bottom_badge"></span>
-                            </span>
-                            </a>
-                            <a class="soc pull-left" href="#">
-                                <img src="/images/icons2/facebook.png" />
-                                <span class="badge bg-badge-1">5<span class="bottom_badge"></span></span>
-
-                            </a>
-                            <a class="soc pull-left" href="#">
-                                <img src="/images/icons2/odk.png" />
-                            </a>
-                            <a class="soc pull-left" href="#">
-                                <img src="/images/icons2/twitter.png" />
-                                <span class="badge bg-badge-1">23<span class="bottom_badge"></span></span>
-
-                            </a>
-                            <a class="soc pull-left" href="#">
-                                <img src="/images/icons2/instagram.png" />
-                            </a>
-                        </div>
-                        <div class="col-sm-6 ">
-                        <a class="soc pull-left" href="#">
-                                <img src="/images/icons2/whatspShapp.png" />
-                                <span class="badge bg-badge-1">76<span class="bottom_badge"></span></span>
-
-                            </a>
-                            <a class="soc pull-left" href="#">
-                                <img src="/images/icons2/skype.png" />
-
-                            </a>
-                            <a class="soc pull-left" href="#">
-                                <img src="/images/icons2/gmail.png" />
-                            </a>
-                            <a class="soc pull-left" href="#">
-                                <img src="/images/icons2/yandex.png" />
-                                <span class="badge bg-badge-1">7<span class="bottom_badge"></span></span>
-
-                            </a>
-                            <a class="soc pull-left" href="#">
-                                <img src="/images/icons2/mail.png" />
-                                <span class="badge bg-badge-1">1<span class="bottom_badge"></span></span>
-
-                            </a>
-                        </div>
-                    </div>
-                </div-->
             </div>
         </div>
     </div>
@@ -198,7 +181,7 @@
             <div class="col-xs-12 col-md-6">
                 <a href="#">
                     <img src="/images/icons2/menu3.png" />
-                    Мои желания
+                    <span ng-bind="activeUser==user?'Мои желания':'Желания'"></span>
                 </a>
             </div>
             <div class="col-xs-12 col-md-6">
@@ -219,8 +202,8 @@
             </div>
             <div class="col-xs-12 col-md-6">
                 <a href="#">
-                    <img src="/images/icons2/menu6.png" />
-                    Пароли
+                    <img ng-src="/images/icons2/menu{{activeUser==user?'6':'7'}}.png" />
+                    <span ng-bind="activeUser==user?'Пароли':'Комментарии'"></span>
                 </a>
             </div>
 
@@ -233,7 +216,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="wrap_ava ava-small pull-left">
-                        <img src="/images/ava-small.png" class="img-circle" />
+                        <img ng-src="/images/75x75/{{activeUser==user?user.photo:activeUser.photo}}" class="img-circle" />
                     </div>
                     <h3 class="header3">Информация о пользователе</h3>
                 </div>
@@ -281,51 +264,11 @@
         <div class="user_online">
             <h3 class="header3">Друзья онлайн <span class="badge bg-badge-2">491</span></h3>
             <div class="row">
-                <div class="col-xs-4">
+                <div class="col-xs-4" ng-repeat="friend in friendsOnline">
                     <div class="wrap_ava ava-small">
-                        <a href="#">
-                            <img src="/images/ava-small.png" class="img-circle" /><br />
-                            Светлана Антипова
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="wrap_ava ava-small">
-                        <a href="#">
-                            <img src="/images/ava-small.png" class="img-circle" /><br />
-                            Светлана Антипова
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="wrap_ava ava-small">
-                        <a href="#">
-                            <img src="/images/ava-small.png" class="img-circle" /><br />
-                            Светлана Антипова
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-4 ">
-                    <div class="wrap_ava ava-small">
-                        <a href="#">
-                            <img src="/images/ava-small.png" class="img-circle" /><br />
-                            Светлана Антипова
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="wrap_ava ava-small">
-                        <a href="#">
-                            <img src="/images/ava-small.png" class="img-circle" /><br />
-                            Светлана Антипова
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="wrap_ava ava-small">
-                        <a href="#">
-                            <img src="/images/ava-small.png" class="img-circle" /><br />
-                            Светлана Антипова
+                        <a href="#" ui-sref="friend({id:friend._id})">
+                            <img ng-src="/images/75x75/{{friend.photo}}" class="img-circle" /><br />
+                            <span ng-bind="friend.name"></span>
                         </a>
                     </div>
                 </div>

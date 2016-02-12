@@ -1,0 +1,9 @@
+{
+  "err":0,
+  "user":{
+    "_id" : 100001,
+    "photo" : "user-ava-1.jpg",
+    "name" : "sin",
+    "status" : 1
+  }
+}

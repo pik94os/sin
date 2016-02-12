@@ -6,7 +6,7 @@
       "status" : 1,
       "from":{
         "_id":1000,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "1.jpg",
         "name" : "Елена Поливайченко"
       },
       "to":{
@@ -23,13 +23,13 @@
       "status" : 0,
       "from":{
         "_id" : 100002,
-        "photo" : "user-ava-2.jpg",
+        "photo" : "2.jpg",
         "name" : "Максим Походун",
         "status" : 1
       },
       "to":{
         "_id":1000,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "1.jpg",
         "name" : "Елена Поливайченко"
       },
       "text":"Это страница с фотографиями. Кликая по одному из проектов — попадаем на страницу с описание проекта.",
@@ -40,12 +40,12 @@
       "status" : 1,
       "from":{
         "_id":1000,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "1.jpg",
         "name" : "Елена Поливайченко"
       },
       "to":{
         "_id" : 100003,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "3.jpg",
         "name" : "Светлана Антипова",
         "status" : 1
       },
@@ -57,12 +57,12 @@
       "status" : 0,
       "from":{
         "_id":1000,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "1.jpg",
         "name" : "Елена Поливайченко"
       },
       "to":{
         "_id" : 100004,
-        "photo" : "user-ava-4.jpg",
+        "photo" : "4.jpg",
         "name" : "Елена Лагунова",
         "status" : 1
       },
@@ -74,13 +74,13 @@
       "status" : 0,
       "from":{
         "_id" : 100005,
-        "photo" : "user-ava-5.jpg",
+        "photo" : "5.jpg",
         "name" : "Изольда Караванова",
         "status" : 0
       },
       "to":{
         "_id":1000,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "1.jpg",
         "name" : "Елена Поливайченко"
       },
       "text":"Подумать над перенесением меню в правую колонку к списку друзей.",
@@ -91,12 +91,12 @@
       "status" : 1,
       "from":{
         "_id":1000,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "1.jpg",
         "name" : "Елена Поливайченко"
       },
       "to":{
         "_id" : 100006,
-        "photo" : "user-ava-6.jpg",
+        "photo" : "6.jpg",
         "name" : "Захар Назинов",
         "status" : 1
       },
@@ -108,13 +108,13 @@
       "status" : 1,
       "from":{
         "_id" : 100007,
-        "photo" : "user-ava-7.jpg",
+        "photo" : "7.jpg",
         "name" : "Елена Назинова",
         "status" : 0
       },
       "to":{
         "_id":1000,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "1.jpg",
         "name" : "Елена Поливайченко"
       },
       "text":"Это страница с фотографиями. Кликая по одному из проектов — попадаем на страницу с описание проекта.",
@@ -125,13 +125,13 @@
       "status" : 1,
       "from":{
         "_id" : 100008,
-        "photo" : "user-ava-8.jpg",
+        "photo" : "8.jpg",
         "name" : "Алёна Лагунова",
         "status" : 0
       },
       "to":{
         "_id":1000,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "1.jpg",
         "name" : "Елена Поливайченко"
       },
       "text":"Привет!",
@@ -142,12 +142,12 @@
       "status" : 1,
       "from":{
         "_id":1000,
-        "photo" : "user-ava-3.jpg",
+        "photo" : "1.jpg",
         "name" : "Елена Поливайченко"
       },
       "to":{
         "_id" : 100009,
-        "photo" : "user-ava-9.jpg",
+        "photo" : "9.jpg",
         "name" : "Светлана Назинова",
         "status" : 1
       },

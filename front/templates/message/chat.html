@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-xs-3">
                 <div class="find-user-form">
-                    <input type="text" placeholder="Введите имя" />
+                    <input type="text" placeholder="Введите имя"  ng-model="search"/>
                     <button type="submit"></button>
                 </div>
             </div>
@@ -50,14 +50,14 @@
 
         <div class="col-xs-3 messages-user-list">
             <div>
-                <div class="row" class="row" ng-repeat="message in messages"
+                <div class="row" class="row" ng-repeat="message in messages | filter:search"
                      ng-init="inbox = (message.to._id==user._id)"
                      ng-class="{'inbox':inbox,'outbox':!inbox,'current':(inbox?message.from._id:message.to._id)==currentFriendId}">
                         <span class="col-xs-12" ng-init="friend = inbox?message.from:message.to" ui-sref="chat({friendId:friend._id})">
                             <a href="#" class="invite "></a>
                             <span class="wrap_ava ava-small" ng-class="{'network-on':friend.status,'network-off':!friend.status}">
                                 <a href="#" class="relative">
-                                    <img ng-src="/images/{{friend.photo}}" alt="{{friend.name}}" class="img-circle" />
+                                    <img ng-src="/images/75x75/{{friend.photo}}" alt="{{friend.name}}" class="img-circle" />
                                 </a>
                             </span>
                             <span class="user-name" ng-bind="friend.name">Sin</span>
@@ -81,24 +81,24 @@
                         </div>
                         <div class="col-xs-10 no-padding">
                             <div class="media">
-                                <div class="media-left" ng-if="inbox">
+                                <div class="media-left" ng-if="inbox" ui-sref="friend({id:message.from._id})">
                                     <a href="#">
-                                        <img data-holder-rendered="true" ng-src="/images/{{message.from.photo}}" alt="{{message.from.name}}" class="media-object">
+                                        <img data-holder-rendered="true" ng-src="/images/75x75/{{message.from.photo}}" alt="{{message.from.name}}" class="media-object">
                                     </a>
                                 </div>
-                                <div class="media-body">
+                                <div class="media-body" ng-click="message.active=!message.active" ng-class="{'active':message.active}">
                                     <div ng-class="{'unread':!message.status}">
-                                        <span ng-bind="message.text"></span>"
+                                        <span ng-bind="message.text"></span>
                                         <div class="resent-del clearfix">
                                             <a href="#" class="resent-msg">Переслать</a>
                                             <a href="#" class="delete-msg">Удалить</a>
-                                            <i class="icon-favorite"></i>
+                                            <i class="icon-favorite" ng-click="message.favorite=!message.favorite" ng-class="{'active':message.favorite}"></i>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="media-right" ng-if="!inbox">
+                                <div class="media-right" ng-if="!inbox" ui-sref="account()">
                                     <a href="#">
-                                        <img data-holder-rendered="true" ng-src="/images/{{message.from.photo}}" alt="{{message.from.name}}" class="media-object">
+                                        <img data-holder-rendered="true" ng-src="/images/75x75/{{message.from.photo}}" alt="{{message.from.name}}" class="media-object">
                                     </a>
                                 </div>
                             </div>
@@ -159,9 +159,9 @@
                             <!--<a href="#" class="editor-window"></a>-->
                         </div>
 
-                        <div class="pull-right relativer">
+                        <div class="pull-right" ng-init="show_menu=false">
 
-                            <div class="expanded_attach_menu">
+                            <div class="expanded_attach_menu" ng-show="show_menu">
                                 <div class="line">
                                     <div class="download_icon"></div>
                                     <span class="tex">Загрузить</span>
@@ -180,7 +180,7 @@
                                 </div>
                             </div>
 
-                            <a class="link attach-button" href="#"><i class="icon icon-link"></i> Прикрепить</a>
+                            <a class="link attach-button" href="#" ng-click="show_menu=true" ng-blur="show_menu=false"><i class="icon icon-link"></i> Прикрепить</a>
                             <a class="btn btn-primary">Отправить</a>
                         </div>
 

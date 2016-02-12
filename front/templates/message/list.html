@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-xs-3">
                 <div class="find-user-form">
-                    <input type="text" placeholder="Введите имя" />
+                    <input type="text" placeholder="Введите имя" ng-model="search"/>
                     <button type="submit"></button>
                 </div>
             </div>
@@ -39,7 +39,7 @@
 
         <div>
 
-            <div class="row" ng-repeat="message in messages"
+            <div class="row" ng-repeat="message in messages | filter:search"
                  ng-init="inbox = (message.to._id==user._id)"
                  ng-class="{'inbox':inbox,'outbox':!inbox}">
                 <div ng-init="friend = inbox?message.from:message.to" ui-sref="chat({friendId:friend._id})">
@@ -47,7 +47,7 @@
                         <a href="#" class="invite "></a>
 								<span class="wrap_ava ava-small" ng-class="{'network-on':friend.status,'network-off':!friend.status}">
 									<a href="#" class="relative">
-                                        <img ng-src="/images/{{friend.photo}}" alt="{{friend.name}}" class="img-circle" />
+                                        <img ng-src="/images/75x75/{{friend.photo}}" alt="{{friend.name}}" class="img-circle" />
                                     </a>
 								</span>
                         <span class="user-name" ng-bind="friend.name">Sin</span>
