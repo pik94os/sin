@@ -1,0 +1,263 @@
+.notebook-page{
+  #panel1{
+    padding-top: 15px;
+  }
+  .show-hide-contacts{
+    font-size: 13px;
+    font-family: "OpenSansLightItalic";
+  }
+  .eye{
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: -5px;
+  }
+
+  .my-modal h4:before {
+    background: none;
+    width: 0;
+  }
+  .my-modal h4 {
+    padding-left: 0;
+  }
+}
+/* MY NOTES */
+.my-notes{
+  padding: 20px 20px 0;
+  .line-with-alph{
+    position: relative;
+  }
+  .alphabet{
+    margin-right: 35px;
+  }
+  .alphabet li{
+    padding: 0;
+  }
+  .alphabet a{
+    display: inline-block;
+    margin-right: 2px;
+    padding: 7px 9px;
+    line-height: 1;
+    font-size: 13px;
+    font-family: "OpenSansLight";
+    color: #000;
+  }
+  .alphabet a:hover,
+  .alphabet a.active{
+    background: #dfebf1;
+  }
+  .alphabet span{
+    border-bottom: 1px dashed #3181a9;
+  }
+  .change-lang{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    width: 27px;
+    height: 20px;
+    margin-top: 3px;
+    background: url(/images/icons2/lang.png) 0 0 no-repeat;
+  }
+  .change-lang.eng{
+    background: url(/images/icons2/lang-eng.png) 0 0 no-repeat;
+  }
+  .change-lang + .dropdown-menu{
+    left: inherit;
+    right: 0;
+    top: 23px;
+    min-width: 30px;
+  }
+  .change-lang + .dropdown-menu > li > a {
+    display: block;
+    padding: 3px 13px;
+  }
+  .wrapper-map{
+    margin-top: 35px;
+  }
+  .show-map{
+    display: inline-block;
+    padding-left: 32px;
+    margin-bottom: 15px;
+    color: #000;
+    background: url(/images/icons2/mesto.png) 5px center no-repeat;
+  }
+  .show-map span{
+    font-size: 13px;
+    font-family: "OpenSansLight";
+    border-bottom: 1px dotted #3181a9;
+  }
+  .wrapper-map{
+    width: 100%;
+  }
+  #map_canvas{
+    display: none;
+    height: 260px;
+    width: 100%;
+  }
+  #map_canvas.visible{
+    display: block;
+  }
+  .addresses-list{
+    margin-top: 35px;
+  }
+  .line-with-alph{
+    margin-top: 20px;
+  }
+  .notebook-tabs li > a,
+  .my-documents .document-tabs li > a{
+    font-family: "OpenSansLight";
+    font-size: 18px;
+  }
+  .my-wishes .document-tabs li > a{
+    font-family: "OpenSansLight";
+    font-size: 18px;
+  }
+  .notebook-tabs li.active > a,
+  .my-documents .document-tabs li.active > a{
+    font-weight: 400;
+  }
+  .my-wishes .document-tabs li.active > a{
+    font-weight: 400;
+  }
+  .addresses-list{
+    font-size: 13px;
+  }
+  .letter-block{
+    position: relative;
+    border-top: 1px solid #dfebf1;
+  }
+  .letter{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+    text-align: center;
+    background: #dfebf1;
+    font-size: 13px;
+    font-family: "OpenSansLight";
+  }
+  .contacts-block{
+    margin-left: 25px;
+    padding: 12px 0 20px;
+    border-bottom: 1px solid #dfebf1;
+  }
+  .contacts-block:last-child{
+    border-bottom: none;
+  }
+  .ava-small{
+    width: 70px;
+    float: left;
+  }
+  .ava-small img{
+    height: 60px;
+  }
+  .main-info{
+    margin-left: 80px;
+  }
+  .name{
+    margin-bottom: 8px;
+    font-family: "OpenSansSemiBold";
+  }
+  .about p{
+    margin: 5px 0 0;
+  }
+  .edit{
+    position: relative;
+    display: inline-block;
+    padding-left: 16px;
+    margin-top: 11px;
+    font-family: "OpenSansLightItalic";
+  }
+  .edit:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 16px;
+    height: 16px;
+    background: url(/images/icons2/edit.png) 0 0 no-repeat;
+  }
+  .bold{
+    font-family: "OpenSansSemiBold";
+  }
+  .right-column {
+    background: #dfebf1 none repeat scroll 0 0;
+    padding: 20px;
+    position: relative;
+    padding-top: 70px;
+  }
+
+  &-add-tag {
+    background: #536177 none repeat scroll 0 0;
+    color: #fff;
+    font-family: "OpenSansLight";
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 15px;
+    text-align: center;
+    text-overflow: ellipsis;
+  }
+  &-tags {
+    margin-top: 15px;
+    a {
+      padding: 0 10px;
+      margin: 5px 0;
+      color: #000;
+      font-family: 'OpenSansLight';
+      font-size: 14px;
+      height: 26px;
+      line-height: 26px;
+      display: inline-block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    li {
+      display: block;
+    }
+    a:hover,
+    a.active,
+    li.active a {
+      background: #91bfd6;
+    }
+  }
+}
+
+.find-note-form {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+  input {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #b9c0c4;
+    border-radius: 3px;
+    color: #000;
+    display: block;
+    font-family: "OpenSansLight";
+    height: 33px;
+    left: 0;
+    line-height: 33px;
+    padding-left: 10px;
+    padding-right: 25px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+  }
+  button {
+    background: rgba(0, 0, 0, 0) url("/images/icons2/user-search.png") repeat scroll 0 0;
+    border: medium none;
+    height: 16px;
+    position: absolute;
+    right: 20px;
+    top: 9px;
+    width: 16px;
+  }
+}

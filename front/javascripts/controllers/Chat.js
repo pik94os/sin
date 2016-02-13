@@ -1,4 +1,4 @@
-define(['./module','jquery', 'slimScroll'],function(controllers,$){
+define(['./module','jquery'],function(controllers,$){
     'use strict';
     controllers.controller('Chat',['$rootScope','$scope', '$stateParams', '$http', function($rootScope,$scope, $stateParams, $http){
         $rootScope.$broadcast('html100', true);

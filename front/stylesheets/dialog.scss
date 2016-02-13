@@ -1,8 +1,5 @@
 .find-user-form {
   height: 33px;
-  margin-left: 5px;
-  margin-right: -5px;
-  margin-top: 0;
   position: relative;
   margin-top: 20px;
   input {
@@ -20,7 +17,7 @@
   }
   button {
     position: absolute;
-    right: 20px;
+    right: 15px;
     border: none;
     top: 9px;
     width: 16px;
@@ -35,8 +32,6 @@
   border-right: 1px solid #dfebf1;
   &-title .find-user-form {
     height: 33px;
-    margin-left: 5px;
-    margin-right: -5px;
     margin-top: 8px;
     position: relative;
     input {
@@ -1048,7 +1043,7 @@
   position: absolute;
   background: url('/images/left_dialog.png') no-repeat;
   bottom: 20px;
-  right: 0;
+  right: -15px;
 }
 
 .bot_date {

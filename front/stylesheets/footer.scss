@@ -1,0 +1,26 @@
+footer {
+  height: 40px;
+  p {
+    line-height: 40px;
+    margin: 0;
+    font-family: OpenSansSemiBold;
+    font-size: 14px;
+    a {
+      font-family: OpenSansRegular;
+    }
+  }
+  ul li a {
+    color: #000;
+    font-family: OpenSansLight;
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+  }
+  ul.list-inline {
+    margin: 0;
+  }
+  a:hover {
+    color: #df703b;
+  }
+}

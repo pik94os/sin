@@ -1,7 +1,7 @@
 /**
  * Created by pik on 06.01.16.
  */
-define(['./module','jquery', 'bootstrap'],function(controllers,$){
+define(['./module','jquery'],function(controllers,$){
     'use strict';
     controllers.controller('Account',['$rootScope','$scope', '$stateParams', '$http', function($rootScope,$scope,$stateParams,$http){
         $rootScope.$broadcast('html100', false);

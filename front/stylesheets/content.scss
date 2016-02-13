@@ -952,3 +952,30 @@ header{
     }
   }
 }
+.find-user-form {
+  height: 33px;
+  position: relative;
+  margin-top: 20px;
+}
+.form-on-the-top-onthe-docs {
+  margin-top: 4px !important;
+  margin-bottom: 20px;
+}
+.nav-tabs > li > a {
+  line-height: 1;
+  font-family: "OpenSansLight";
+  font-size: 18px;
+  border-bottom: 1px dashed #458eb2;
+}
+.nav-tabs > li.active, .nav-tabs > li.active, .nav-tabs > li.active, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background: #536177;
+  font-weight: 400;
+  color: #fff;
+}
+.user_top_panel {
+  margin-bottom: 15px;
+  .icon {
+    vertical-align: top;
+    margin-left: 8px;
+  }
+}

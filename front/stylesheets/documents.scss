@@ -1,0 +1,714 @@
+.documents-page{
+  .grid-view{
+    .doc-checked{
+      top: initial;
+      bottom: 9px;
+    }
+    .file-img{
+      min-height: 50px;
+    }
+    .file-info{
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      min-height: 40px;
+      &.overflow{
+        height: 40px;
+        .file-size{
+          position: absolute;
+          bottom: 1px;
+          right: 0;
+          width: 41px;
+          background: #f0f7fb;
+        }
+        span{
+          position: absolute;
+          bottom: 0;
+          right: 41px;
+          background: #f0f7fb;
+        }
+      }
+    }
+    .file-size{
+      margin-top: 0;
+      font-size: 13px;
+    }
+    .file-name{
+      margin-top: 0;
+      display: inline-block;
+    }
+    .each-attached-file{
+      padding: 0 8px;
+      width: 25%;
+      float: left;
+      margin: 0;
+      text-align: center;
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+      position: relative;
+      min-height: 100px;
+      margin-bottom: 2px;
+      background: #f0f7fb;
+      &:hover {
+        background: #f5dbce;
+      }
+    }
+
+  }
+  .sort{
+    margin-left: 20px;
+    padding: 20px 0 13px;
+    font-size: 13px;
+    font-family: "OpenSansLight";
+    a{
+      margin-right: 18px;
+      margin-left: 13px;
+      padding-top: 7px;
+      line-height: 14px;
+      color: #000;
+      border-bottom: 1px dotted #91bfd6;
+      &.active{
+        margin-right: 5px;
+        margin-left: 0;
+        padding: 7px 13px 8px;
+        border-bottom: none;
+        color: #fff;
+        background: #91bfd6;
+      }
+    }
+    span{
+      margin-right: 18px;
+      padding-top: 7px;
+      line-height: 14px;
+      color: #000;
+      font-family: "OpenSansItalic";
+      display: inline-block;
+    }
+  }
+  .dialog-list,
+  .dialog-grid{
+    margin-top: 27px;
+  }
+  .dialog-list{
+    margin-left: 15px;
+  }
+  .wrap-btn-group{
+    width: 295px;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  .btn-group{
+    width: 280px;
+    height: 80px;
+  }
+  .new-doc{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 80px;
+    padding: 23px 0 0 60px;
+    color: #fff;
+    font-family: "OpenSansLightItalic";
+    font-size: 13px;
+    border-right: 1px solid #fff;
+    background: #91bfd6 url(/images/icons2/new-doc.png) 25px center no-repeat;
+  }
+  .load,
+  .to-archive{
+    position: absolute;
+    right: 0;
+    width: 140px;
+    height: 40px;
+    padding: 6px 0 0 !important;
+    font-family: "OpenSansRegular";
+    font-size: 18px;
+    color: #fff;
+    background: #536177;
+    text-align: center;
+  }
+  .load{
+    top: 0;
+    border-bottom: 1px solid #fff;
+  }
+  .to-archive{
+    top: 40px;
+  }
+  .transcript{
+    padding-left: 30px;
+    color: #858788;
+    font-size: 13px;
+    font-family: "OpenSansLight";
+  }
+  .transcript p{
+    padding-top: 12px;
+  }
+  .my-documents{
+    padding-top: 20px;
+  }
+  .wishes-page .my-wishes{
+    padding-top: 20px;
+  }
+
+  .right-column .file-img{
+    position: relative;
+    min-height: 80px;
+    padding-left: 0;
+    padding-right: 0;
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      max-width: 60px;
+      max-height: 60px;
+      margin-top: -30px;
+      margin-left: -30px;
+    }
+  }
+  .right-column .file-name{
+    max-height: 60px;
+    margin-bottom: 7px;
+    margin-top: 0;
+    overflow: hidden;
+    font-family: "OpenSansBold";
+  }
+  .right-column{
+    padding: 0 0 0 10px;
+    &-bg{
+      padding: 4px 10px 20px;
+      background: #f0f7fb;
+    }
+    .btn-primary{
+      margin-top: 7px;
+    }
+  }
+  .right-info p{
+    margin: 0 0 3px;
+  }
+  .show-file{
+    position: relative;
+    padding-left: 25px;
+  }
+  .btn-primary{
+    padding: 3px 8px;
+  }
+  .save-file{
+    position: relative;
+    width: 27px;
+    height: 26px;
+    margin: 0 10px;
+  }
+  .copy-link{
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 30px;
+    color: #000;
+    cursor: pointer;
+    &:before{
+      position: absolute;
+      content: "";
+      width: 16px;
+      height: 19px;
+      background: url(/images/icons2/copypaste.png) 0 0 no-repeat;
+      top: 0px;
+      left: 3px;
+    }
+  }
+  .edit-pencil{
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 30px;
+    color: #000;
+    &:before{
+      position: absolute;
+      content: "";
+      width: 16px;
+      height: 19px;
+      background: url(/images/icons2/edit.png) 0 0 no-repeat;
+      top: 0px;
+      left: 3px;
+    }
+  }
+  .messages-smile{
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 30px;
+    color: #000;
+    &:before{
+      position: absolute;
+      content: "";
+      width: 22px;
+      height: 19px;
+      background: url(/images/icons2/messages.png) 0 0 no-repeat;
+      top: 0px;
+      left: 3px;
+    }
+  }
+  .save-disketa{
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 30px;
+    color: #000;
+    &:before{
+      position: absolute;
+      content: "";
+      width: 17px;
+      height: 17px;
+      background: url(/images/icons2/save.png) 0 0 no-repeat;
+      top: 0px;
+      left: 3px;
+    }
+  }
+  .trash-bucket{
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 30px;
+    color: #000;
+    &:before{
+      position: absolute;
+      content: "";
+      width: 15px;
+      height: 19px;
+      background: url(/images/icons2/trash.png) 0 0 no-repeat;
+      top: 0px;
+      left: 3px;
+    }
+  }
+  .save-file:before{
+    position: absolute;
+    content: "";
+    top: 3px;
+    left: 4px;
+    width: 18px;
+    height: 17px;
+    background: url(/images/icons2/open-save.png) -46px 0 no-repeat;
+  }
+  .trash-file{
+    color: #D9E8EF;
+  }
+  .dots{
+    margin-left: 10px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #D9E8EF;
+  }
+  .share-link{
+    height: 28px;
+    line-height: 28px;
+    padding-left: 7px;
+    padding-right: 7px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-family: "OpenSansLight";
+    border: 1px solid #91bfd6;
+    background: #fff;
+  }
+  .text-share{
+    margin-top: 25px;
+    cursor: pointer;
+  }
+  .file-name{
+    margin-top: 15px;
+    font-family: "OpenSansRegular";
+  }
+  .file-size,
+  .file-type,
+  .file-date{
+    color: #5b5b5b;
+    font-size: 13px;
+    text-align: center;
+  }
+  .file-size{
+    margin-top: 45px;
+    font-family: "OpenSansLight";
+  }
+  .file-type{
+    margin-top: 0;
+  }
+  .files-attached-list .file-img{
+    min-height: 80px;
+  }
+
+  &default .wrap-btn-group,
+  &default .files-attached-list{
+    padding-left: 0;
+  }
+
+  .my-modal h4:before {
+    background: none;
+    width: 0;
+  }
+  .my-modal h4 {
+    padding-left: 0;
+  }
+  .find-user-form {
+    input {
+      position: inherit;
+      width: 100%;
+      height: 33px;
+      border: none;
+      background: #dfebf1;
+      border-radius: 7px;
+      font-family: OpenSansLightItalic;
+      color: #858788;
+      display: block;
+      padding: 5px 35px 5px 10px;
+    }
+    button{
+      right: 30px;
+    }
+  }
+}
+
+.documents-new-page{
+  .right-column .simple-text {
+    margin-top: 15px;
+  }
+  .top-fld-container {
+    background-color: #dfebf1;
+    padding: 14px 15px 10px 15px;
+    .top-inp-tex {
+      background: #fff none repeat scroll 0 0;
+      border: 1px solid #91bfd6;
+      font-family: "OpenSansLight";
+      font-size: 14px;
+      height: 28px;
+      width: 185px;
+      line-height: 28px;
+      overflow: hidden;
+      padding-left: 7px;
+      padding-right: 7px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .main-area {
+    border-left: 1px solid #dfebf1;
+    border-right: 1px solid #dfebf1;
+    min-height: 470px;
+    width: 100%;
+  }
+  .sort{
+    margin-left: 20px;
+    padding: 20px 0 25px;
+    font-size: 13px;
+    font-family: "OpenSansLight";
+    a{
+      margin-right: 18px;
+      margin-left: 13px;
+      padding-top: 7px;
+      line-height: 14px;
+      color: #000;
+      border-bottom: 1px dotted #91bfd6;
+      &.active{
+        margin-right: 5px;
+        margin-left: 0;
+        padding: 7px 13px 8px;
+        border-bottom: none;
+        color: #fff;
+        background: #91bfd6;
+      }
+    }
+    span{
+      margin-right: 18px;
+      padding-top: 7px;
+      line-height: 14px;
+      color: #000;
+      font-family: "OpenSansItalic";
+      display: inline-block;
+    }
+  }
+  .panel-title{
+    height: 80px;
+  }
+  .dialog-list{
+    margin-left: 15px;
+  }
+  .top-fld-container .top-inp-tex::-webkit-input-placeholder { font-style: italic; }
+  .top-fld-container .top-inp-tex::-moz-placeholder { font-style: italic; }
+  .top-fld-container .top-inp-tex:-ms-input-placeholder { font-style: italic; }
+  .top-fld-container .top-inp-texinput:-moz-placeholder { font-style: italic; }
+  .dialog-list,
+  .dialog-grid{
+    margin-top: 27px;
+  }
+  .wrap-btn-group{
+    width: 295px;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  .btn-group{
+    width: 280px;
+    height: 80px;
+  }
+  .new-doc{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 80px;
+    padding: 23px 0 0 60px;
+    color: #fff;
+    font-family: "OpenSansLightItalic";
+    font-size: 13px;
+    border-right: 1px solid #fff;
+    background: #91bfd6 url(/images/icons2/new-doc.png) 25px center no-repeat;
+  }
+  .load,
+  .to-archive{
+    position: absolute;
+    right: 0;
+    width: 140px;
+    height: 40px;
+    padding: 6px 0 0 !important;
+    font-family: "OpenSansRegular";
+    font-size: 18px;
+    color: #fff;
+    background: #536177;
+    text-align: center;
+  }
+  .load{
+    top: 0;
+    border-bottom: 1px solid #fff;
+  }
+  .to-archive{
+    top: 40px;
+  }
+  .transcript{
+    padding-left: 30px;
+    color: #858788;
+    font-size: 13px;
+    font-family: "OpenSansLight";
+  }
+  .transcript p{
+    padding-top: 12px;
+  }
+  .my-documents{
+    padding-top: 3px;
+  }
+
+  .right-column .file-img{
+    position: relative;
+    min-height: 80px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .right-column .file-img img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    max-width: 60px;
+    max-height: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+  .right-column .file-name{
+    max-height: 60px;
+    margin-bottom: 7px;
+    margin-top: 0;
+    overflow: hidden;
+    font-family: "OpenSansBold";
+  }
+  .right-column{
+    padding: 0 0 0 10px;
+  }
+  .right-column-bg{
+    padding: 4px 10px 20px;
+    background: #f0f7fb;
+  }
+  .right-info p{
+    margin: 0 0 3px;
+  }
+  .show-file{
+    position: relative;
+    padding-left: 25px;
+  }
+  .btn-primary{
+    padding: 3px 8px;
+  }
+  .right-column .btn-primary{
+    margin-top: 7px;
+  }
+  .save-file{
+    position: relative;
+    width: 27px;
+    height: 26px;
+    margin: 0 10px;
+  }
+  .copy-link{
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 30px;
+    color: #000;
+  }
+  .copy-link:before{
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 19px;
+    background: url(/images/icons2/copypaste.png) 0 0 no-repeat;
+    top: 0px;
+    left: 3px;
+  }
+  .edit-pencil{
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 35px;
+    color: #000;
+  }
+  .edit-pencil:before{
+    position: absolute;
+    content: "";
+    width: 25px;/*16*/
+    height: 19px;
+    background: url(/images/icons2/edit.png) center center no-repeat;
+    top: 0px;
+    left: 3px;
+  }
+  .edit-pencil:hover:before {
+    background-color: #FFF;
+  }
+  .messages-smile{
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 35px;
+    color: #000;
+  }
+  .messages-smile:before{
+    position: absolute;
+    content: "";
+    width: 25px;/*22*/
+    height: 19px;
+    background: url(/images/icons2/messages.png) center center no-repeat;
+    top: 0px;
+    left: 3px;
+  }
+  .messages-smile:hover:before {
+    background-color: #FFF;
+  }
+  .save-disketa{
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 35px;
+    color: #000;
+  }
+  .save-disketa:before{
+    position: absolute;
+    content: "";
+    width: 25px;/*17*/
+    height: 17px;
+    background: url(/images/icons2/save.png) center center no-repeat;
+    top: 0px;
+    left: 3px;
+  }
+  .save-disketa:hover:before {
+    background-color: #FFF;
+  }
+  .trash-bucket{
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 35px;
+    color: #000;
+  }
+  .trash-bucket:before{
+    position: absolute;
+    content: "";
+    width: 25px;/*15*/
+    height: 19px;
+    background: url(/images/icons2/trash.png) center center no-repeat;
+    top: 0px;
+    left: 3px;
+    margin-right: 5px;
+  }
+  .trash-bucket:hover:before {
+    background-color: #FFF;
+  }
+  .save-file:before{
+    position: absolute;
+    content: "";
+    top: 3px;
+    left: 4px;
+    width: 18px;
+    height: 17px;
+    background: url(/images/icons2/open-save.png) -46px 0 no-repeat;
+  }
+  .trash-file{
+    color: #D9E8EF;
+  }
+  .dots{
+    margin-left: 10px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #D9E8EF;
+  }
+  .share-link{
+    height: 28px;
+    line-height: 28px;
+    padding-left: 7px;
+    padding-right: 7px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-family: "OpenSansLight";
+    border: 1px solid #91bfd6;
+    background: #fff;
+  }
+  .text-share{
+    margin-top: 25px;
+    cursor: pointer;
+  }
+  .file-name{
+    margin-top: 15px;
+    font-family: "OpenSansRegular";
+  }
+  .file-size,
+  .file-type,
+  .file-date{
+    color: #5b5b5b;
+    font-size: 13px;
+    text-align: center;
+  }
+  .file-size{
+    margin-top: 45px;
+    font-family: "OpenSansLight";
+  }
+  .file-type{
+    margin-top: 0;
+  }
+  .files-attached-list .file-img{
+    min-height: 80px;
+  }
+
+  &.default .wrap-btn-group,
+  &.default .files-attached-list{
+    padding-left: 0;
+  }
+}
+
+
+.document-tabs .doc-menu-on-right-side .new-tab {
+  border-bottom: none;
+  color: #FFF;
+  background: url(/images/icons2/plus.png) center center no-repeat #536177;
+  height: 43px;
+  width: 43px;
+  border-radius: 0 !important;
+}

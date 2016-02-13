@@ -1,4 +1,4 @@
-define(['./module','jquery', 'slimScroll'],function(controllers,$){
+define(['./module','jquery'],function(controllers,$){
     'use strict';
     controllers.controller('Calendar',['$rootScope','$scope', function($rootScope,$scope){
         $('title').text('Календарь');

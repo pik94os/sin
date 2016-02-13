@@ -30,6 +30,26 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/calendar/list.html",
                 controller: 'Calendar'
             })
+            .state('documents', {
+                url: "/documents",
+                templateUrl: "/templates/documents/list.html",
+                controller: 'Documents'
+            })
+            .state('notebook', {
+                url: "/notebook",
+                templateUrl: "/templates/notebook/list.html",
+                controller: 'Notebook'
+            })
+            .state('wishes', {
+                url: "/wishes",
+                templateUrl: "/templates/wishes/list.html",
+                controller: 'Wishes'
+            })
+            .state('passwords', {
+                url: "/passwords",
+                templateUrl: "/templates/passwords/list.html",
+                controller: 'Passwords'
+            })
             //Ошибка 404
             .state('err_404', {
                 url: "/err404",

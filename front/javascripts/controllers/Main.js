@@ -1,7 +1,7 @@
 /**
  * Created by pik on 06.01.16.
  */
-define(['./module','jquery', 'slimScroll', 'bootstrap'],function(controllers,$){
+define(['./module','jquery'],function(controllers,$){
     'use strict';
     controllers.controller('Main',['$scope','$http', function($scope,$http){
         $scope.html100=false;

@@ -11,7 +11,7 @@
     <div class="col-xs-3 col-md-12">
         <div class="row no-margin wrap_header bg-header relative" ng-init="hi = false">
             <div class="col-xs-12 col-md-3 bg-ava-big">
-                <div class="wrap_ava ava-big pull-left text-center" ng-class="{'network-on':(activeUser==user || activeUser.status), 'network-off':!activeUser.status}">
+                <div class="wrap_ava ava-big pull-left text-center" ng-class="{'network-on':(activeUser==user || activeUser.status), 'network-off':activeUser!=user && !activeUser.status}">
                     <div>
                         <img ng-src="images/500x500/{{activeUser==user?user.photo:activeUser.photo}}"  class="img-circle">
                     </div>
@@ -179,13 +179,13 @@
     <div class="col-xs-3 col-md-4">
         <div class="row">
             <div class="col-xs-12 col-md-6">
-                <a href="#">
+                <a href="#" ui-sref="wishes">
                     <img src="/images/icons2/menu3.png" />
                     <span ng-bind="activeUser==user?'Мои желания':'Желания'"></span>
                 </a>
             </div>
             <div class="col-xs-12 col-md-6">
-                <a href="#">
+                <a href="#" ui-sref="notebook">
                     <img src="/images/icons2/menu4.png" />
                     Блокнот
                 </a>
@@ -195,15 +195,21 @@
     <div class="col-xs-3 col-md-4">
         <div class="row">
             <div class="col-xs-12 col-md-6">
-                <a href="#">
+                <a href="#" ui-sref="documents">
                     <img src="/images/icons2/menu5.png" />
                     Документы
                 </a>
             </div>
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-md-6" ng-if="activeUser==user">
+                <a href="#" ui-sref="passwords">
+                    <img src="/images/icons2/menu6.png"/>
+                    Пароли
+                </a>
+            </div>
+            <div class="col-xs-12 col-md-6" ng-if="activeUser!=user">
                 <a href="#">
-                    <img ng-src="/images/icons2/menu{{activeUser==user?'6':'7'}}.png" />
-                    <span ng-bind="activeUser==user?'Пароли':'Комментарии'"></span>
+                    <img src="/images/icons2/menu7.png"/>
+                    Комментарии
                 </a>
             </div>
 

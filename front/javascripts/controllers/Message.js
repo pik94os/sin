@@ -1,4 +1,4 @@
-define(['./module','jquery', 'slimScroll'],function(controllers,$){
+define(['./module','jquery'],function(controllers,$){
     'use strict';
     controllers.controller('Message',['$rootScope','$scope','$http', function($rootScope,$scope,$http){
         $('title').text('Сообщения');
