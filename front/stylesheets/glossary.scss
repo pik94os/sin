@@ -1,29 +1,33 @@
 /* WISHES */
 
-.wishes-page{
+.glossary-page{
 
-  .sort a{
-    margin-right: 18px;
-    margin-left: 13px;
-    padding-top: 7px;
-    line-height: 14px;
-    color: #000;
-    border-bottom: 1px dotted #91bfd6;
-  }
-  .sort span{
-    margin-right: 18px;
-    padding-top: 7px;
-    line-height: 14px;
-    color: #000;
-    font-family: "OpenSansItalic";
-  }
-  .sort a.active{
-    margin-right: 5px;
-    margin-left: 0;
-    padding: 7px 13px 8px;
-    border-bottom: none;
-    color: #fff;
-    background: #91bfd6;
+  .sort{
+    a{
+      margin-right: 18px;
+      margin-left: 13px;
+      padding-top: 7px;
+      line-height: 14px;
+      color: #000;
+      border-bottom: 1px dotted #91bfd6;
+      &.active{
+        margin-right: 5px;
+        margin-left: 0;
+        padding: 7px 13px 8px;
+        border-bottom: none;
+        color: #fff;
+        background: #91bfd6;
+      }
+    }
+    span{
+      margin-right: 18px;
+      padding-top: 7px;
+      line-height: 14px;
+      color: #000;
+      font-family: "OpenSansItalic";
+
+      display: inline-block;
+    }
   }
   .dialog-list,
   .dialog-grid{
@@ -31,9 +35,6 @@
   }
   .dialog-list{
     margin-left: 15px;
-  }
-  .sort span{
-    display: inline-block;
   }
   .wrap-btn-group{
     width: 295px;
@@ -286,50 +287,57 @@
   .my-modal h4 {
     padding-left: 0;
   }
-  .grid-view .doc-checked{
-    top: initial;
-    bottom: 9px;
+  .shop-item{
+    $photo-height : 200px;
+    $body-height : $photo-height;
+    $title-height : 40px;
+    $category-height : 20px;
+    $category-margin-bottom : 5px;
+    $shop-height : 20px;
+    $buttons-height : 20px;
+    $description-height : calc( 100% - #{$photo-height - $title-height - $category-height - $category-margin-bottom - $shop-height - $buttons-height} );
+    &-photo{
+      height: $photo-height;
+    }
+    &-body{
+      height: $body-height;
+      &-title, &-price{
+        height: $title-height;
+      }
+      &-title{
+        color: #0000AA;
+        text-decoration: underline;
+        font-size: 20px;
+        line-height: 40px;
+      }
+      &-category{
+        height: $category-height;
+        color: gray;
+        margin-bottom: $category-margin-bottom;
+      }
+      &-description{
+        height: $description-height ;
+      }
+      &-shop{
+        height: $shop-height ;
+      }
+      &-buttons, &-vote{
+        height: $buttons-height;
+      }
+    }
   }
-  .grid-view .file-img{
-    min-height: 50px;
+  .grid-view{
+    .doc-checked{
+      top: initial;
+      bottom: 9px;
+    }
+    .each-attached-file{
+      padding: 0 8px;
+      width: 25%;
+      float: left;
+    }
   }
-  .grid-view .file-info{
-    position: relative;
-    display: inline-block;
-    max-width: 100%;
-    overflow: hidden;
-    min-height: 40px;
-  }
-  .grid-view .file-size{
-    margin-top: 0;
-    font-size: 13px;
-  }
-  .grid-view .file-name{
-    margin-top: 0;
-    display: inline-block;
-  }
-  .grid-view .each-attached-file{
-    padding: 0 8px;
-    width: 25%;
-    float: left;
-  }
-  .grid-view .file-info.overflow{
-    height: 40px;
-  }
-  .grid-view .file-info.overflow .file-size{
-    position: absolute;
-    bottom: 1px;
-    right: 0;
-    width: 41px;
-    background: #f0f7fb;
-  }
-  .grid-view .file-info.overflow span{
-    position: absolute;
-    bottom: 0;
-    right: 41px;
-    background: #f0f7fb;
-  }
-  .my-wishes{
+  .glossary{
     padding-top: 20px;
     .find-user-form{
       input{
@@ -363,19 +371,4 @@
   .messages-user-list {
     border: none;
   }
-}
-.sort{
-  margin-left: 11px;
-  padding: 6px 0 13px;
-  font-size: 13px;
-  font-family: "OpenSansLight";
-}
-.no-right-padding {
-  padding-right: 0 !important;
-}
-
-.brands-grey-bordered {
-  border: 1px solid #e7f0f4;
-  width: 100%;
-  height: 100%;
 }

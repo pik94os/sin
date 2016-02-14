@@ -3,6 +3,7 @@ define([
     './Calendar',
     './Chat',
     './Documents',
+    './Glossary',
     './Main',
     './Message',
     './Notebook',
