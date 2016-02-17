@@ -8,5 +8,6 @@ define([
     './Message',
     './Notebook',
     './Passwords',
+    './Purchases',
     './Wishes',
 ], function () {});

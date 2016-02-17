@@ -1,0 +1,63 @@
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@mixin margin-vertical ($size){
+  mergin:{
+    top:$size;
+    bottom:$size;
+  }
+}
+@mixin margin-horizontal ($size){
+  mergin:{
+    left:$size;
+    right:$size;
+  }
+}
+@mixin padding-vertical ($size){
+  padding:{
+    top:$size;
+    bottom:$size;
+  }
+}
+@mixin padding-horizontal ($size){
+  paddind:{
+    left:$size;
+    right:$size;
+  }
+}
+@mixin square-size ($size, $pref: none){
+  @if $pref == none{
+    width: $size !important;
+    height: $size !important;
+  } @else if $pref == max {
+    max-width: $size !important;
+    max-height: $size !important;
+  } @else if $pref == min {
+    min-width: $size !important;
+    min-height: $size !important;
+  }
+}
+
+@mixin sm-or-less-display{
+  @media (max-width: $screen-sm-max) {
+    @content ;
+  }
+}
+@mixin sm-or-more-display{
+  @media (min-width: $screen-sm-min) {
+    @content ;
+  }
+}
+@mixin sm-display{
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @content ;
+  }
+}
+@mixin xs-or-more-display{
+  @media (min-width: $screen-xs-min) {
+    @content ;
+  }
+}
+@mixin xs-display{
+  @media (max-width: $screen-xs-max) {
+    @content ;
+  }
+}

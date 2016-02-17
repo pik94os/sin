@@ -243,7 +243,6 @@ header{
         bottom: 10px;
         left: 5px;
       }
-    ;
       font-family: OpenSansLight;
       height: 22px;
       line-height: 22px;
@@ -977,5 +976,85 @@ header{
   .icon {
     vertical-align: top;
     margin-left: 8px;
+  }
+}
+
+.stars{
+  display: inline-block;
+  width: 66px;
+  height: 13px;
+  background-image: url(/images/inactivestar.png);
+  &-active-5{
+    @extend .stars;
+    display: block;
+    background-image: url(/images/activestar.png);
+  }
+  &-active-1{
+    @extend .stars-active-5;
+    width: 13px;
+  }
+  &-active-2{
+    @extend .stars-active-5;
+    width: 26px;
+  }
+  &-active-3{
+    @extend .stars-active-5;
+    width: 39px;
+  }
+  &-active-4{
+    @extend .stars-active-5;
+    width: 52px;
+  }
+}
+@include sm-or-less-display{
+  .wrap_header{
+    margin-top: 1px;
+  }
+}
+@include sm-display{
+  .wrap_header,
+  .bg-ava-big,
+  .wrap_ava{
+    height: 251px;
+  }
+  .wrap_ava{
+    img{
+      @include square-size(135px,max);
+    }
+  }
+  .wrap_content .ava-big.network-off>div:after,
+  .wrap_content .ava-big.network-on>div:after{
+    @include square-size(15px);
+  }
+}
+@include xs-display{
+  .wrap_content .ava-big.network-off>div:after,
+  .wrap_content .ava-big.network-on>div:after{
+    right: 7% !important;
+    top: 7% !important;
+    @include square-size(12px)
+  }
+  .ava-big .btn{
+    width: 95%;
+  }
+
+  .bg-ava-big,
+  .wrap_ava{
+    height: 199px;
+  }
+  .wrap_header > div{
+    padding: 0 5px;
+  }
+  .wrap_content .btn-panel .col-md-6 a {
+    height: 100px;
+  }
+  .wrap_ava{
+    img{
+      @include square-size(95px,max);
+    }
+  }
+  .wrap_content .user_data p {
+    line-height: normal;
+    padding-top: 10px;
   }
 }

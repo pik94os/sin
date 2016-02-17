@@ -55,6 +55,11 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/passwords/list.html",
                 controller: 'Passwords'
             })
+            .state('purchases', {
+                url: "/purchases",
+                templateUrl: "/templates/purchases/list.html",
+                controller: 'Purchases'
+            })
             //Ошибка 404
             .state('err_404', {
                 url: "/err404",

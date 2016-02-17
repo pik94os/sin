@@ -363,6 +363,99 @@
   .messages-user-list {
     border: none;
   }
+  .shop-item{
+    $shop-item-height:190px;
+    $photo-height : $shop-item-height - 2px;// - border
+    $body-height : $photo-height;
+    $body-paddind-top : 10px;
+    $title-height : 27px;
+    $category-height : 20px;
+    $category-margin-bottom : 5px;
+    $shop-height : 20px;
+    $shop-margin-top : 5px;
+    $shop-margin-bottom : 2px;
+    $buttons-padding-vertical:5px;
+    $buttons-height : 30px;
+    $description-height : calc( 100% - #{$body-paddind-top + $title-height + $category-height + $category-margin-bottom + $shop-height + $shop-margin-top + $shop-margin-bottom + $buttons-height} );
+    height: $shop-item-height;
+    &-photo{
+      height: $photo-height;
+      padding: 7px;
+    }
+    &-body{
+      height: $body-height;
+      padding-top: $body-paddind-top;
+      &-title, &-price{
+        height: $title-height;
+      }
+      &-title{
+        color: #0000AA;
+        text-decoration: underline;
+        font-size: 20px;
+      }
+      &-price{
+        color: #181818;
+        font-size: 17px;
+        line-height: 27px;
+        text-align: right;
+      }
+      &-category{
+        height: $category-height;
+        color: gray;
+        margin-bottom: $category-margin-bottom;
+      }
+      &-description{
+        height: $description-height ;
+      }
+      &-shop{
+        height: $shop-height ;
+        & > div{
+          margin: {
+            top:$shop-margin-top;
+            bottom: $shop-margin-bottom;
+          }
+        }
+        .shop{
+          &-name{
+            color: green;
+          }
+          &-comments{
+            color: gray;
+          }
+        }
+      }
+      &-buttons, &-vote{
+        height: $buttons-height;
+      }
+      &-buttons{
+        @include padding-vertical($buttons-padding-vertical);
+      }
+      &-vote{
+        padding: 0 5px;
+        .vote{
+          padding: 4px;
+          height: 100%;
+          background-color: #6DAF53;
+          border: 1px solid #A5A5A5;
+          border-radius: 3px;
+          text-align: center;
+        }
+      }
+      .item-comments{
+        color:gray;
+        &-like{
+          i{
+            position: absolute;
+            top: 5px;
+          }
+          span{
+            padding-left: 20px;
+            color: gray;
+          }
+        }
+      }
+    }
+  }
 }
 .sort{
   margin-left: 11px;
