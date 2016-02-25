@@ -750,6 +750,19 @@ header{
     width: 16px;
     height: 12px;
   }
+
+  &-wishes{
+    @extend .icon;
+    background: {
+      image: url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAbCAMAAABcI88jAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACl1BMVEUAAAB8bHG5f2fli2D7kV3/k1z9kl3rjV/GgmSKcG6pemnXiGH0kF7xjl7OhGOYdWyyfGj1j176kVzHg2V9bnCZdmzwjl71j13zj13eiWKBbnC9f2b4kV3/klvqjF/EgWW3fme6f2bah2L6kVzxjl7Lg2S2fmfXh2L6kV3sjV+IcG+xfGjrjF+hd2uJcW7UhmL5kV2vfGh5bHGGcHDJg2TlimF2a3J1anLgiWHmjF+dd2t2a3HKg2Tyj16edmt2a3LKhGSqemque2mzfGiCb3DXiGG7f2d2bHHdiGF6bHHUhmOLcW96bHFwaXOMcW7iimB7bXGqe2iTdG3eiGB+bnCwfGeRc23Ng2OSdG3QhWKKcW6remmxfGdyanLvjl7Yh2F5bHFxanHhimDiimCJcG6/gWWpeWm6fmb2kF3CgWWMcW7zj13pjF98bHDWhmPzj16fdmuQc27ujl+bdmtvaXLOhWP9klzGgmWkeGrzkF3sjV6NcW7BgGXYh2K1fGj5kVztjl+Gb2+8f2b/lFvdiWHEgWbujV6Fb2/9klziimHRhWOGcG+/gGb4kF3ojGCed2vpjF+KcW6/gGXyjl2hd2pwanLojF+Ocm7GgmWkeWpyanPUh2PjimCPc27DgmX0j133kF3Lg2TdiWGremm+gGbxj16gd2twaXLIg2TEgWX5kV3kil+bdmvDgmX2kF6WdGywfGmWdG33kV33kF34kF35kV35kF39klz/k1zzj17pjF/tjV/6kV32kF3/lVr/lFv8kV3/llr/lFrwjl7+k1z7klzxjl72kF76klz/k1vWhmLujl7biGL6kVz0kF75kFz/klz0j13/lVv8k1z8kVz8klz+klz4kV39kVz/klv6kFz7kV0AAADCKGW3AAAAsnRSTlMAFW+vztbRt4MpWJ3EwZA+ZMbOgxdAv8bEpRx2y+TDiXN5qtvOlHOn27knZMNQLKLZaBAkka0KCqe9Sg6Rzk0LkVhfbh6neQ6lEpgsEwMsqhNgNqUZazSOOpwpWmsFy6APBaq1LIFYccmGL9C0FZvQSDHIRwOa04NQxMUxhJ1qzsUme+Slfsgk4aqTJoHZskjALIHQTQPAMYxQBZi4NIbTyYuvYH7BSwOGgcuvQ37GO2I7vVocfQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGkSURBVCjPY2AAAkYmZhZWNnYOThCHi5uHlZWXj58BBgQEN23esnXbls1CwiKiYuJA9tYtmyUkpSCy0jLbZeXkFRSVlHfs3LV7zw4VVTVFdY0dezW1QLLa4vt0dMHq9PT3H9huYGgEYhub7N9uasbAYG6x39IKaou1zUFbOyjb3mHvIUcGBqfD+53hrnBxdYOz3XWOeHgyeB095g0XYvDxRbBVj5/wY/A/eSqAASsIPH0wiCH45JkQ7NKhh/eFMYSfPReBXTpy8/kohujd+2KwysbGXYhPYEhM2pecgk069eKlNCCVnnE5E4tsVvaenFwQI29fviGGrFHyFdYCMKsw52BRMZpsSen+snIou6Jyf1U1qnTNvj21cE5d/faGRmTZpuarLVIIbqvQ2bZ2JNmOa51ByMq7ZLa1dcM4Pb3X+vpRLau9vmfCRAhz0uQLYlPQnDq1duuVadNBrBkqOzJmYnh01uwbN+fMZWCYN//mggpsYbzwyv5Fi5do7Fi6DGscLF9x5cKt29c0+xmwg+UrV+24snoNA06wdl3SegY8YMNGVD4AulOKh8pTTCUAAAAASUVORK5CYII=);
+      position: top center;
+      repeat: no-repeat;
+      size: 30px;
+    };
+    width: 30px;
+    height: 27px;
+    margin: -6px 0;
+  }
 }
 
 #status {
@@ -1005,6 +1018,21 @@ header{
     @extend .stars-active-5;
     width: 52px;
   }
+}
+
+i.alarm-clock{
+  @extend .icon;
+  background: {
+    image: url("/images/svg/alarm_clock-26.svg");
+    position: top center;
+    repeat: no-repeat;
+    size: 29px;
+  };
+  filter: invert(100%);
+  width: 31px;
+  height: 35px;
+  margin: 2px 0;
+  cursor: pointer;
 }
 @include sm-or-less-display{
   .wrap_header{

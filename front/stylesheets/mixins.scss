@@ -1,12 +1,13 @@
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @mixin margin-vertical ($size){
-  mergin:{
+  margin:{
     top:$size;
     bottom:$size;
   }
 }
 @mixin margin-horizontal ($size){
-  mergin:{
+  margin:{
     left:$size;
     right:$size;
   }
@@ -18,7 +19,7 @@
   }
 }
 @mixin padding-horizontal ($size){
-  paddind:{
+  padding:{
     left:$size;
     right:$size;
   }
@@ -60,4 +61,33 @@
   @media (max-width: $screen-xs-max) {
     @content ;
   }
+}
+
+@mixin border-radius($rad,$bord ...){
+  border:$bord;
+  border-radius: $rad;
+}
+
+@mixin border-radius-left($rad,$bord ...){
+  border-left:$bord;
+  @include border-left-radius($rad);
+}
+@mixin border-radius-right($rad,$bord ...){
+  border-right:$bord;
+  @include border-right-radius($rad);
+}
+@mixin border-radius-top($rad,$bord ...){
+  border-top:$bord;
+  @include border-top-radius($rad);
+}
+@mixin border-radius-bottom($rad,$bord ...){
+  border-bottom:$bord;
+  @include border-bottom-radius($rad);
+}
+@mixin border-no-bottom($bord ...){
+  border:{
+    right: $bord;
+    left: $bord;
+    top: $bord;
+  };
 }
