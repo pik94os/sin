@@ -1,0 +1,40 @@
+<div class="photos-page">
+    <div class="row no-margin user_data">
+        <div class="col-xs-8 no-padding ">
+            <h2>Фотографии</h2>
+        </div>
+        <div class="col-xs-4 no-padding text-right ">
+            <p><i class="icon icon-clock"></i> <strong>18:15</strong> <i class="icon icon-line"></i> 15 января 2015</p>
+        </div>
+    </div>
+
+    <div class="row buttons">
+        <div class="col-xs-12">
+            <div class="buttons-newAlbum">
+                <span>Новый альбом</span>
+            </div>
+            <div class="buttons-upload">
+                <span class="icon-buttons-upload"></span>
+                <div class="title"><span>Загрузить</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row albums">
+        <div class="album col-xs-4" ng-repeat="album in albums" ui-sref="album({id:album._id})">
+            <img ng-src="/images/photos/{{album.photo}}">
+            <div class="album-bottom">
+                <span class="album-bottom-title" ng-bind="album.title"></span>
+                <span class="album-bottom-photoCount" ng-bind="album.photoCount"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row photos">
+        <div class="col-xs-12 photos-year">
+            <span>2015 год</span>
+        </div>
+        <img class="col-xs-3 photo" ng-repeat="photo in photos" ng-src="/images/photos/{{photo.name}}" href="#photo-preview" data-toggle="modal"  ng-click="setPhotoModal(photo)"/>
+    </div>
+
+</div>

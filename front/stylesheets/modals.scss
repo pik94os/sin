@@ -1,0 +1,64 @@
+.my-modal .modal-content {
+  box-shadow: none;
+  border-radius: 0;
+  .modal-header,.modal-footer{
+    border:{
+      bottom: none;
+      top:none;
+    }
+  }
+}
+
+#photo-preview{
+  .modal-title{
+    line-height: 40px;
+    font-family: OpenSansSemiBold;
+    font-size: 14px;
+    color: #2b669a;
+  }
+  .modal-body{
+    padding: 15px;
+    .modal-img{
+      height: 700px;
+      img{
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+    .editor{
+      padding: 36px 0 10px 25px;
+      &-header{
+        line-height: 40px;
+        font-family: OpenSansSemiBold;
+        font-size: 14px;
+        color: #2b669a;
+      }
+      &-body{
+        border: 2px solid #CACBCC;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 10px;
+      }
+      &-footer{
+        width: 100%;
+        text-align: right;
+      }
+    }
+  }
+  .user-info-mini{
+    height: 50px;
+    margin-bottom: 20px;
+    img{
+      @include square-size(50px);
+      float: left;
+      display: block;
+      margin-right: 10px;
+    }
+    div{
+      width: calc(100% - 50px);
+      min-width: 130px;
+      float: left;
+      color: gray;
+    }
+  }
+}

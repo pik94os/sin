@@ -3,11 +3,13 @@ define([
     './Calendar',
     './Chat',
     './Documents',
+    './Friends',
     './Glossary',
     './Main',
     './Message',
     './Notebook',
     './Passwords',
     './Purchases',
+    './Photos',
     './Wishes',
 ], function () {});

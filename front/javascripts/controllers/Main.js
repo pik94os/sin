@@ -77,6 +77,10 @@ define(['./module','jquery'],function(controllers,$){
             });
         });
 
+        $scope.setPhotoModal=function(photo){
+            $scope.photo = photo;
+        };
+
         function wrap_soc(){
             $('.wrap_soc').height($('.btn-panel').height()+'px');
         }

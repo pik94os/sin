@@ -49,20 +49,23 @@ body {
   color: #000;
   background-color: #fff;
   height: 100%;
-  #wrap_browser.html100{
-    height: calc( 100% - 62px); // - header
-    & > .row{
-      height: 100%;
-      & > div{
+  #wrap_browser{
+    min-height: calc(100% - 62px - 40px);// - header -footer
+    &.html100{
+      height: calc( 100% - 62px); // - header
+      & > .row{
         height: 100%;
-        & > .row.bg-main{
+        & > div{
           height: 100%;
-          & > .wrap_content{
+          & > .row.bg-main{
             height: 100%;
-            & > .dialog {
-              height: calc( 100% - 42px );
-              & > .dialogs-list{
-                height: calc( 100% - 50px );
+            & > .wrap_content{
+              height: 100%;
+              & > .dialog {
+                height: calc( 100% - 42px );
+                & > .dialogs-list{
+                  height: calc( 100% - 50px );
+                }
               }
             }
           }
@@ -763,6 +766,17 @@ header{
     height: 27px;
     margin: -6px 0;
   }
+
+  &-buttons-upload{
+    @extend .icon;
+    background: {
+      image: url('/images/icons/uplimg.png');
+      position: center;
+      repeat: no-repeat;
+    };
+    width: 43px;
+    height: 35px;
+  }
 }
 
 #status {
@@ -1034,6 +1048,7 @@ i.alarm-clock{
   margin: 2px 0;
   cursor: pointer;
 }
+
 @include sm-or-less-display{
   .wrap_header{
     margin-top: 1px;

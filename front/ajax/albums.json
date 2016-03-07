@@ -3,7 +3,49 @@
   "albums":[
     {
       "_id": 1001,
-      "titile":"Мой новый год",
+      "title":"Мой новый год",
+      "photo":"",
+      "photoCount":801
+    },
+    {
+      "_id": 1002,
+      "title":"Панда",
+      "photo":"",
+      "photoCount":801
+    },
+    {
+      "_id": 1003,
+      "title":"Каникулы",
+      "photo":"",
+      "photoCount":801
+    },
+    {
+      "_id": 1004,
+      "title":"Театр",
+      "photo":"",
+      "photoCount":801
+    },
+    {
+      "_id": 1005,
+      "title":"Париж",
+      "photo":"",
+      "photoCount":801
+    },
+    {
+      "_id": 1006,
+      "title":"Питер",
+      "photo":"",
+      "photoCount":801
+    },
+    {
+      "_id": 1007,
+      "title":"Дача",
+      "photo":"",
+      "photoCount":801
+    },
+    {
+      "_id": 1008,
+      "title":"Свадьба",
       "photo":"",
       "photoCount":801
     }

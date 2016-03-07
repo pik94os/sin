@@ -1,0 +1,73 @@
+<div class="friends-page">
+    <div class="row no-margin user_data">
+        <div class="col-xs-8 no-padding ">
+            <h2>Друзья</h2>
+        </div>
+        <div class="col-xs-4 no-padding text-right ">
+            <p><i class="icon icon-clock"></i> <strong>18:15</strong> <i class="icon icon-line"></i> 15 января 2015</p>
+        </div>
+    </div>
+
+    <div class="row no-margin">
+
+        <div class="col-xs-12 friend-panel">
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="find-user-form">
+                        <input type="text" />
+                        <button type="submit"></button>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-xs-offset-6 friend-panel-button">
+
+
+                    <div class="btn btn-lg btn-primary">
+                        Добавить Друзей
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+
+            <ul class="nav nav-tabs notebook-tabs">
+                <li class="active"><a data-toggle="tab" href="#panel1" ng-click="allFriends()">Все друзья</a></li>
+                <li class="tab-with-map"><a data-toggle="tab" href="#panel1" ng-click="onlineOnly()">Онлайн</a></li>
+                <li class="tab-with-map"><a data-toggle="tab" href="#panel2">Заявки в друзья</a></li>
+                <li class="doc-menu-on-right-side"><a href="#newTab"  data-toggle="modal" class="new-tab"></a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="panel1" class="tab-pane fade in active">
+                    <div class="row friend" ng-repeat="friend in friends">
+                        <div class="col-xs-4">
+                            <div class="friend-ava">
+                                <img ng-src="/images/500x500/{{friend.photo}}" class="img-circle">
+                            </div>
+                            <div class="friend-info">
+                                <div class="friend-name" ng-bind="friend.name"></div>
+                                <div class="friend-status" ng-bind="friend.status?'Онлайн':'Офлайн'"></div>
+                                <div class="friend-action">Поместить в папку</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="friend-comment">
+                                Вы можете оставить заметку о пользователе.<br/>
+                                Видеть написанное будете только вы и никто другой.
+                            </div>
+                            <div class="friend-comment-edit">Написать заметку</div>
+                        </div>
+                        <div class="col-xs-3">
+                            <ul class="friend-buttons">
+                                <li>Написать сообщение</li>
+                                <li>Посмотреть друзей</li>
+                                <li>Убрать из друзей</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

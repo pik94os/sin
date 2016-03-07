@@ -6,13 +6,20 @@
 @import "font-awesome.min.css";
 @import "fonts.css";
 @import "content";
+// a-z pages
+@import "calendar";
 @import "comment-in-friend";
 @import "dialog";
-@import "glossary";
-@import "passwords";
-@import "purchases";
 @import "documents";
-@import "calendar";
+@import "friends";
+@import "glossary";
 @import "notebook";
+@import "passwords";
+@import "photos";
+@import "purchases";
 @import "wishes";
+
+@import "modals";
+
 @import "footer";
+

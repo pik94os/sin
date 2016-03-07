@@ -1,0 +1,69 @@
+.friends-page{
+  .new-tab {
+    border-bottom: none;
+    color: #FFF;
+    background: url(/images/icons2/plus.png) center center no-repeat #536177;
+    height: 43px;
+    width: 43px;
+    border-radius: 0!important;
+  }
+  .friend-panel{
+    @include margin-vertical(20px);
+    .find-user-form {
+      height: 33px;
+      position: relative;
+      margin: 0;
+    }
+    &-button{
+      text-align: right;
+      div{
+        width: 100%;
+      }
+    }
+  }
+  .friend{
+    height: 130px;
+    &>div,&-info,&-ava{
+      height: 100%;
+    }
+    &>div{
+      border-bottom: 1px solid #ddd;
+      padding: 15px;
+    }
+    &-action,&-comment-edit{
+      position: absolute;
+      bottom:0;
+    }
+    &-ava{
+      float: left;
+      margin-right: 20px;
+      img{
+        @include square-size(100px);
+      }
+    }
+    &-info{
+      float: left;
+    }
+    &-name{
+      font: {
+        family: OpenSansSemiBold;
+        size: 14px;
+      };
+    }
+    &-status{
+      font-family: OpenSansLightItalic;
+    }
+    &-comment{
+      color: #C1BCBC;
+      font-family: OpenSansBoldItalic;
+    }
+    &-buttons{
+      margin: 0;
+      li{
+        display: block;
+        @include padding-vertical(5px);
+      }
+    }
+  }
+
+}

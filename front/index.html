@@ -74,7 +74,7 @@
                         <span class="text">Группы</span></a>
                     <a ui-sref="friends" href="#" class="list-group-item bg-color5">
                         <span class="text">Друзья</span></a>
-                    <a ui-sref="albums" href="#" class="list-group-item bg-color6">
+                    <a ui-sref="photos" href="#" class="list-group-item bg-color6">
                         <span class="text">Фотографии</span></a>
                     <a ui-sref="notebook" href="#" class="list-group-item bg-color7">
                         <span class="text">Блокнот</span></a>
@@ -109,6 +109,63 @@
                     <li><a href="#">Помощь</a></li>
                     <li><a href="#">Реклама</a></li>
                 </ul>
+            </div>
+        </div>
+        <div id="photo-preview" class="modal fade my-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon icon-close"></i></button>
+                        <span class="modal-title">Фотография <span ng-bind="modal.photo.index">4</span> из <span ng-bind="modal.photo.count">11</span></span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-img">
+                            <img ng-src="/images/photos/{{modal.photo.name}}">
+                        </div>
+                        <div class="row user_top_panel">
+                            <div class="col-xs-12">
+                                <ul class="list-inline">
+                                    <li>
+                                        <i class="icon icon-show-love"></i> <strong>5</strong>
+                                    </li>
+                                    <li>
+                                        <i class="icon icon-show-love-not"></i> <strong>2</strong>
+                                    </li>
+                                    <li>
+                                        <i>Поделиться</i>
+                                    </li>
+                                    <li>
+                                        <i class="icon icon-alert"></i> <strong>7</strong>
+                                    </li>
+                                    <li>
+                                        <i class="icon icon-comment"></i>
+                                    </li>
+                                    <li class="text-right pull-right">
+                                        <small>Сегодня в 19:40</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9 editor">
+                                <div class="editor-header"><p>Ваш комментарий</p></div>
+                                <div class="editor-body"></div>
+                                <div class="editor-footer">
+                                    <button type="button" class="btn btn-link">Прикрепить</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Отправить</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 ">
+                                <div class="user-info-mini">
+                                    <img src="/images/75x75/{{user.photo}}">
+                                    <div ng-bind="user.name"></div>
+                                </div>
+                                <div><a>Поделиться</a></div>
+                                <div><a>Сохранить в блокнот</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

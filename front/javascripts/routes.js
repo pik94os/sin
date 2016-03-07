@@ -60,11 +60,26 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/purchases/list.html",
                 controller: 'Purchases'
             })
+            .state('photos', {
+                url: "/photos",
+                templateUrl: "/templates/photos/list.html",
+                controller: 'Photos'
+            })
+            .state('album', {
+                url: "/photos/album{id}",
+                templateUrl: "/templates/photos/list.html",
+                controller: 'Photos'
+            })
+            .state('friends', {
+                url: "/photos/friends",
+                templateUrl: "/templates/friends/list.html",
+                controller: 'Friends'
+            })
             //Ошибка 404
             .state('err_404', {
                 url: "/err404",
                 templateUrl: "/templates/err404.html"
-            })
+            });
         //Включаем красивые url(требуется html5)
         $locationProvider.html5Mode({
             enabled: true,
