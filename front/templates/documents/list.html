@@ -8,7 +8,7 @@
             <p><i class="icon icon-clock"></i> <strong>18:15</strong> <i class="icon icon-line"></i> 15 января 2015</p>
         </div>
     </div>
-    <div class="row">
+    <div class="row" ui-view>
         <div class="col-xs-12">
             <div class="row">
                 <div class="col-xs-3 find-user-form sub-search form-on-the-top-onthe-docs">
@@ -36,7 +36,7 @@
                         <!-- begin btn-group -->
                         <div class="wrap-btn-group col-sm-4">
                             <div class="btn-group">
-                                <a href="documents-new.html" class="new-doc">Новый документ</a>
+                                <a ui-sref=".create" class="new-doc">Новый документ</a>
                                 <a href="#" class="load btn-primary">Загрузить</a>
                                 <a href="#" class="to-archive btn-primary">В архив</a>
                                 <div class="no-chosen">Выберите элемент</div>

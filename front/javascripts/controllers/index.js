@@ -5,6 +5,7 @@ define([
     './Documents',
     './Friends',
     './Glossary',
+    './Groups',
     './Main',
     './Message',
     './Notebook',

@@ -1,3 +1,13 @@
+
+%status{
+  bottom: 93px;
+  left: 93px;
+  content: " ";
+  position: absolute;
+  border-radius: 12px;
+  @include square-size(15px);
+}
+
 .friends-page{
   .new-tab {
     border-bottom: none;
@@ -30,14 +40,33 @@
       padding: 15px;
     }
     &-action,&-comment-edit{
+      cursor: pointer;
       position: absolute;
       bottom:0;
     }
+    &-action{
+      .glyphicon{
+        font-size: 12px;
+        font-weight: bold;
+        color: #99C4D9;
+        padding-left: 3px;
+      }
+    }
     &-ava{
+      cursor: pointer;
       float: left;
       margin-right: 20px;
       img{
         @include square-size(100px);
+      }
+      &.online:after{
+        @extend %status;
+        background: #78b854 none repeat scroll 0 0;
+      }
+      &.offline:after{
+        @extend %status;
+        background: #fff;
+        border: 2px solid #78b854;
       }
     }
     &-info{
@@ -45,6 +74,7 @@
       width: calc(100% - 120px);
     }
     &-name{
+      cursor: pointer;
       font: {
         family: OpenSansSemiBold;
         size: 14px;
@@ -56,11 +86,22 @@
     &-comment{
       color: #C1BCBC;
       font-family: OpenSansItalic;
+      &-edit{
+        font-family: OpenSansItalic;
+
+        background:{
+          image: url(/images/icons2/note.png);
+          position: left 4px center;
+          repeat: no-repeat;
+        }
+        padding-left: 27px;
+      }
     }
     &-buttons{
       margin: 0;
       padding-left: 0;
       li{
+        cursor: pointer;
         display: block;
         @include padding-vertical(5px);
       }

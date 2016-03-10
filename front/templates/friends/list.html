@@ -34,7 +34,7 @@
             <ul class="nav nav-tabs notebook-tabs">
                 <li class="active"><a data-toggle="tab" href="#panel1" ng-click="allFriends()">Все друзья</a></li>
                 <li class="tab-with-map"><a data-toggle="tab" href="#panel1" ng-click="onlineOnly()">Онлайн</a></li>
-                <li class="tab-with-map"><a data-toggle="tab" href="#panel2">Заявки в друзья</a></li>
+                <li class="tab-with-map"><a data-toggle="tab" href="#panel2" ng-click="friends=[]">Заявки в друзья</a></li>
                 <li class="doc-menu-on-right-side"><a href="#newTab"  data-toggle="modal" class="new-tab"></a></li>
             </ul>
 
@@ -42,13 +42,13 @@
                 <div id="panel1" class="tab-pane fade in active">
                     <div class="row friend" ng-repeat="friend in friends">
                         <div class="col-xs-4">
-                            <div class="friend-ava">
+                            <div class="friend-ava" ui-sref="friend({id:friend._id})" ng-class="{'online':friend.status, 'offline':!friend.status}">
                                 <img ng-src="/images/500x500/{{friend.photo}}" class="img-circle">
                             </div>
                             <div class="friend-info">
-                                <div class="friend-name" ng-bind="friend.name"></div>
+                                <div class="friend-name" ng-bind="friend.name" ui-sref="friend({id:friend._id})"></div>
                                 <div class="friend-status" ng-bind="friend.status?'Онлайн':'Офлайн'"></div>
-                                <div class="friend-action">Поместить в папку</div>
+                                <div class="friend-action">Поместить в папку <span class="glyphicon glyphicon-menu-down"></span></div>
                             </div>
                         </div>
                         <div class="col-xs-5">
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-xs-3">
                             <ul class="friend-buttons">
-                                <li>Написать сообщение</li>
+                                <li ui-sref="chat({friendId:friend._id})">Написать сообщение</li>
                                 <li>Посмотреть друзей</li>
                                 <li>Убрать из друзей</li>
                             </ul>

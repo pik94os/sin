@@ -35,6 +35,11 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/documents/list.html",
                 controller: 'Documents'
             })
+            .state('documents.create', {
+                url: "/create",
+                templateUrl: "/templates/documents/create.html",
+                controller: 'Documents'
+            })
             .state('notebook', {
                 url: "/notebook",
                 templateUrl: "/templates/notebook/list.html",
@@ -76,7 +81,7 @@ define(['./app'], function (app) {
                 controller: 'Photos'
             })
             .state('friends', {
-                url: "/photos/friends",
+                url: "/friends",
                 templateUrl: "/templates/friends/list.html",
                 controller: 'Friends'
             })

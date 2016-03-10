@@ -31,12 +31,13 @@
       }
     }
     .file-size{
-      margin-top: 0;
-      font-size: 13px;
+      overflow: hidden;
+      height: 50px;
     }
     .file-name{
       margin-top: 0;
-      display: inline-block;
+      overflow: hidden;
+      height: 50px;
     }
     .each-attached-file{
       padding: 0 8px;
@@ -700,6 +701,22 @@
   &.default .wrap-btn-group,
   &.default .files-attached-list{
     padding-left: 0;
+  }
+  .blue-grey-button {
+    line-height: 28px;
+    padding: 5px 10px;
+    height: 30px;
+    font-size: 13px;
+    color: #000;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+      background-color: #91bed5;
+    }
+  }
+
+  .savebutt-for-docnew {
+    margin-left: 4px;
   }
 }
 
