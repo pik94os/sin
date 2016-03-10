@@ -50,6 +50,11 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/glossary/list.html",
                 controller: 'Glossary'
             })
+            .state('groups', {
+                url: "/groups",
+                templateUrl: "/templates/groups/list.html",
+                controller: 'Groups'
+            })
             .state('passwords', {
                 url: "/passwords",
                 templateUrl: "/templates/passwords/list.html",

@@ -27,7 +27,6 @@
       height: 100%;
     }
     &>div{
-      border-bottom: 1px solid #ddd;
       padding: 15px;
     }
     &-action,&-comment-edit{
@@ -43,6 +42,7 @@
     }
     &-info{
       float: left;
+      width: calc(100% - 120px);
     }
     &-name{
       font: {
@@ -55,13 +55,23 @@
     }
     &-comment{
       color: #C1BCBC;
-      font-family: OpenSansBoldItalic;
+      font-family: OpenSansItalic;
     }
     &-buttons{
       margin: 0;
+      padding-left: 0;
       li{
         display: block;
         @include padding-vertical(5px);
+      }
+    }
+    &-line{
+      height: 0 !important;
+      @include padding-vertical(0);
+      &>div{
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
       }
     }
   }
