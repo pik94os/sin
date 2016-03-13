@@ -1,0 +1,85 @@
+<div class="cart-page">
+    <div class="row no-margin user_data">
+        <div class="col-xs-8 no-padding ">
+            <h2>Карзина</h2>
+        </div>
+        <div class="col-xs-4 no-padding text-right ">
+            <p><i class="icon icon-clock"></i> <strong>18:15</strong> <i class="icon icon-line"></i> 15 января 2015</p>
+        </div>
+    </div>
+
+    <div class="row no-margin">
+
+        <div class="col-xs-3 cart-panel">
+            <div class="find-user-form">
+                <input type="text" />
+                <button type="submit"></button>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+
+            <ul class="nav nav-tabs notebook-tabs">
+                <li class="active"><a data-toggle="tab" href="#panel1">Все товары</a></li>
+                <li class="tab-with-map"><a data-toggle="tab" href="#panel1">Совместные покупки</a></li>
+                <li class="tab-with-map"><a data-toggle="tab" href="#panel2">Куплено</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="panel1" class="tab-pane fade in active">
+                    <div class="row item">
+                        <div class="col-md-7">
+                            <div class="row item-header">
+                                <div class="col-md-3 item-header-first">Продавец:</div>
+                                <div class="col-md-3 item-header-shop">Связной</div>
+                                <div class="col-md-6 item-header-msg">Написать продавцу</div>
+                            </div>
+                            <div class="row item-body">
+                                <div class="col-md-3">
+                                    <img src="/images/333.png">
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="item-body-name">Xiaomi mi 4c</div>
+                                    <div class="item-body-description">смартфон с 2мя симкартами, 4 ядра, 16 Гб.</div>
+                                    <div class="item-body-color">Цвет <div ng-style="{'background-color':'black'}" class="item-body-color-circle"></div> чёрный</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 item-count">
+                            <div class="item-count-title item-header">Количество</div>
+                            <div class="item-count-edit">
+                                <div class="group">
+                                    <div class="first">+</div>
+                                    <input type="text" value="1">
+                                    <div class="last">-</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 item-price">
+                            <div class="item-price-title item-header">Цена</div>
+                            <div class="item-price-body"><b>8000 руб.</b></div>
+                            <div class="item-price-footer"><div class="btn btn-warning-2">Заказать</div></div>
+                        </div>
+                        <div class="col-xs-12 item-line">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="row cart-footer">
+                        <div class="col-md-9">
+                            <i class="icon icon-close" id="del-all-items-icon"></i> <span id="del-all-items">Удалить все товары</span>
+                        </div>
+                        <div class="col-md-3 cart-footer-left">
+                            <div id="count-all-items">Количество товаров:<b>1</b></div>
+                            <div id="price-all-items">Общая стоимость: <b><span>8000</span> руб.</b></div>
+                        </div>
+                        <div class="col-xs-12 item-line">
+                            <div><div id="make-order" class="btn btn-warning-2">Оформить заказ</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel2" class="tab-pane"></div>
+            </div>
+        </div>
+    </div>
+</div>

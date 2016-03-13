@@ -1,6 +1,7 @@
 define([
     './Account',
     './Calendar',
+    './Cart',
     './Chat',
     './Documents',
     './Friends',

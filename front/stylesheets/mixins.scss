@@ -63,6 +63,16 @@
   }
 }
 
+@mixin break-line{
+  height: 0 !important;
+  @include padding-vertical(0);
+  &>div{
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
 @mixin border-radius($rad,$bord ...){
   border:$bord;
   border-radius: $rad;

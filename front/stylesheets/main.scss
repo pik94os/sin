@@ -5,21 +5,47 @@
 //@import "bootstrap-theme.css";
 @import "font-awesome.min.css";
 @import "fonts.css";
+%status{
+  bottom: 93px;
+  left: 93px;
+  content: " ";
+  position: absolute;
+  border-radius: 12px;
+  @include square-size(15px);
+}
 @import "content";
-// a-z pages
-@import "calendar";
-@import "comment-in-friend";
-@import "dialog";
-@import "documents";
-@import "friends";
-@import "glossary";
-@import "notebook";
-@import "passwords";
-@import "photos";
-@import "purchases";
-@import "wishes";
+  @import "calendar";
+.cart-page{
+  @import "cart";
+}
+  @import "comment-in-friend";
+  @import "dialog";
+  @import "documents";
 
-@import "modals";
+.friends-page{
+  @import "friends";
+}
 
-@import "footer";
+.glossary-page{
+  @import "glossary";
+}
+
+  @import "notebook";
+  @import "passwords";
+
+.photos-page{
+  @import "photos";
+}
+
+.purchases {
+  @import "purchases";
+}
+
+  @import "wishes";
+
+  @import "modals";
+
+footer {
+  @import "footer";
+}
 

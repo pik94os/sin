@@ -3,7 +3,7 @@
  */
 define(['./module','jquery'],function(controllers,$){
     'use strict';
-    controllers.controller('Main',['$scope','$http', function($scope,$http){
+    controllers.controller('Main',['$scope','$http', '$rootScope',function($scope,$http,$rootScope){
         $scope.html100=false;
         $scope.$on('html100', function(event,html100){
             $scope.html100 = html100;
@@ -83,6 +83,7 @@ define(['./module','jquery'],function(controllers,$){
 
         function wrap_soc(){
             $('.wrap_soc').height($('.btn-panel').height()+'px');
+            $('#wrap_browser .wrap_content').css('min-height',$('#wrap_browser').height()+'px');
         }
 
         $(window).resize( function(){
@@ -100,6 +101,10 @@ define(['./module','jquery'],function(controllers,$){
             $('#status').css('width', '180px');
             $('#status span').html('Изменить статус');
             $('#status input').addClass('hide');
+        });
+
+        $rootScope.$on('$viewContentLoaded',function(){
+            wrap_soc();
         });
     }])
 });

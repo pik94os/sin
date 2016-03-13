@@ -1,120 +1,101 @@
-
-%status{
-  bottom: 93px;
-  left: 93px;
-  content: " ";
-  position: absolute;
-  border-radius: 12px;
-  @include square-size(15px);
+.new-tab {
+  border-bottom: none;
+  color: #FFF;
+  background: url(/images/icons2/plus.png) center center no-repeat #536177;
+  height: 43px;
+  width: 43px;
+  border-radius: 0!important;
 }
-
-.friends-page{
-  .new-tab {
-    border-bottom: none;
-    color: #FFF;
-    background: url(/images/icons2/plus.png) center center no-repeat #536177;
-    height: 43px;
-    width: 43px;
-    border-radius: 0!important;
+.friend-panel{
+  @include margin-vertical(20px);
+  .find-user-form {
+    height: 33px;
+    position: relative;
+    margin: 0;
   }
-  .friend-panel{
-    @include margin-vertical(20px);
-    .find-user-form {
-      height: 33px;
-      position: relative;
-      margin: 0;
-    }
-    &-button{
-      text-align: right;
-      div{
-        width: 100%;
-      }
+  &-button{
+    text-align: right;
+    div{
+      width: 100%;
     }
   }
-  .friend{
-    height: 130px;
-    &>div,&-info,&-ava{
-      height: 100%;
+}
+.friend{
+  height: 130px;
+  &>div,&-info,&-ava{
+    height: 100%;
+  }
+  &>div{
+    padding: 15px;
+  }
+  &-action,&-comment-edit{
+    cursor: pointer;
+    position: absolute;
+    bottom:0;
+  }
+  &-action{
+    .glyphicon{
+      font-size: 12px;
+      font-weight: bold;
+      color: #99C4D9;
+      padding-left: 3px;
     }
-    &>div{
-      padding: 15px;
+  }
+  &-ava{
+    cursor: pointer;
+    float: left;
+    margin-right: 20px;
+    img{
+      @include square-size(100px);
     }
-    &-action,&-comment-edit{
-      cursor: pointer;
-      position: absolute;
-      bottom:0;
+    &.online:after{
+      @extend %status;
+      background: #78b854 none repeat scroll 0 0;
     }
-    &-action{
-      .glyphicon{
-        font-size: 12px;
-        font-weight: bold;
-        color: #99C4D9;
-        padding-left: 3px;
-      }
+    &.offline:after{
+      @extend %status;
+      background: #fff;
+      border: 2px solid #78b854;
     }
-    &-ava{
-      cursor: pointer;
-      float: left;
-      margin-right: 20px;
-      img{
-        @include square-size(100px);
-      }
-      &.online:after{
-        @extend %status;
-        background: #78b854 none repeat scroll 0 0;
-      }
-      &.offline:after{
-        @extend %status;
-        background: #fff;
-        border: 2px solid #78b854;
-      }
-    }
-    &-info{
-      float: left;
-      width: calc(100% - 120px);
-    }
-    &-name{
-      cursor: pointer;
-      font: {
-        family: OpenSansSemiBold;
-        size: 14px;
-      };
-    }
-    &-status{
-      font-family: OpenSansLightItalic;
-    }
-    &-comment{
-      color: #C1BCBC;
+  }
+  &-info{
+    float: left;
+    width: calc(100% - 120px);
+  }
+  &-name{
+    cursor: pointer;
+    font: {
+      family: OpenSansSemiBold;
+      size: 14px;
+    };
+  }
+  &-status{
+    font-family: OpenSansLightItalic;
+  }
+  &-comment{
+    color: #C1BCBC;
+    font-family: OpenSansItalic;
+    &-edit{
       font-family: OpenSansItalic;
-      &-edit{
-        font-family: OpenSansItalic;
 
-        background:{
-          image: url(/images/icons2/note.png);
-          position: left 4px center;
-          repeat: no-repeat;
-        }
-        padding-left: 27px;
+      background:{
+        image: url(/images/icons2/note.png);
+        position: left 4px center;
+        repeat: no-repeat;
       }
-    }
-    &-buttons{
-      margin: 0;
-      padding-left: 0;
-      li{
-        cursor: pointer;
-        display: block;
-        @include padding-vertical(5px);
-      }
-    }
-    &-line{
-      height: 0 !important;
-      @include padding-vertical(0);
-      &>div{
-        display: block;
-        width: 100%;
-        border-bottom: 1px solid #ddd;
-      }
+      padding-left: 27px;
     }
   }
-
+  &-buttons{
+    margin: 0;
+    padding-left: 0;
+    li{
+      cursor: pointer;
+      display: block;
+      @include padding-vertical(5px);
+    }
+  }
+  &-line{
+    @include break-line;
+  }
 }

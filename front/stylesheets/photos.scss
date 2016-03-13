@@ -1,74 +1,72 @@
-.photos-page{
-  .buttons{
-    $width:130px;
-    height: 70px;
+.buttons{
+  $width:130px;
+  height: 70px;
+  &>div{
+    height: 100%;
     &>div{
+      float: left;
       height: 100%;
-      &>div{
+    }
+  }
+  &-newAlbum{
+    width: $width;
+    padding: 15px 0 0 60px;
+    color: #fff;
+    font-family: OpenSansLightItalic;
+    font-size: 13px;
+    border-right: 1px solid #fff;
+    background: url(/images/icons2/new-doc.png) 25px center no-repeat #91bfd6;
+  }
+  &-upload{
+    text-align: center;
+    width: $width;
+    border: 2px dashed gray;
+    padding-top: 8px;
+    .title{
+      font-family: OpenSansSemiBoldItalic;
+      width: $width;
+      position: absolute;
+      bottom: 0;
+      line-height: 26px;
+      color: #616161;
+    }
+  }
+}
+
+.albums{
+  margin-top: 20px;
+  .album{
+    @include margin-vertical(15px);
+    height: 200px;
+    &-bottom{
+      position: absolute;
+      width: calc(100% - 30px);
+      color: white;
+      padding: 0 3px;
+      height: 20px;
+      background-color: #000;
+      opacity: 0.7;
+      bottom: 0;
+      &-title{
         float: left;
-        height: 100%;
+      }
+      &-photoCount{
+        float: right;
       }
     }
-    &-newAlbum{
-      width: $width;
-      padding: 15px 0 0 60px;
-      color: #fff;
-      font-family: OpenSansLightItalic;
-      font-size: 13px;
-      border-right: 1px solid #fff;
-      background: url(/images/icons2/new-doc.png) 25px center no-repeat #91bfd6;
-    }
-    &-upload{
-      text-align: center;
-      width: $width;
-      border: 2px dashed gray;
-      padding-top: 8px;
-      .title{
-        font-family: OpenSansSemiBoldItalic;
-        width: $width;
-        position: absolute;
-        bottom: 0;
-        line-height: 26px;
-        color: #616161;
-      }
+    img{
+      @include square-size(100%);
     }
   }
+}
 
-  .albums{
-    margin-top: 20px;
-    .album{
-      @include margin-vertical(15px);
-      height: 200px;
-      &-bottom{
-        position: absolute;
-        width: calc(100% - 30px);
-        color: white;
-        padding: 0 3px;
-        height: 20px;
-        background-color: #000;
-        opacity: 0.7;
-        bottom: 0;
-        &-title{
-          float: left;
-        }
-        &-photoCount{
-          float: right;
-        }
-      }
-      img{
-        @include square-size(100%);
-      }
-    }
+.photos{
+  margin-top: 15px;
+  &-year{
+    color: darkgray;
   }
-
-  .photos{
-    margin-top: 15px;
-    &-year{
-      color: darkgray;
-    }
-    .photo{
-      @include margin-vertical(10px);
-      height: 150px;
-    }
+  .photo{
+    @include margin-vertical(10px);
+    height: 150px;
   }
 }

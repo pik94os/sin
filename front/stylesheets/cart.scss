@@ -1,0 +1,136 @@
+#panel1{
+  color: #536177;
+  font-family: OpenSansLight;
+  b{
+    color: black;
+    font-family: OpenSansBold;
+  }
+}
+.notebook-tabs{
+  margin-bottom: 20px;
+}
+.cart-panel{
+  @include margin-vertical(20px);
+  .find-user-form {
+    height: 33px;
+    position: relative;
+    margin: 0;
+  }
+}
+
+.item{
+  &-header{
+    font-size: 16px;
+    margin-bottom: 10px;
+    &-first{
+    }
+    &-shop{
+      font-family: OpenSansBold;
+      color: #000;
+    }
+    &-msg{
+      padding-left: 24px;
+      background: url(/images/icons2/friend-comm.png) left bottom no-repeat;
+      background-size: 18px;
+    }
+  }
+  &-body{
+    &-name{
+      font-size: 16px;
+    }
+    &-color{
+      &-circle{
+        @include margin-horizontal(5px);
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 8px;
+      }
+    }
+  }
+  &-count{
+    &-edit{
+      margin-top: 40px;
+      .group{
+        width: 100px;
+        border: 1px solid #B5B4B4;
+        color: #8c8c8c;
+        height: 22px;
+        text-align: center;
+        &>div{
+          display: inline-block;
+          width: 20px;
+          cursor: pointer;
+          font-weight: bold;
+          &.first{
+            border-right: 1px solid #B5B4B4;
+          }
+          &.last{
+            border-left: 1px solid #B5B4B4;
+          }
+        }
+        input{
+          width: 50px;
+          font-size: 13px;
+          border: none;
+          padding: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &-price{
+    &-body{
+      margin-top: 40px;
+      height: 45px;
+      font:{
+        size: 17px;
+      }
+    }
+    &-footer{
+      padding-right: 2px;
+      .btn.btn-warning-2{
+        width: 100%;
+      }
+    }
+  }
+
+  &-line{
+    @include margin-vertical(10px);
+    @include break-line;
+  }
+}
+
+.cart-footer{
+
+  b{
+    font-family: OpenSansBold;
+  }
+  #del-all-items{
+    cursor: pointer;
+    font-size: 17px;
+  }
+  &-left{
+    text-align: right;
+    margin-bottom: 20px;
+    #count-all-items{
+    }
+    #price-all-items{
+      font-size: 17px;
+    }
+  }
+}
+#make-order{
+  position: absolute;
+  right: 14px;
+  top: -24px;
+}
+
+.btn.btn-warning-2{
+  @include padding-vertical(3px);
+  border-radius: 3px;
+  border: 1px solid #B5B4B4;
+  background-color: #e88e4a;
+  color: white;
+  font-family: OpenSansLight;
+}

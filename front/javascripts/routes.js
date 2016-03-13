@@ -30,6 +30,11 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/calendar/list.html",
                 controller: 'Calendar'
             })
+            .state('cart', {
+                url: "/cart",
+                templateUrl: "/templates/cart/list.html",
+                controller: 'Cart'
+            })
             .state('documents', {
                 url: "/documents",
                 templateUrl: "/templates/documents/list.html",

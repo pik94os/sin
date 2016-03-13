@@ -1,194 +1,251 @@
-.purchases{
-  .wishes-btn{
-    @extend .btn-primary;
-    width: 100%;
-    margin: 3px 5px;
+.wishes-btn{
+  @extend .btn-primary;
+  width: 100%;
+  margin: 3px 5px;
+}
+&-tabs {
+  border-bottom: 1px solid #536177;
+  padding-top:2px;
+  li>a{
+    border: none;
   }
-  &-tabs {
-    border-bottom: 1px solid #536177;
-    padding-top:2px;
-    li>a{
-      border: none;
-    }
-  }
-  .categories{
+}
+.categories{
+  margin-top: 5px;
+  margin-bottom: 20px;
+  ul.categ{
+    padding: 0;
     margin-top: 5px;
     margin-bottom: 20px;
-    ul.categ{
-      padding: 0;
-      margin-top: 5px;
-      margin-bottom: 20px;
-      &>li{
-        margin-top: 10px;
-        float: left;
-        margin-bottom: -1px;
-        display: block;
+    &>li{
+      margin-top: 10px;
+      float: left;
+      margin-bottom: -1px;
+      display: block;
+      position: relative;
+      &.show{
         position: relative;
-        &.show{
-          position: relative;
-          z-index: 21;
-          @include border-no-bottom(1px solid black);
-          &>.categ-title{
-            margin-bottom: -1px;
-            z-index: 21;
-          }
-        }
+        z-index: 21;
+        @include border-no-bottom(1px solid black);
         &>.categ-title{
-          padding: 5px 15px;
-          cursor: pointer;
-          font-family: OpenSansLight;
-          color: black;
-          position: relative;
-          background: white;
-          margin-bottom:0;
-          a{
-            display: block;
-            border-bottom: 1px dashed #458eb2;
-            line-height: 1;
-            color: black;
-          }
+          margin-bottom: -1px;
+          z-index: 21;
         }
-        .subCateg{
-          position: absolute;
-          z-index: 20;
-          background: white;
-          width: 400px;
-          padding: 15px 0;
-          border: 1px solid black;
-          margin-left: -1px;
-          ul{
-            padding: 0;
-            &>li{
-              float: left;
-              margin-bottom: -1px;
-              padding: 15px;
+      }
+      &>.categ-title{
+        padding: 5px 15px;
+        cursor: pointer;
+        font-family: OpenSansLight;
+        color: black;
+        position: relative;
+        background: white;
+        margin-bottom:0;
+        a{
+          display: block;
+          border-bottom: 1px dashed #458eb2;
+          line-height: 1;
+          color: black;
+        }
+      }
+      .subCateg{
+        position: absolute;
+        z-index: 20;
+        background: white;
+        width: 400px;
+        padding: 15px 0;
+        border: 1px solid black;
+        margin-left: -1px;
+        ul{
+          padding: 0;
+          &>li{
+            float: left;
+            margin-bottom: -1px;
+            padding: 15px;
+            display: block;
+            position: relative;
+            width: 199px;
+            text-align: center;
+            &>a{
+              cursor: pointer;
+              line-height: 1;
+              font-family: OpenSansLight;
+              color: black;
+              border-bottom: 1px solid black;
               display: block;
               position: relative;
-              width: 199px;
-              text-align: center;
-              &>a{
-                cursor: pointer;
-                line-height: 1;
-                font-family: OpenSansLight;
-                color: black;
-                border-bottom: 1px solid black;
-                display: block;
-                position: relative;
-              }
             }
           }
         }
       }
     }
   }
-  &-block{
-    margin-bottom: 10px;
-    &-header{
-      &-row{
-        border-bottom: 1px solid #6CC3FF;
-        height: 40px;
+}
+&-block{
+  margin-bottom: 10px;
+  &-header{
+    &-row{
+      border-bottom: 1px solid #6CC3FF;
+      height: 40px;
+    }
+    &-title{
+      font-size: 20px;
+      background: #6CC3FF;
+      font-family: OpenSansBold;
+      color: #fff;
+      float: left;
+      margin-bottom: -1px;
+      padding: 6px 25px;
+    }
+    &-count{
+      float: left;
+      margin-bottom: -1px;
+      padding: 15px 14px;
+      padding-bottom: 0px;
+      color: gray;
+      font-weight: bold;
+    }
+  }
+
+  &-orange{
+    border-bottom: 1px solid #F9A67C;
+    .purchases-block-header-title{
+      background: #F9A67C;
+    }
+  }
+
+  &-green{
+    border-bottom: 1px solid green;
+    .purchases-block-header-title{
+      background: #2AC7A3;
+    }
+  }
+  &-body{
+    margin: 0;
+    & > div{
+      height: 452px;
+      border: 1px solid #DCF0FB;
+    }
+    & .slider{
+      padding:0;
+      img{
+        height: 450px;
+      }
+      .carousel-caption{
+        font-size: 25px;
+        .badge{
+          position: absolute;
+          font-size: 12px;
+          padding: 2px 6px;
+        }
+        b{
+          font-family: OpenSansRegular;
+          font-size: 31px;
+          font-weight: normal;
+        }
+      }
+    }
+    .item-block{
+      padding: 10px;
+      &-top{
+        &-num{
+          &-green{
+            display: inline-block;
+            height: 23px;
+            width: 23px;
+            text-align: center;
+            border: 1px solid green;
+          }
+          &-red{
+            @extend .item-block-top-num-green;
+            border-color: red;
+          }
+          &-orange{
+            @extend .item-block-top-num-green;
+            border-color: orangered;
+          }
+        }
+      }
+      &-images{
+        padding: 15px 0;
+        text-align: center;
+        img{
+          height: 170px;
+          max-width: 100%;
+        }
       }
       &-title{
-        font-size: 20px;
-        background: #6CC3FF;
+        font-size: 16px;
+        height: 70px;
+        overflow: hidden;
+      }
+      &-shop{
+        padding:5px 0;
+        border-bottom: 1px solid #DCF0FB;
+      }
+      &-price{
+        padding: 5px 0;
         font-family: OpenSansBold;
-        color: #fff;
-        float: left;
-        margin-bottom: -1px;
-        padding: 6px 25px;
+        font-size: 16px;
       }
-      &-count{
-        float: left;
-        margin-bottom: -1px;
-        padding: 15px 14px;
-        padding-bottom: 0px;
-        color: gray;
-        font-weight: bold;
-      }
-    }
-
-    &-orange{
-      border-bottom: 1px solid #F9A67C;
-      .purchases-block-header-title{
-        background: #F9A67C;
-      }
-    }
-
-    &-green{
-      border-bottom: 1px solid green;
-      .purchases-block-header-title{
-        background: #2AC7A3;
-      }
-    }
-    &-body{
-      margin: 0;
-      & > div{
-        height: 452px;
-        border: 1px solid #DCF0FB;
-      }
-      & .slider{
-        padding:0;
-        img{
-          height: 450px;
+      &-buttons{
+        border: 1px solid #C9D2D6;
+        background: #DFEBF1;
+        padding: 3px;
+        text-align: center;
+        border-radius: 5px;
+        height: 28px;
+        overflow: hidden;
+        span{
+          color: orangered;
+          font-size: 12px;
         }
-        .carousel-caption{
-          font-size: 25px;
-          .badge{
+      }
+      &-time{
+        $bord-color:#536177;
+        height: 38px;
+        text-align: center;
+        @include border-radius(5px,1px solid $bord-color);
+        @include margin-vertical(10px);
+        width: 100%;
+        &>div{
+          float: left;
+          height: 100%;
+          @include padding-vertical(5px);
+          width: 20%;
+          &:first-child{
+            background-color: $bord-color;
+            padding: 0;
+          }
+          &:last-child{
+            float: right;
+            background: #DFEBF1;
+            border-left:1px solid $bord-color;
+            margin-right: -1px;
+            @include border-radius-right(5px,1px solid $bord-color)
+          }
+          &:nth-child(3):before,&:nth-child(4):before{
+            content: ":";
             position: absolute;
-            font-size: 12px;
-            padding: 2px 6px;
+            display: block;
+            font-family: OpenSansBold;
+            margin-left: -1px;
           }
-          b{
-            font-family: OpenSansRegular;
-            font-size: 31px;
-            font-weight: normal;
+          & > div{
+            line-height: 14px;
+            &:first-child{
+              font-family: OpenSansBold;
+            }
+            &:last-child{
+              color: gray;
+            }
           }
         }
       }
-      .item-block{
-        padding: 10px;
-        &-top{
-          &-num{
-            &-green{
-              display: inline-block;
-              height: 23px;
-              width: 23px;
-              text-align: center;
-              border: 1px solid green;
-            }
-            &-red{
-              @extend .item-block-top-num-green;
-              border-color: red;
-            }
-            &-orange{
-              @extend .item-block-top-num-green;
-              border-color: orangered;
-            }
-          }
+      &-bottom{
+        &>div{
+          float: left;
         }
-        &-images{
-          padding: 15px 0;
-          text-align: center;
-          img{
-            height: 170px;
-            max-width: 100%;
-          }
-        }
-        &-title{
-          font-size: 16px;
-          height: 70px;
-          overflow: hidden;
-        }
-        &-shop{
-          padding:5px 0;
-          border-bottom: 1px solid #DCF0FB;
-        }
-        &-price{
-          padding: 5px 0;
-          font-family: OpenSansBold;
-          font-size: 16px;
-        }
-        &-buttons{
+        &-prices{
           border: 1px solid #C9D2D6;
           background: #DFEBF1;
           padding: 3px;
@@ -196,165 +253,106 @@
           border-radius: 5px;
           height: 28px;
           overflow: hidden;
-          span{
-            color: orangered;
-            font-size: 12px;
+          width: calc(95% - 55px);
+          .p-count{
+            color: gray;
           }
         }
-        &-time{
-          $bord-color:#536177;
-          height: 38px;
-          text-align: center;
-          @include border-radius(5px,1px solid $bord-color);
-          @include margin-vertical(10px);
-          width: 100%;
-          &>div{
-            float: left;
-            height: 100%;
-            @include padding-vertical(5px);
-            width: 20%;
-            &:first-child{
-              background-color: $bord-color;
-              padding: 0;
-            }
-            &:last-child{
-              float: right;
-              background: #DFEBF1;
-              border-left:1px solid $bord-color;
-              margin-right: -1px;
-              @include border-radius-right(5px,1px solid $bord-color)
-            }
-            &:nth-child(3):before,&:nth-child(4):before{
-              content: ":";
-              position: absolute;
-              display: block;
-              font-family: OpenSansBold;
-              margin-left: -1px;
-            }
-            & > div{
-              line-height: 14px;
-              &:first-child{
-                font-family: OpenSansBold;
-              }
-              &:last-child{
-                color: gray;
-              }
-            }
-          }
-        }
-        &-bottom{
-          &>div{
-            float: left;
-          }
-          &-prices{
-            border: 1px solid #C9D2D6;
-            background: #DFEBF1;
-            padding: 3px;
-            text-align: center;
-            border-radius: 5px;
-            height: 28px;
-            overflow: hidden;
-            width: calc(95% - 55px);
-            .p-count{
-              color: gray;
-            }
-          }
-          &-car{
-            width: 45px;
-            position: absolute;
-            right: 10px;
-            margin-top: -10px;
-            border-radius: 5px;
-            height: 40px;
-            background: {
-              color: #f54;
-              image: url(/images/icons/car.png);
-              position: center;
-              repeat: no-repeat;
-              size: 30px;
-            };
-          }
+        &-car{
+          width: 45px;
+          position: absolute;
+          right: 10px;
+          margin-top: -10px;
+          border-radius: 5px;
+          height: 40px;
+          background: {
+            color: #f54;
+            image: url(/images/icons/car.png);
+            position: center;
+            repeat: no-repeat;
+            size: 30px;
+          };
         }
       }
     }
   }
-  &-search{
-    background: #91BFD6;
-    height: 50px;
-    padding: 10px 0;
-    input{
-      @include margin-horizontal(10px);
-      height: 100%;
-      border: 1px solid #DCF0FB;
-      border-radius: 5px;
-      width: calc(100% - 150px);
-      background: #DFEBF1;
-    }
-    .btn {
-      width: 100px;
-      margin: 0 5px;
-    }
+}
+&-search{
+  background: #91BFD6;
+  height: 50px;
+  padding: 10px 0;
+  input{
+    @include margin-horizontal(10px);
+    height: 100%;
+    border: 1px solid #DCF0FB;
+    border-radius: 5px;
+    width: calc(100% - 150px);
+    background: #DFEBF1;
   }
-  .all-items-btn{
-    margin: 0;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    cursor: pointer;
-    &:hover{
-      background: #DFEBF1;
-    }
+  .btn {
+    width: 100px;
+    margin: 0 5px;
   }
-  .bg-orange{
-    background: orangered;
+}
+.all-items-btn{
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  &:hover{
+    background: #DFEBF1;
   }
-  .bg-green{
-    background: green;
+}
+.bg-orange{
+  background: orangered;
+}
+.bg-green{
+  background: green;
+}
+&-category{
+  text-align: center;
+  margin-bottom: 15px;
+  & , & > .row > div:last-child > div{
+    border: 1px solid rgb(218, 239, 251);
   }
-  &-category{
-    text-align: center;
-    margin-bottom: 15px;
-    & , & > .row > div:last-child > div{
-      border: 1px solid rgb(218, 239, 251);
+  & > .row > div:first-child{
+    height: 500px;
+    padding: 15px;
+    b{
+      color: #F7568D;
+      font-family: OpenSansBold;
+      font-size: 18px;
     }
-    & > .row > div:first-child{
-      height: 500px;
-      padding: 15px;
-      b{
-        color: #F7568D;
-        font-family: OpenSansBold;
-        font-size: 18px;
-      }
-      p{
-        margin-bottom: 10px;
-      }
-    }
-    &-icon{
-      background: #F7568D;
-      border-radius: 70px;
-      height: 130px;
-      padding: 15px;
-      width: 130px;
-      display: inline-block;
+    p{
       margin-bottom: 10px;
     }
-    .pc-item{
-      padding: 10px;
-      height: 250px;
-      &-photo{
-        height: calc( 100% - 20px );
-        img{
-          height: 100%;
-          max-width: 100%;
-        }
+  }
+  &-icon{
+    background: #F7568D;
+    border-radius: 70px;
+    height: 130px;
+    padding: 15px;
+    width: 130px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .pc-item{
+    padding: 10px;
+    height: 250px;
+    &-photo{
+      height: calc( 100% - 20px );
+      img{
+        height: 100%;
+        max-width: 100%;
       }
-      &-title{
-        height: 20px;
-        padding-bottom: 10px;
-        &-left{
-          @extend .pc-item-title;
-          text-align: left;
-        }
+    }
+    &-title{
+      height: 20px;
+      padding-bottom: 10px;
+      &-left{
+        @extend .pc-item-title;
+        text-align: left;
       }
     }
   }
