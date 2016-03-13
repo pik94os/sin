@@ -25,7 +25,7 @@
                                     </div>
                                     <div class="col-xs-9">
                                         <ul class="nav navbar-nav navbar-right">
-                                            <li class="new-count-container-inhead"><h3 class="payment">Счёт: 5 600 <i class="fa fa-rub"></i></h3></li>
+                                            <li class="new-count-container-inhead"><a ui-sref="cart"><h3 class="payment">Счёт: 5 600 <i class="fa fa-rub"></i></h3></a></li>
                                             <li class="dropdown hidden-xs">
                                                 <span class="dropdown-toggle ava-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                     <div class="for-arrow collapsed"></div>
@@ -60,34 +60,12 @@
     </header>
     <div id="wrap_browser" class="container-fluid bg-color13" ng-class="{'html100':html100}">
         <div class="row">
-            <div class="col-xs-2 col-md-3 col-lg-2 wrap_menu" id="wrap_menu">
+            <div class="col-xs-2 col-md-3 col-lg-2 wrap_menu" id="wrap_menu" ng-class="{'show':leftMenu}">
                 <div class="list-group list-menu">
                     <a href="#" class="settings"></a>
-                    <a ui-sref="account" href="#" class="list-group-item bg-color1">
-                        <span class="text">Мой кабинет</span>
+                    <a ng-repeat="menuItem in leftMenu" ui-sref="{{menuItem.state}}" href="#" class="list-group-item bg-color{{$index+1}}">
+                        <span class="text" ng-bind="menuItem.text"><span></span><span ng-show="menuItem.count" class="num" ng-bind="menuItem.count"></span></span>
                     </a>
-                    <a ui-sref="message" href="#" class="list-group-item bg-color2">
-                        <span class="text">Сообщения <span class="num">7</span></span></a>
-                    <a ui-sref="purchases" href="#" class="list-group-item bg-color3">
-                        <span class="text">Покупки</span></a>
-                    <a ui-sref="groups" href="#" class="list-group-item bg-color4">
-                        <span class="text">Группы</span></a>
-                    <a ui-sref="friends" href="#" class="list-group-item bg-color5">
-                        <span class="text">Друзья</span></a>
-                    <a ui-sref="photos" href="#" class="list-group-item bg-color6">
-                        <span class="text">Фотографии</span></a>
-                    <a ui-sref="notebook" href="#" class="list-group-item bg-color7">
-                        <span class="text">Блокнот</span></a>
-                    <a ui-sref="glossary" href="#" class="list-group-item bg-color8">
-                        <span class="text">Голлосариум</span></a>
-                    <a ui-sref="wishes" href="#" class="list-group-item bg-color9">
-                        <span class="text">Желания</span></a>
-                    <a ui-sref="calendar" href="#" class="list-group-item bg-color10">
-                        <span class="text">Календарь</span></a>
-                    <a ui-sref="cart" class="list-group-item bg-color11">
-                        <span class="text">Счет</span></a>
-                    <a ui-sref="sittings" class="list-group-item bg-color12">
-                        <span class="text">Настройки</span></a>
                 </div>
             </div>
             <div class="col-xs-10 col-md-9 col-lg-10">

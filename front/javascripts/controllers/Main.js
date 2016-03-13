@@ -8,6 +8,20 @@ define(['./module','jquery'],function(controllers,$){
         $scope.$on('html100', function(event,html100){
             $scope.html100 = html100;
         });
+        $scope.leftMenu=[
+            {text:'Мой кабинет', state:'account',icon:''},
+            {text:'Сообщения', state:'message',icon:'',count:7},
+            {text:'Покупки', state:'purchases',icon:''},
+            {text:'Группы', state:'groups',icon:''},
+            {text:'Друзья', state:'friends',icon:''},
+            {text:'Фотографии', state:'photos',icon:''},
+            {text:'Блокнот', state:'notebook',icon:''},
+            {text:'Голлосариум', state:'glossary',icon:''},
+            {text:'Желания', state:'wishes',icon:''},
+            {text:'Календарь', state:'calendar',icon:''},
+            {text:'Счёт', state:'cart',icon:''},
+            {text:'Настройки', state:'sittings',icon:''}
+        ];
         $scope.friends = [];
         $http.get('/ajax/friends.json').then(function (response) {
             if(response.data.err){

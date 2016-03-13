@@ -1,3 +1,9 @@
+.wrap_menu{
+  display: none;
+  .show{
+    display: block;
+  }
+}
 textarea {
   resize: vertical;
 }
@@ -95,6 +101,11 @@ header{
     }
     .new-count-container-inhead {
       margin-right: 48px;
+      a{
+        display: block;
+        cursor: pointer;
+        padding: 0;
+      }
       .payment {
         color: #fff;
         font-size: 18px;
