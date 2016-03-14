@@ -25,7 +25,11 @@
                                     </div>
                                     <div class="col-xs-9">
                                         <ul class="nav navbar-nav navbar-right">
-                                            <li class="new-count-container-inhead"><a ui-sref="cart"><h3 class="payment">Счёт: 5 600 <i class="fa fa-rub"></i></h3></a></li>
+                                            <li class="new-count-container-inhead">
+                                                <a ui-sref="cart">
+                                                    <h3 class="payment">Счёт: 5 600 <i class="fa fa-rub"></i></h3>
+                                                </a>
+                                            </li>
                                             <li class="dropdown hidden-xs">
                                                 <span class="dropdown-toggle ava-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                     <div class="for-arrow collapsed"></div>
@@ -64,7 +68,11 @@
                 <div class="list-group list-menu">
                     <a href="#" class="settings"></a>
                     <a ng-repeat="menuItem in leftMenu" ui-sref="{{menuItem.state}}" href="#" class="list-group-item bg-color{{$index+1}}">
-                        <span class="text" ng-bind="menuItem.text"><span></span><span ng-show="menuItem.count" class="num" ng-bind="menuItem.count"></span></span>
+                        <span id="menuItem" class="text">
+                            <span ng-bind="menuItem.text"  class="menu-title" ng-hide="state.name=='purchases'"></span>
+                            <img ng-src="/images/menu/{{menuItem.icon}}" class="menu-icon" title="{{menuItem.text}}" alt="{{menuItem.text}}" ng-show="state.name=='purchases'">
+                            <span ng-show="menuItem.count" class="num" ng-bind="menuItem.count"></span>
+                        </span>
                     </a>
                 </div>
             </div>

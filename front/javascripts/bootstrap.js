@@ -5,6 +5,7 @@ define([
     'require',
     'angular',
     'app',
+    'domReady',
     'routes'
 ], function (require, ng) {
     'use strict';

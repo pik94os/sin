@@ -3,24 +3,24 @@
  */
 define(['./module','jquery'],function(controllers,$){
     'use strict';
-    controllers.controller('Main',['$scope','$http', '$rootScope',function($scope,$http,$rootScope){
+    controllers.controller('Main',['$scope','$http', '$rootScope', '$state', function($scope,$http,$rootScope,$state){
         $scope.html100=false;
         $scope.$on('html100', function(event,html100){
             $scope.html100 = html100;
         });
         $scope.leftMenu=[
-            {text:'Мой кабинет', state:'account',icon:''},
-            {text:'Сообщения', state:'message',icon:'',count:7},
-            {text:'Покупки', state:'purchases',icon:''},
-            {text:'Группы', state:'groups',icon:''},
-            {text:'Друзья', state:'friends',icon:''},
-            {text:'Фотографии', state:'photos',icon:''},
-            {text:'Блокнот', state:'notebook',icon:''},
-            {text:'Голлосариум', state:'glossary',icon:''},
-            {text:'Желания', state:'wishes',icon:''},
-            {text:'Календарь', state:'calendar',icon:''},
-            {text:'Счёт', state:'cart',icon:''},
-            {text:'Настройки', state:'sittings',icon:''}
+            {text:'Мой кабинет', state:'account',icon:'account.png'},
+            {text:'Сообщения', state:'message',icon:'message.png',count:7},
+            {text:'Покупки', state:'purchases',icon:'purchases.png'},
+            {text:'Группы', state:'groups',icon:'groups.png'},
+            {text:'Друзья', state:'friends',icon:'friends.png'},
+            {text:'Фотографии', state:'photos',icon:'photos.png'},
+            {text:'Блокнот', state:'notebook',icon:'notebook.png'},
+            {text:'Голлосариум', state:'glossary',icon:'glossary.png'},
+            {text:'Желания', state:'wishes',icon:'wishes.png'},
+            {text:'Календарь', state:'calendar',icon:'calendar.png'},
+            {text:'Счёт', state:'cart',icon:'cart.png'},
+            {text:'Настройки', state:'sittings',icon:'sittings.png'}
         ];
         $scope.friends = [];
         $http.get('/ajax/friends.json').then(function (response) {
@@ -97,7 +97,9 @@ define(['./module','jquery'],function(controllers,$){
 
         function wrap_soc(){
             $('.wrap_soc').height($('.btn-panel').height()+'px');
-            $('#wrap_browser .wrap_content').css('min-height',$('#wrap_browser').height()+'px');
+            if( $('#wrap_browser .wrap_content').height()<$('#wrap_browser').height()){
+                $('#wrap_browser .wrap_content').css('min-height',$('#wrap_browser').height()+'px');
+            }
         }
 
         $(window).resize( function(){
@@ -119,6 +121,7 @@ define(['./module','jquery'],function(controllers,$){
 
         $rootScope.$on('$viewContentLoaded',function(){
             wrap_soc();
+            $scope.state = $state.current;
         });
     }])
 });

@@ -12,13 +12,14 @@ var gulp = require('gulp'),
     rigger = require('gulp-rigger'),
     htmlmin = require('gulp-htmlmin'),
     browserSync = require("browser-sync"),
+    rjs = require('./r'),
     reload = browserSync.reload;
 
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
         html: 'public/',
         js: 'public/javascripts/',
-        bower_js: 'public/bower_components/',
+        bower_js: 'public/bower_components/requirejs/',
         css: 'public/stylesheets/',
         img: 'public/images/',
         fonts: 'public/fonts/',
@@ -26,8 +27,8 @@ var path = {
     },
     src: { //Пути откуда брать исходники
         html: 'front/**/*.html',
-        js: 'front/javascripts/**/*.*',
-        bower_js: 'front/bower_components/**/*.js',
+        js: 'front/javascripts/*.js',
+        bower_js: 'front/bower_components/requirejs/require.js',
         style: 'front/stylesheets/main.scss',
         img: 'front/images/**/*.*',
         fonts: 'front/bower_components/bootstrap-sass/assets/fonts/**/*.*',
@@ -36,7 +37,7 @@ var path = {
     watch:{
         html: 'front/**/*.html',
         js: 'front/javascripts/**/*.js',
-        bower_components: 'front/bower_components/**/*.js',
+        bower_components: 'front/bower_components/requirejs/require.js',
         style: 'front/stylesheets/**/*.scss',
         img: 'front/images/**/*.*',
         fonts: 'front/fonts/**/*.*',
@@ -56,7 +57,34 @@ gulp.task('sass', function () {
 
 gulp.task("js", function () {
     gulp.src(path.src.js)
-        .pipe(gulp.dest(path.build.js))
+        .pipe(rjs({
+            baseUrl:'front/javascripts/',
+            outPath:'public/javascripts/',
+            paths: {
+                'domReady': '../bower_components/domReady/domReady',
+                'angular': '../bower_components/angular/angular.min',
+                'uiRouter': '../bower_components/angular-ui-router/release/angular-ui-router.min',
+                'jquery': '../bower_components/jquery/dist/jquery.min',
+                'bstrap': '../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min',
+                'slimScroll': '../bower_components/jquery-slimscroll/jquery.slimscroll.min'
+            },
+            // angular не поддерживает AMD из коробки, поэтому экспортируем перменную angular в глобальную область
+            shim: {
+                'angular': {
+                    deps: [],
+                    exports: 'angular'
+                },
+                'uiRouter':{
+                    deps: ['angular']
+                },
+                "bstrap" : {
+                    "deps" :['jquery']
+                },
+                "slimScroll" : {
+                    "deps" :['jquery']
+                }
+            }
+        }))
 });
 
 gulp.task("bower_js", function () {
