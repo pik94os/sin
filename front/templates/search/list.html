@@ -1,0 +1,43 @@
+<div class="search-page">
+    <div class="row no-margin user_data">
+        <div class="col-xs-8 no-padding ">
+            <h2>Поиск</h2>
+        </div>
+        <div class="col-xs-4 no-padding text-right ">
+            <p><i class="icon icon-clock"></i> <strong>18:15</strong> <i class="icon icon-line"></i> 15 января 2015</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-10">
+            <ul class="nav nav-tabs purchases-tabs">
+                <li class="active"><a data-toggle="tab" href="#all">Все категории</a></li>
+                <li class="tab-with-map"><a data-toggle="tab" href="#piple">Люди</a></li>
+                <li class="tab-with-map"><a data-toggle="tab" href="#panel3">Магазины</a></li>
+                <li class="tab-with-map"><a data-toggle="tab" href="#panel4">Группы</a></li>
+                <li class="tab-with-map pull-right"><a data-toggle="tab" href="#panel5">Обзоры</a></li>
+                <li class="tab-with-map pull-right"><a data-toggle="tab" href="#panel6">Отзывы</a></li>
+            </ul>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-10">
+            <div class="main-search">
+                <input type="text" ng-model="searchText"/>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="btn btn-primary btn-lg main-search-btn" ui-sref="search({text:searchText})">Найти</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 tab-content">
+            <div id="all" class="tab-pane fade in active">
+                <!--=include _all.html -->
+            </div>
+            <div id="piple" class="row tab-pane fade">
+                <!--=include _piple.html -->
+            </div>
+        </div>
+    </div>
+</div>

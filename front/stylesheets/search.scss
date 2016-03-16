@@ -1,0 +1,198 @@
+.main-search{
+  background: #91BFD6;
+  height: 50px;
+  padding: 10px 0;
+  margin-bottom: 5px;
+  input{
+    @include margin-horizontal(10px);
+    height: 100%;
+    border: 1px solid #DCF0FB;
+    border-radius: 5px;
+    width: calc(100% - 20px);
+    background: #DFEBF1;
+  }
+  &-btn {
+    width: 90%;
+    margin: 3px -15px;
+    font-family: OpenSansLight;
+  }
+}
+
+.title-result>div{
+  @include margin-vertical(5px);
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #91BFD6;
+  font-family: OpenSansSemiBold;
+  color: #91BFD6;
+}
+
+.user{
+  &-result{
+    @include margin-vertical(10px);
+  }
+  &-info{
+    &>div{
+      float: left;
+    }
+    &-2{
+      padding-left: 15px;
+      color: #3F4348;
+    }
+  }
+  &-photo{
+    @include square-size(90px);
+    img{
+      @include square-size(90px);
+    }
+  }
+  &-add{
+    .btn{
+      width: 90%;
+      margin: 3px -15px;
+      font-family: OpenSansLight;
+    }
+  }
+}
+.shop{
+  &-result{
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+  &-info{
+    &>div{
+      float: left;
+    }
+    &-2{
+      padding-left: 15px;
+      b{
+        font-family: OpenSansBold;
+      }
+    }
+    &-3{
+      p{
+        font-family: OpenSansLight;
+        margin: 0;
+      }
+    }
+  }
+  &-photo{
+    @include square-size(135px);
+    img{
+      @include square-size(135px);
+    }
+  }
+}
+.group{
+  $height: 135px;
+  &-result{
+    font-family: OpenSansLight;
+    @include margin-vertical(10px);
+    height: $height;
+  }
+  &-info{
+    &>div{
+      float: left;
+    }
+    &-2{
+      padding-left: 15px;
+      b{
+        font-family: OpenSansBold;
+      }
+    }
+  }
+  &-count{
+    margin-top: 45px;
+    line-height: 35px;
+    text-align: center;
+  }
+  &-btn{
+    margin-top: 45px;
+    .btn{
+      width: 100%;
+    }
+  }
+  &-photo{
+    @include square-size($height);
+    img{
+      @include square-size($height);
+    }
+  }
+}
+
+.result{
+  $height: 330px;
+  $width-photo:75px;
+  &-body{
+    @include margin-vertical(10px);
+    height: $height;
+    &>div{
+      float: left;
+    }
+    &-photo{
+      height: 100%;
+      width: $width-photo;
+      img{
+        @include square-size($width-photo);
+      }
+    }
+    .r-bb{
+      padding-left: 25px;
+      width: calc(100% - #{$width-photo});
+      height: 100%;
+      &-title{
+        font-family: OpenSansBold;
+        margin-bottom: 5px;
+        .num-green{
+          font-family: OpenSansRegular;
+          display: inline-block;
+          height: 23px;
+          width: 23px;
+          text-align: center;
+          border: 1px solid green;
+          margin-left: 10px;
+        }
+      }
+      &-content{
+        padding-right: 10px;
+        font-family: OpenSansLight;
+        img{
+          float: left;
+          width: 400px;
+          height: 300px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+#piple{
+  .user-add{
+    margin-top: 25px;
+    .btn{
+      margin: 0;
+      width: 100%;
+    }
+  }
+  .user-body{
+    border-bottom: 1px solid #DFEBF1;
+  }
+  .title-result>div{
+    margin-bottom: 0;
+  }
+}
+
+.see-all{
+  margin-bottom: 15px;
+  font-family: OpenSansLight;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #DFEBF1 ;
+  line-height: 24px;
+  cursor: pointer;
+  &:hover{
+    background-color: #b6c2e5;
+  }
+}

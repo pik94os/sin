@@ -7,10 +7,10 @@ define([
     'app',
     'domReady',
     'routes'
-], function (require, ng) {
+], function (require, angular) {
     'use strict';
 
     require(['domReady!'], function (document) {
-        ng.bootstrap(document, ['app']);
+        angular.bootstrap(document, ['app']);
     });
 });

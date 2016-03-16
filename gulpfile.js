@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     runSequence = require('run-sequence'),
-    rigger = require('gulp-rigger'),
+    include = require("gulp-include"),
     htmlmin = require('gulp-htmlmin'),
     browserSync = require("browser-sync"),
     rjs = require('./r'),
@@ -19,16 +19,15 @@ var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
         html: 'public/',
         js: 'public/javascripts/',
-        bower_js: 'public/bower_components/requirejs/',
         css: 'public/stylesheets/',
         img: 'public/images/',
         fonts: 'public/fonts/',
         json: 'public/ajax/'
     },
     src: { //Пути откуда брать исходники
-        html: 'front/**/*.html',
-        js: 'front/javascripts/*.js',
-        bower_js: 'front/bower_components/requirejs/require.js',
+        html: ['front/**/*.html','!front/templates/**/_*.html','!front/bower_components/**/*.*'],
+        js: 'front/javascripts/bootstrap.js',
+        js_copy: ['front/bower_components/requirejs/require.js','front/javascripts/main.js'],
         style: 'front/stylesheets/main.scss',
         img: 'front/images/**/*.*',
         fonts: 'front/bower_components/bootstrap-sass/assets/fonts/**/*.*',
@@ -37,7 +36,6 @@ var path = {
     watch:{
         html: 'front/**/*.html',
         js: 'front/javascripts/**/*.js',
-        bower_components: 'front/bower_components/requirejs/require.js',
         style: 'front/stylesheets/**/*.scss',
         img: 'front/images/**/*.*',
         fonts: 'front/fonts/**/*.*',
@@ -87,9 +85,9 @@ gulp.task("js", function () {
         }))
 });
 
-gulp.task("bower_js", function () {
-    gulp.src(path.src.bower_js)
-        .pipe(gulp.dest(path.build.bower_js))
+gulp.task("js_copy", function () {
+    gulp.src(path.src.js_copy)
+        .pipe(gulp.dest(path.build.js))
 });
 
 gulp.task("json", function () {
@@ -116,10 +114,9 @@ gulp.task("fonts", function () {
 
 gulp.task('html', function () {
     gulp.src(path.src.html) //Выберем файлы по нужному пути
-        .pipe(rigger()) //Прогоним через rigger
-        .pipe(gulp.dest(path.build.html)) //Выплюнем их в папку build
-        .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(reload({stream: true})); //И перезагрузим наш сервер для обновлений
+        .pipe(include())//Объединим с шаблонами
+        .pipe(htmlmin({collapseWhitespace: true}))//минимизируем
+        .pipe(gulp.dest(path.build.html)); //Выплюнем их в папку build
 });
 
 gulp.task('watch', function(){
@@ -128,9 +125,6 @@ gulp.task('watch', function(){
     });
     watch([path.watch.style], function(event, cb) {
         gulp.start('sass');
-    });
-    watch([path.watch.bower_components], function(event, cb) {
-        gulp.start('bower_components');
     });
     watch([path.watch.js], function(event, cb) {
         gulp.start('js');
@@ -147,5 +141,5 @@ gulp.task('watch', function(){
 });
 
 gulp.task('default', function(cb) {
-    runSequence(['fonts', 'js', 'bower_js', 'sass', 'image', 'html', 'json','watch'], cb);
+    runSequence(['fonts', 'js', 'js_copy', 'sass', 'image', 'html', 'json','watch'], cb);
 });
