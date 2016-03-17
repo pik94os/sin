@@ -95,6 +95,10 @@ define(['./module','jquery'],function(controllers,$){
             $scope.photo = photo;
         };
 
+        $scope.submitSearchForm = function(searchText){
+            $state.go('search',{text:searchText, type:'all'});
+        };
+
         function wrap_soc(){
             $('.wrap_soc').height($('.btn-panel').height()+'px');
             if( $('#wrap_browser .wrap_content').height()<$('#wrap_browser').height()){

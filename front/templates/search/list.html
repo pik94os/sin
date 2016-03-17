@@ -10,33 +10,45 @@
     <div class="row">
         <div class="col-xs-10">
             <ul class="nav nav-tabs purchases-tabs">
-                <li class="active"><a data-toggle="tab" href="#all">Все категории</a></li>
-                <li class="tab-with-map"><a data-toggle="tab" href="#piple">Люди</a></li>
-                <li class="tab-with-map"><a data-toggle="tab" href="#panel3">Магазины</a></li>
-                <li class="tab-with-map"><a data-toggle="tab" href="#panel4">Группы</a></li>
-                <li class="tab-with-map pull-right"><a data-toggle="tab" href="#panel5">Обзоры</a></li>
-                <li class="tab-with-map pull-right"><a data-toggle="tab" href="#panel6">Отзывы</a></li>
+                <li ui-sref-active="active" class="tab-with-map pull-right"><a ui-sref="{type:'comments'}">Отзывы</a></li>
+                <li ui-sref-active="active" class="tab-with-map pull-right"><a ui-sref="{type:'reviews'}">Обзоры</a></li>
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{type:'all'}">Все категории</a></li>
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{type:'people'}">Люди</a></li>
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{type:'shops'}">Магазины</a></li>
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{type:'groups'}">Группы</a></li>
             </ul>
             <div class="clr"></div>
         </div>
     </div>
-    <div class="row">
+    <form class="row" ng-submit="submitSearchForm(sText)">
         <div class="col-xs-10">
             <div class="main-search">
-                <input type="text" ng-model="searchText"/>
+                <input type="text" ng-model="sText"/>
             </div>
         </div>
         <div class="col-xs-2">
-            <div class="btn btn-primary btn-lg main-search-btn" ui-sref="search({text:searchText})">Найти</div>
+            <button type="submit" class="btn btn-primary btn-lg main-search-btn">Найти</button>
         </div>
-    </div>
+    </form>
     <div class="row">
         <div class="col-xs-12 tab-content">
-            <div id="all" class="tab-pane fade in active">
+            <div id="all" class="tab-pane fade" ng-class="{'in active':!searchType||searchType==='all'}">
                 <!--=include _all.html -->
             </div>
-            <div id="piple" class="row tab-pane fade">
-                <!--=include _piple.html -->
+            <div id="people" class="row tab-pane fade" ng-class="{'in active':searchType==='people'}">
+                <!--=include _people.html -->
+            </div>
+            <div id="shops" class="row tab-pane fade" ng-class="{'in active':searchType==='shops'}">
+                <!--=include _shops.html -->
+            </div>
+            <div id="groups" class="row tab-pane fade" ng-class="{'in active':searchType==='groups'}">
+                <!--=include _groups.html -->
+            </div>
+            <div id="reviews" class="row tab-pane fade" ng-class="{'in active':searchType==='reviews'}">
+                <!--=include _reviews.html -->
+            </div>
+            <div id="comments" class="row tab-pane fade" ng-class="{'in active':searchType==='comments'}">
+                <!--=include _comments.html -->
             </div>
         </div>
     </div>

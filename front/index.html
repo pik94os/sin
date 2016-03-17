@@ -18,10 +18,10 @@
                             <div class="col-md-11 col-sm-12">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <div class="find-form">
+                                        <form class="find-form" ng-submit="submitSearchForm(searchText)">
                                             <input type="text" ng-model="searchText"/>
-                                            <button type="submit" ui-sref="search({text:searchText})"></button>
-                                        </div>
+                                            <button type="submit"></button>
+                                        </form>
                                     </div>
                                     <div class="col-xs-9">
                                         <ul class="nav navbar-nav navbar-right">

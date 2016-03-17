@@ -91,7 +91,7 @@ define(['./app'], function (app) {
                 controller: 'Friends'
             })
             .state('search', {
-                url: "/search?text",
+                url: "/search?type&text",
                 templateUrl: "/templates/search/list.html",
                 controller: 'Search'
             })

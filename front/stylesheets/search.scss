@@ -64,6 +64,10 @@
       float: left;
     }
     &-2{
+      width: calc(100% - 135px);
+      &>div{
+        width: 100%;
+      }
       padding-left: 15px;
       b{
         font-family: OpenSansBold;
@@ -81,6 +85,9 @@
     img{
       @include square-size(135px);
     }
+  }
+  &-btn{
+    text-align: right;
   }
 }
 .group{
@@ -126,48 +133,63 @@
   &-body{
     @include margin-vertical(10px);
     height: $height;
-    &>div{
-      float: left;
+    &-2{
+      @include padding-vertical(10px);
+      overflow: auto;
+      border-bottom: 1px solid #DFEBF1;
     }
-    &-photo{
-      height: 100%;
-      width: $width-photo;
-      img{
-        @include square-size($width-photo);
+    &,&-2{
+      &>div{
+        float: left;
       }
-    }
-    .r-bb{
-      padding-left: 25px;
-      width: calc(100% - #{$width-photo});
-      height: 100%;
-      &-title{
-        font-family: OpenSansBold;
-        margin-bottom: 5px;
-        .num-green{
-          font-family: OpenSansRegular;
-          display: inline-block;
-          height: 23px;
-          width: 23px;
-          text-align: center;
-          border: 1px solid green;
-          margin-left: 10px;
+      &-name{
+        margin-bottom: 15px;
+      }
+      &-photo{
+        height: 100%;
+        width: $width-photo;
+        img{
+          @include square-size($width-photo);
         }
       }
-      &-content{
-        padding-right: 10px;
-        font-family: OpenSansLight;
-        img{
-          float: left;
-          width: 400px;
-          height: 300px;
-          margin-right: 20px;
+      .r-bb{
+        padding-left: 25px;
+        width: calc(100% - #{$width-photo});
+        height: 100%;
+        &-title{
+          font-family: OpenSansBold;
+          margin-bottom: 5px;
+          .num-green{
+            font-family: OpenSansRegular;
+            display: inline-block;
+            height: 23px;
+            width: 23px;
+            text-align: center;
+            border: 1px solid green;
+            margin-left: 10px;
+          }
+        }
+        &-content{
+          padding-right: 10px;
+          font-family: OpenSansLight;
+          img{
+            &.left{
+              float: left;
+              margin-right: 20px;
+            }
+            width: 400px;
+            height: 300px;
+          }
         }
       }
     }
   }
 }
 
-#piple{
+.title-result>.open{
+  margin-bottom: 0;
+}
+#people{
   .user-add{
     margin-top: 25px;
     .btn{
@@ -178,9 +200,42 @@
   .user-body{
     border-bottom: 1px solid #DFEBF1;
   }
-  .title-result>div{
-    margin-bottom: 0;
+}
+
+#shops, #groups{
+  .right-stars{
+    width: 127px;
+    float: right;
   }
+  .shop-info{
+    border-bottom: 1px solid #DFEBF1;
+    @include padding-vertical(10px);
+    height: 155px;
+    &-3{
+      &>p{
+        margin-top: 7px;
+      }
+      .btn{
+        float: right;
+        margin-top: 15px;
+      }
+    }
+  }
+  div:last-child>.shop-info{
+    border-bottom: none;
+  }
+}
+
+div:last-child>.line-stop{
+  border-bottom: none;
+}
+
+.top-search-sort{
+  position: absolute;
+  top: -21px;
+  left: 0;
+  color: #6684B3;
+  font-family: OpenSansLight;
 }
 
 .see-all{
@@ -194,5 +249,24 @@
   cursor: pointer;
   &:hover{
     background-color: #b6c2e5;
+  }
+}
+
+.search-filter{
+  padding-top: 10px;
+  height: 700px;
+  margin-top: -1px;
+  background: #DFEBF1;
+  border-top: 1px solid #91BFD6;
+  &-line{
+    text-decoration: line-through;
+    padding: 4px;
+    border: none;
+    background: rgba(0,0,0,0);
+  }
+  .btn{
+    font-family: OpenSansLight;
+    width: 100%;
+    text-align: left;
   }
 }

@@ -1,0 +1,86 @@
+<div class="col-xs-12 title-result">
+    <div class="open">Найдено 256 людей</div>
+</div>
+<div class="col-xs-9">
+    <div class="row">
+        <div class="col-xs-12" ng-repeat="r in [2,3,4,5,6]">
+            <div class="user-body">
+                <div class="row user-result">
+                    <div class="user-info col-xs-9">
+                        <div class="user-photo">
+                            <img ng-src="/images/500x500/{{r}}.jpg" class="img-circle">
+                        </div>
+                        <div class="user-info-2">
+                            <div class="user-name"><b>Константин Викторович</b></div>
+                            <div class="user-house">Москва, Россия</div>
+                        </div>
+                    </div>
+                    <div class="user-add col-xs-3">
+                        <div class="btn btn-primary">Добавить</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-3 search-filter">
+    <form>
+        <div class="form-group">
+            <label for="search-country">Страна</label>
+            <input type="text" class="form-control input-sm" id="search-country" placeholder="Выберите страну">
+        </div>
+        <div class="form-group">
+            <label for="search-city">Город</label>
+            <input type="text" class="form-control input-sm" id="search-city" placeholder="Выберите город">
+        </div>
+        <div class="form-group">
+            <label for="search-age">Возраст</label>
+            <div id="search-age" class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="От">
+                <span class="input-group-addon search-filter-line">--</span>
+                <input type="text" class="form-control" placeholder="До">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="search-gender">Пол</label>
+            <div id="search-gender">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Мужской
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Женский
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Любой
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="search-university">Университет</label>
+            <input type="text" class="form-control input-sm" id="search-university" placeholder="Выберите университет">
+        </div>
+        <div class="form-group">
+            <label for="search-school">Школа</label>
+            <input type="text" class="form-control input-sm" id="search-school" placeholder="Выберите школу">
+        </div>
+        <div class="form-group">
+            <label for="search-status">Семейное положение</label>
+            <input type="text" class="form-control input-sm" id="search-status" placeholder="Выберите статус">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> с фотографией
+            </label>
+        </div><div class="checkbox">
+        <label>
+            <input type="checkbox"> сейчас на сайте
+        </label>
+    </div>
+    </form>
+</div>

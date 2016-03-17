@@ -6,6 +6,7 @@ define(['./module'],function(controllers){
     controllers.controller('Search',['$rootScope','$scope', '$stateParams', '$http', function($rootScope,$scope,$stateParams,$http){
         $('title').text('Поиск');
         $rootScope.$broadcast('html100', false);
-        $scope.searchText = $stateParams.text;
+        $scope.sText = $stateParams.text;
+        $scope.searchType = $stateParams.type;
     }])
 });
