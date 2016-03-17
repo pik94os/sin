@@ -1,0 +1,54 @@
+<nav class="navbar navbar-default bg-blue">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-2 wrap_menu" ng-class="{'col-md-3 col-lg-2':state.name!=='purchases','col-md-1':state.name==='purchases'}">
+                <h2 class="logo" ui-sref="account"><span>Sin</span></h2>
+            </div>
+            <div class="col-xs-10 wrap_content"  ng-class="{'col-md-9 col-lg-10':state.name!=='purchases','col-md-11':state.name=='purchases'}">
+                <div class="row">
+                    <div class="col-md-11 col-sm-12">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <form class="find-form" ng-submit="submitSearchForm(searchText)">
+                                    <input type="text" ng-model="searchText"/>
+                                    <button type="submit"></button>
+                                </form>
+                            </div>
+                            <div class="col-xs-9">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="new-count-container-inhead">
+                                        <a ui-sref="cart">
+                                            <h3 class="payment">Счёт: 5 600 <i class="fa fa-rub"></i></h3>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown hidden-xs">
+                                                <span class="dropdown-toggle ava-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <div class="for-arrow collapsed"></div>
+                                                    <img ng-src="/images/75x75/{{user.photo}}"  class="img-circle"/>
+                                                </span>
+                                        <ul class="dropdown-menu account-menu">
+                                            <li><a href="#">Профиль</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">Сменить аккаунт</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li>
+                                                <a href="#">
+                                                    <div>Сменить статус</div>
+                                                    <div class="statusonoff online"></div>
+                                                    <div class="emptyblock"></div>
+                                                </a>
+                                            </li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">Выйти</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

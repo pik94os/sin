@@ -1,5 +1,5 @@
 /**
- * Created by pik on 06.01.16.
+ * Created by Шульгин Роман Константинович on 06.01.16.
  */
 define(['./module','jquery'],function(controllers,$){
     'use strict';

@@ -95,6 +95,11 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/search/list.html",
                 controller: 'Search'
             })
+            .state('support', {
+                url: "/support",
+                templateUrl: "/templates/support/list.html",
+                controller: 'Support'
+            })
             //Ошибка 404
             .state('err_404', {
                 url: "/err404",

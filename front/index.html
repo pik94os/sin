@@ -4,63 +4,11 @@
     <meta charset="UTF-8">
     <title>Sin</title>
     <link rel="stylesheet" href="/stylesheets/main.css" />
+    <script src="/javascripts/require.js" data-main="/javascripts/main.js"></script>
 </head>
 <body ng-controller="Main">
     <header>
-        <nav class="navbar navbar-default bg-blue">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-2 wrap_menu" ng-class="{'col-md-3 col-lg-2':state.name!=='purchases','col-md-1':state.name==='purchases'}">
-                        <h2 class="logo" ui-sref="account"><span>Sin</span></h2>
-                    </div>
-                    <div class="col-xs-10 wrap_content"  ng-class="{'col-md-9 col-lg-10':state.name!=='purchases','col-md-11':state.name=='purchases'}">
-                        <div class="row">
-                            <div class="col-md-11 col-sm-12">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <form class="find-form" ng-submit="submitSearchForm(searchText)">
-                                            <input type="text" ng-model="searchText"/>
-                                            <button type="submit"></button>
-                                        </form>
-                                    </div>
-                                    <div class="col-xs-9">
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li class="new-count-container-inhead">
-                                                <a ui-sref="cart">
-                                                    <h3 class="payment">Счёт: 5 600 <i class="fa fa-rub"></i></h3>
-                                                </a>
-                                            </li>
-                                            <li class="dropdown hidden-xs">
-                                                <span class="dropdown-toggle ava-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                    <div class="for-arrow collapsed"></div>
-                                                    <img ng-src="/images/75x75/{{user.photo}}"  class="img-circle"/>
-                                                </span>
-                                                <ul class="dropdown-menu account-menu">
-                                                    <li><a href="#">Профиль</a></li>
-                                                    <li role="separator" class="divider"></li>
-                                                    <li><a href="#">Сменить аккаунт</a></li>
-                                                    <li role="separator" class="divider"></li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <div>Сменить статус</div>
-                                                            <div class="statusonoff online"></div>
-                                                            <div class="emptyblock"></div>
-                                                        </a>
-                                                    </li>
-                                                    <li role="separator" class="divider"></li>
-                                                    <li><a href="#">Выйти</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-1"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <!--=include templates/_header.html -->
     </header>
     <div id="wrap_browser" class="container-fluid bg-color13" ng-class="{'html100':html100}">
         <div class="row">
@@ -84,77 +32,8 @@
         </div>
     </div>
     <footer class="bg-blue footer container-fluid">
-        <div class="row">
-            <div class="col-xs-3 text-center">
-                <p>Sin © 2015, <a href="#">Агаджанян Артур</a></p>
-            </div>
-            <div class="col-xs-9 text-center">
-                <ul class="list-inline">
-                    <li><a href="#">О сайте</a></li>
-                    <li><a href="#">Правила</a></li>
-                    <li><a href="#">Помощь</a></li>
-                    <li><a href="#">Реклама</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="photo-preview" class="modal fade my-modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon icon-close"></i></button>
-                        <span class="modal-title">Фотография <span ng-bind="modal.photo.index">4</span> из <span ng-bind="modal.photo.count">11</span></span>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-img">
-                            <img ng-src="/images/photos/{{modal.photo.name}}">
-                        </div>
-                        <div class="row user_top_panel">
-                            <div class="col-xs-12">
-                                <ul class="list-inline">
-                                    <li>
-                                        <i class="icon icon-show-love"></i> <strong>5</strong>
-                                    </li>
-                                    <li>
-                                        <i class="icon icon-show-love-not"></i> <strong>2</strong>
-                                    </li>
-                                    <li>
-                                        <i>Поделиться</i>
-                                    </li>
-                                    <li>
-                                        <i class="icon icon-alert"></i> <strong>7</strong>
-                                    </li>
-                                    <li>
-                                        <i class="icon icon-comment"></i>
-                                    </li>
-                                    <li class="text-right pull-right">
-                                        <small>Сегодня в 19:40</small>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-9 editor">
-                                <div class="editor-header"><p>Ваш комментарий</p></div>
-                                <div class="editor-body"></div>
-                                <div class="editor-footer">
-                                    <button type="button" class="btn btn-link">Прикрепить</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Отправить</button>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 ">
-                                <div class="user-info-mini">
-                                    <img src="/images/75x75/{{user.photo}}">
-                                    <div ng-bind="user.name"></div>
-                                </div>
-                                <div><a>Поделиться</a></div>
-                                <div><a>Сохранить в блокнот</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--=include templates/_footer.html -->
+        <!--=include templates/_modals.html -->
     </footer>
-    <script src="/javascripts/require.js" data-main="/javascripts/main.js"></script>
 </body>
 </html>
