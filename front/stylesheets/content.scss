@@ -802,6 +802,22 @@ header{
     width: 43px;
     height: 35px;
   }
+  &-btn-down{
+    @extend .icon;
+    background: {
+      image: url('/images/icons/down.png');
+      repeat: no-repeat;
+    };
+    @include square-size(10px);
+  }
+  &-btn-up{
+    @extend .icon;
+    background: {
+      image: url('/images/icons/up.png');
+      repeat: no-repeat;
+    };
+    @include square-size(10px);
+  }
 }
 
 #status {

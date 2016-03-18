@@ -140,6 +140,9 @@ gulp.task('watch', function(){
     });
 });
 
+gulp.task('start', function(cb) {
+    runSequence(['fonts', 'js', 'js_copy', 'sass', 'image', 'html', 'json'], cb);
+});
 gulp.task('default', function(cb) {
-    runSequence(['fonts', 'js', 'js_copy', 'sass', 'image', 'html', 'json','watch'], cb);
+    runSequence(['start','watch'], cb);
 });

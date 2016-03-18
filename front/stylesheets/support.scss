@@ -7,3 +7,23 @@
     width: 100%;
   }
 }
+
+.supports{
+ padding-top: 20px;
+  font-family: OpenSansLight;
+  .header{
+    font-size: 20px;
+  }
+  &-title{
+    background: #dfebf1;
+    font-family: OpenSansBold;
+    cursor: pointer;
+    .icon-btn{
+      &-down,&-up{
+        float: right;
+        margin-top: 3px;
+        margin-right: 4px;
+      }
+    }
+  }
+}

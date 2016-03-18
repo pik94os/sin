@@ -95,6 +95,11 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/search/list.html",
                 controller: 'Search'
             })
+            .state('sittings', {
+                url: "/sittings",
+                templateUrl: "/templates/sittings/list.html",
+                controller: 'Sittings'
+            })
             .state('support', {
                 url: "/support",
                 templateUrl: "/templates/support/list.html",

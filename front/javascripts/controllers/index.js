@@ -14,6 +14,7 @@ define([
     './Purchases',
     './Photos',
     './Search',
+    './Sittings',
     './Support',
     './Wishes',
 ], function () {});
