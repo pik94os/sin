@@ -65,6 +65,23 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/groups/list.html",
                 controller: 'Groups'
             })
+            .state('groupOpen', {
+                url: "/groups/{id}",
+                templateUrl: "/templates/groups/open.html",
+                controller: 'GroupOpen'
+            })
+            .state('groupOpen.category', {
+                url: "/{category}",
+                views:{
+                    '': {
+                        templateUrl: "/templates/groups/category.html",
+                        controller: 'GroupCategory'
+                    },
+                    'header':{
+                        template: "<div></div>"
+                    }
+                }
+            })
             .state('passwords', {
                 url: "/passwords",
                 templateUrl: "/templates/passwords/list.html",

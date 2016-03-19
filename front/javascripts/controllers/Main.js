@@ -104,6 +104,12 @@ define(['./module','jquery'],function(controllers,$){
             if( $('#wrap_browser .wrap_content').height()<$('#wrap_browser').height()){
                 $('#wrap_browser .wrap_content').css('min-height',$('#wrap_browser').height()+'px');
             }
+            $('.resize-me').each(function(){
+                var info = $(this);
+                if(info.attr('new-height') && !info.attr('new-height').indexOf('#') && info.attr('new-height').length>1 && $(info.attr('new-height')).length){
+                    info.height($(info.attr('new-height')).height());
+                }
+            });
         }
 
         $(window).resize( function(){
@@ -126,6 +132,9 @@ define(['./module','jquery'],function(controllers,$){
         $rootScope.$on('$viewContentLoaded',function(){
             wrap_soc();
             $scope.state = $state.current;
+        });
+        $scope.$on('LastRepeaterElement', function(){
+            wrap_soc();
         });
     }])
 });

@@ -1,0 +1,22 @@
+.breadcrumb{
+  background: white;
+  padding-left: 0;
+}
+.category-body{
+}
+
+.search-filter{
+  background: #F1F1F1;
+  border: 1px solid #D4D4D4;
+  padding: 10px;
+  &-title{
+    color: grey;
+  }
+  &-body{
+    margin-bottom: 20px;
+  }
+  .checkbox{
+    font-size: 13px;
+    @include margin-vertical(2px);
+  }
+}

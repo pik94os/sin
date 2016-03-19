@@ -30,6 +30,14 @@
   @import "glossary";
 }
 
+.groups-page{
+  @import "groups";
+}
+.group-open-page{
+  @import "group-open";
+  @import "group-category";
+}
+
   @import "notebook";
   @import "passwords";
 

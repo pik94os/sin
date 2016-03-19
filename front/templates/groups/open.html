@@ -1,0 +1,100 @@
+
+<div class="group-open-page">
+    <div class="group-header">
+        <img src="1" class="group-header-img">
+        <div class="group-header-menu">
+            <div class="group-header-menu-horizontal">
+                <div class="group-header-menu-horizontal-list row">
+                    <div class="col-xs-3" ng-style="{color:'white',background:'orangered'}">КАТЕГОРИИ ТОВАРОВ</div>
+                    <div class="col-xs-9">
+                        <div class="btn btn-gray">НОВИНКИ</div>
+                        <div class="btn">АКЦИИ</div>
+                        <form class="group-header-menu-horizontal-search">
+                            <input type="text" placeholder="Найти товар">
+                            <button type="submit" class="btn btn-none"><span class="glyphicon glyphicon-search" ng-style="{color:'orangered'}"></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="group-header-menu-vertical" ui-view="header">
+                <div class="group-header-menu-vertical-list col-xs-3" id="groupMenuList">
+                    <div class="menu-item" ng-repeat="item in groupVerticalMenu" ng-bind="item.title" emit-last-repeater-element></div>
+                </div>
+                <div class="col-xs-9 group-header-menu-vertical-image resize-me" new-height="#groupMenuList">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row group-body">
+        <div class="col-xs-12" ui-view="">
+            <div class=" group-body-items">
+                <div class="row">
+                    <div class="group-body-item col-xs-4">
+                        <div class="group-body-item-head"><b>Товар недели</b></div>
+                        <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
+                        <div class="group-body-item-image"></div>
+                    </div>
+                    <div class="group-body-item col-xs-4">
+                        <div class="group-body-item-head"><b>Акция</b></div>
+                        <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
+                        <div class="group-body-item-image"></div>
+                    </div>
+                    <div class="group-body-item col-xs-4">
+                        <div class="group-body-item-head"><b>Топ продаж</b></div>
+                        <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
+                        <div class="group-body-item-image"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="group-body-items">
+                <div class="row group-body-items-head">
+                    <div class="col-xs-4">Популярные</div>
+                    <div class="col-xs-8">специальное предложение</div>
+                </div>
+                <div class="row">
+                    <div class="group-body-item col-xs-4">
+                        <div class="group-body-item-head"><b>Товар недели</b></div>
+                        <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
+                        <div class="group-body-item-image"></div>
+                    </div>
+                    <div class="group-body-item col-xs-8">
+                    </div>
+                </div>
+            </div>
+
+            <div class=" group-body-items">
+                <div class="row group-body-items-head">
+                    <div class="col-xs-12">новинки</div>
+                </div>
+                <div class="row">
+                    <div class="group-body-item col-xs-4">
+                        <div class="group-body-item-head"><b>Товар недели</b></div>
+                        <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
+                        <div class="group-body-item-image"></div>
+                    </div>
+                    <div class="group-body-item col-xs-4">
+                        <div class="group-body-item-head"><b>Акция</b></div>
+                        <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
+                        <div class="group-body-item-image"></div>
+                    </div>
+                    <div class="group-body-item col-xs-4">
+                        <div class="group-body-item-head"><b>Топ продаж</b></div>
+                        <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
+                        <div class="group-body-item-image"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-description">
+                <div class="group-description-title">Официальный представитель Xiaomi MI</div>
+                <div class="group-description-text">Тут типа много текста</div>
+            </div>
+        </div>
+    </div>
+    <div class="group-footer">
+        <div>
+            Copyring russia-xiaomi.ru, 2012-2016
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="groups-page">
+    <div class="row user_data">
+        <div class="col-xs-8">
+            <h2>Группы</h2>
+        </div>
+        <div class="col-xs-4 text-right ">
+            <p><i class="icon icon-clock"></i> <strong>18:15</strong> <i class="icon icon-line"></i> 15 января 2015</p>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-xs-12 groups-panel">
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="find-user-form">
+                        <input type="text" />
+                        <button type="submit"></button>
+                    </div>
+                </div>
+                <div class="col-xs-9 support-panel-button">
+                    <div class="btn btn-lg btn-primary pull-right" href="#support-message" data-toggle="modal">
+                        Создать группу
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12"  ng-repeat="r in [1,2]" ui-sref="groupOpen({id:10001})">
+            <div class="shop-info">
+                <div class="shop-photo">
+                    <img src="1">
+                </div>
+                <div class="shop-info-2">
+                    <div class="shop-name"><b>Xiaomi Global</b></div>
+                    <div class="shop-info-3">
+                        <p>Москва, Россия</p>
+                        <p>Официальный магазин техники</p>
+                        <p>26 123 подписчика</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

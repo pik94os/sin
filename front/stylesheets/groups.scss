@@ -1,0 +1,53 @@
+.find-user-form{
+  margin: 0;
+}
+.groups-panel{
+  @include margin-vertical(15px);
+}
+.shop-info {
+  border-bottom: 1px solid #DFEBF1;
+  @include padding-vertical(10px);
+  height: 155px;
+  &-3 {
+    & > p {
+      margin-top: 7px;
+    }
+  }
+}
+div:last-child>.shop-info{
+  border-bottom: none;
+}
+.shop{
+  &-result{
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+  &-info{
+    &>div{
+      cursor: pointer;
+      float: left;
+    }
+    &-2{
+      width: calc(100% - 135px);
+      &>div{
+        width: 100%;
+      }
+      padding-left: 15px;
+      b{
+        font-family: OpenSansBold;
+      }
+    }
+    &-3{
+      p{
+        font-family: OpenSansLight;
+        margin: 0;
+      }
+    }
+  }
+  &-photo{
+    @include square-size(135px);
+    img{
+      @include square-size(135px);
+    }
+  }
+}

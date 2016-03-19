@@ -1,0 +1,137 @@
+.group{
+  &-header{
+    font-family: OpenSansLight;
+    @include margin-horizontal(-15px);
+    &-img{
+      height: 127px;
+      width: 100%;
+    }
+    &-menu{
+      width: 100%;
+      &-horizontal{
+        height: 42px;
+        width: 100%;
+        background: #54505F;
+        border-bottom: 1px solid orangered;
+        color: white;
+        &-list{
+          margin: 0;
+          height: 100%;
+          &>div{
+            height: 100%;
+            line-height: 42px;
+            .btn{
+              @include padding-vertical(5px);
+            }
+          }
+        }
+      }
+      &-vertical{
+        overflow: auto;
+        &>div{
+          float: left;
+        }
+        &-list{
+          padding: 0;
+          border-left: 1px solid gray;
+          .menu-item{
+            text-transform: uppercase;
+            padding: 10px;
+            min-height: 42px;
+            border-bottom: 1px solid gray;
+          }
+        }
+        &-image{
+          border: 1px solid orangered;
+          border-top: none;
+        }
+      }
+      &-horizontal{
+        .btn{
+          @include margin-horizontal(5px);
+        }
+        &-search{
+          display: inline-block;
+          width: calc(100% - 202px);
+          input{
+            line-height: 24px;
+            width: 100%;
+            padding:{
+              left:10px;
+              right: 25px;
+            };
+            color: gray;
+          }
+          button{
+            position: absolute;
+            bottom: 9px;
+            right: 20px;
+            span{
+              transform: scale(-1,1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-body{
+    &-items{
+      &:first-child{
+        margin-top: 42px;
+      }
+      .row{
+        margin: 0;
+      }
+      &-head{
+        text-transform: uppercase;
+        font-family: OpenSansSemiBold;
+        font-size: 16px;
+        line-height: 42px;
+        height: 42px;
+        &>div{
+          padding: 0;
+        }
+      }
+    }
+    &-item{
+      border: 1px solid black;
+      border-left: none;
+      text-align: center;
+      height: 300px;
+      &:first-child{
+        border-left: 1px solid black;
+      }
+      &-head{
+        text-transform: uppercase;
+        font-size: 15px;
+        font-family: OpenSansSemiBold;
+        @include padding-vertical(10px);
+      }
+      &-title{
+        font-family: OpenSansLightItalic;
+      }
+    }
+
+  }
+  &-description{
+    margin-bottom: 40px;
+    &-title{
+      font-family: OpenSansSemiBold;
+      line-height: 40px;
+      font-size: 15px;
+    }
+    &-text{
+      font-family: OpenSansLight;
+    }
+  }
+  &-footer{
+    line-height: 30px;
+    @include margin-horizontal(-15px);
+    &>div{
+      @include padding-horizontal(15px);
+      width: 100%;
+      border: 1px dashed gray;
+    }
+  }
+}

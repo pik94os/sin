@@ -7,6 +7,8 @@ define([
     './Friends',
     './Glossary',
     './Groups',
+    './GroupOpen',
+    './GroupCategory',
     './Main',
     './Message',
     './Notebook',
