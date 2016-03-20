@@ -9,6 +9,7 @@ define([
     './Groups',
     './GroupOpen',
     './GroupCategory',
+    './GroupItem',
     './Main',
     './Message',
     './Notebook',

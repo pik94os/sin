@@ -14,9 +14,74 @@
   }
   &-body{
     margin-bottom: 20px;
+    .checkbox{
+      font-size: 13px;
+      @include margin-vertical(2px);
+      input[type=checkbox]{
+        width: 0;
+        font-family: 'Glyphicons Halflings';
+        &:after{
+          cursor: pointer;
+          content: " ";
+          background: #fff;
+          width: 14px;
+          height: 14px;
+          position: absolute;
+          top: -1px;
+          left: 0;
+          border: 1px solid #D4D4D4;
+          border-radius: 2px;
+        }
+        &:checked:after{
+          color: #ff4500;
+          content: "\e013";
+          overflow: hidden;
+          line-height: 9px;
+        }
+      }
+    }
   }
-  .checkbox{
-    font-size: 13px;
-    @include margin-vertical(2px);
+  &-footer{
+    text-align: center;
+    button[type=submit]{
+      max-width: 100%;
+    }
+  }
+  margin-bottom: 40px;
+}
+.item{
+  margin-bottom: 80px;
+  @include padding-horizontal(20px);
+  font-family: OpenSansBold;
+  &-photo{
+    height: 160px;
+    text-align: center;
+    img{
+      max-height: 160px;
+    }
+  }
+  &-title{
+    cursor: pointer;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  &-in-cart{
+    line-height: 40px;
+  }
+  &-price{
+    font-size: 18px;
+  }
+  &-cart{
+    width: 55px;
+    float: right;
+    border-radius: 3px;
+    height: 45px;
+    background:{
+      image: url(/images/icons/car.png);
+      position: 9px center;
+      repeat: no-repeat;
+      size: 33px;
+      color: #ff4500;
+    }
   }
 }

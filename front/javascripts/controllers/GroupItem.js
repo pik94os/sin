@@ -3,7 +3,7 @@
  */
 define(['./module','jquery'],function(controllers,$){
     'use strict';
-    controllers.controller('GroupOpen',['$rootScope','$scope', function($rootScope,$scope){
+    controllers.controller('GroupItem',['$rootScope','$scope', '$stateParams', '$state', function($rootScope,$scope,$stateParams,$state){
         $('title').text('Группа');
         $rootScope.$broadcast('html100', false);
         $scope.groupVerticalMenu = [
@@ -32,6 +32,7 @@ define(['./module','jquery'],function(controllers,$){
         ];
         $scope.actItemF=function(i){
             $scope.actItem=i;
-        }
+        };
+        $scope.tab = $stateParams.tab;
     }]);
 });

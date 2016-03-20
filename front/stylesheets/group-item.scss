@@ -1,0 +1,134 @@
+.item-open{
+  &-title{
+    font-family: OpenSansBold;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  &-shop-stars{
+    font-family: OpenSansLight;
+  }
+  &-body{
+    margin-bottom: 30px;
+    &-description{
+      font-family: OpenSansLight;
+    }
+    .big-photo{
+      width:100%;
+      text-align: center;
+      height: 270px;
+      img{
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .gallery{
+      height: 75px;
+      overflow: hidden;
+      position: relative;
+      margin: 0;
+      &>div{
+        height: 100%;
+        margin: 0 auto;
+      }
+      &-button{
+        width: 40px;
+
+      }
+      &-photos{
+        &>div{
+          height: 100%;
+          padding:0;
+          position: relative;
+        }
+      }
+      &-photo{
+        cursor: pointer;
+        border: 2px solid orangered;
+        border-radius: 2px;
+        height: 100%;
+        margin: 0 auto;
+        width: 75px;
+        text-align: center;
+        img{
+          max-height: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  &-ul{
+    display: block;
+    height: 24px;
+    margin: 0;
+    li{
+      font-family: OpenSansLight;
+      cursor: pointer;
+      display: inline-block;
+      height: 100%;
+      padding: 2px 20px;
+      span{
+      }
+      &.active{
+        @include border-radius-top(3px);
+        border: 2px solid #DAD6D6;
+        padding: 0;
+        span{
+          @include border-radius-top(3px);
+          padding: 2px 18px;
+          display: block;
+          height: 25px;
+          width: 100%;
+          background: whitesmoke;
+        }
+      }
+    }
+  }
+  &-tabs{
+    padding-top: 20px;
+    border-top: 2px solid #DAD6D6;;
+    min-height: 200px;
+    background-color: #f5f5f5;
+    pre{
+      border: none;
+    }
+    .text{
+      display: block;
+      font-family: OpenSansLight;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+  }
+  &-reviews{
+    .title{
+      width: 100%;
+      font-family: OpenSansBold;
+      font-size: 18px;
+      text-align: center;
+    }
+    .body{
+      width: 100%;
+      padding: 10px 0;
+      .user{
+        &-name{
+          font-family: OpenSansSemiBold;
+        }
+        &-date{
+          font-family: OpenSansLight;
+        }
+        &-photo{
+          @include square-size(80px);
+          padding: 5px;
+          img{
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+        &-message{
+          padding: 0 5px;
+          width: calc(100% - 80px);
+        }
+
+      }
+    }
+  }
+}

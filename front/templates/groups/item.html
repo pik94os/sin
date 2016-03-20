@@ -1,0 +1,65 @@
+<ol class="breadcrumb">
+    <li><a href="#" ui-sref="groupOpen">Магазин</a></li>
+    <li><a href="#" ui-sref="groupOpen.category">Смартфоны</a></li>
+    <li><a href="#" ui-sref="groupOpen.category">Mi Note</a></li>
+    <li class="active">Смартфон Xiaomi Mi Note 2Gb/16 White</li>
+</ol>
+<div class="item-open-title">Смартфон Xiaomi Mi Note 2Gb/16 White</div>
+<div class="item-open-shop-stars"><span class="stars"><span class="stars-active-4"></span></span>&nbsp;&nbsp;&nbsp;&nbsp;(6 отзывов)</div>
+<div class="row item-open-body">
+    <div class="col-md-6">
+        <div class="big-photo"><img src="/images/img-products/2.png"></div>
+        <div class="gallery row">
+            <div class="gallery-button pull-right col-xs-1"></div>
+            <div class="gallery-button pull-left col-xs-1"></div>
+            <div class="gallery-photos row col-xs-10 pull-left">
+                <div ng-repeat="photo in [1,2,3,4,5,6,7,8,9,10,11,12,13]" class="col-xs-3">
+                    <div class="gallery-photo">
+                        <img src="/images/img-products/2.png">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 item-open-body-description">смартфон, андроид 5.1<br/>
+        поддержка двух симкарт<br/>
+        экран пять дюймов, разрешение 1920х1080<br/>
+        камера 13 МП, автофокус <br/>
+        память 32 гига без карты памяти,<br/>
+        3G,4G LTE, Wi-Fi, Bluetooth, GPS, ГЛОНАСС<br/>
+        аккумулятор 3080 мА⋅ч<br/>
+        вес 149 г, ШxВxТ 68.50x139.20x8.90 мм<br/>
+        Тип экрана цветной IPS, 16.78 млн цветов, сенсорный<br/>
+        Тип сенсорного экрана мультитач, емкостный<br/>
+        Диагональ 5 дюйм.<br/>
+        Размер изображения 1920x1080<br/>
+        Число пикселей на дюйм (PPI) 441<br/>
+        Автоматический поворот экрана есть<br/>
+        Фотокамера 13 млн пикс., светодиодная вспышка<br/>
+        Функции камеры автофокус<br/>
+        <a href="#">Читать все характеристики</a>
+    </div>
+</div>
+<ul class="item-open-ul">
+    <li ng-class="{'active':!tab||tab==='characteristics'}" ui-sref="{tab:'characteristics'}"><span>Характеристики</span></li>
+    <li ng-class="{'active':tab==='description'}" ui-sref="{tab:'description'}"><span>Описание</span></li>
+    <li ng-class="{'active':tab==='video'}" ui-sref="{tab:'video'}"><span>Видео</span></li>
+    <li ng-class="{'active':tab==='reviews'}" ui-sref="{tab:'reviews'}"><span>Отзывы</span></li>
+</ul>
+<div class="row item-open-tabs">
+    <div class="col-md-11 col-lg-10 tab-content">
+        <div class="tab-pane fade"  ng-class="{'in active':tab==''||tab==='characteristics'}">
+            <!--=include _characteristics.html -->
+        </div>
+        <div class="tab-pane fade"  ng-class="{'in active':tab==='description'}">
+            <!--=include _description.html -->
+        </div>
+        <div class="tab-pane fade"  ng-class="{'in active':tab==='video'}">
+            <!--=include _video.html -->
+        </div>
+        <div class="tab-pane fade"  ng-class="{'in active':tab==='reviews'}">
+            <!--=include _reviews.html -->
+        </div>
+    </div>
+</div>

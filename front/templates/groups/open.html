@@ -17,8 +17,18 @@
                 </div>
             </div>
             <div class="group-header-menu-vertical" ui-view="header">
-                <div class="group-header-menu-vertical-list col-xs-3" id="groupMenuList">
-                    <div class="menu-item" ng-repeat="item in groupVerticalMenu" ng-bind="item.title" emit-last-repeater-element></div>
+                <div class="group-header-menu-vertical-list col-xs-3" id="groupMenuList" ng-mouseleave="actItemF(-1)">
+                    <div class="menu-item" ng-repeat="item in groupVerticalMenu" emit-last-repeater-element ng-mouseover="actItemF($index)" ng-class="{'active':actItem===$index}">
+                        <div class="menu-item-block">
+                            <a class="menu-item-sub-category" ng-repeat="subCateg in item.subCateg" ui-sref=".category">
+                                <img src="1">
+                                <span ng-bind="subCateg.title"></span>
+                            </a>
+                        </div>
+                        <span ng-bind="item.title"  ui-sref=".category" class="link">
+
+                        </span>
+                    </div>
                 </div>
                 <div class="col-xs-9 group-header-menu-vertical-image resize-me" new-height="#groupMenuList">
 
