@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-xs-2 wrap_menu" id="wrap_menu" ng-class="{'show':leftMenu,'col-md-3 col-lg-2':!imgOnly,'col-md-1':imgOnly}">
                 <div class="list-group list-menu">
-                    <a href="#" class="settings"></a>
+                    <a href="#" class="settings" ui-sref="sittings"></a>
                     <a ng-repeat="menuItem in leftMenu" ui-sref="{{menuItem.state}}" href="#" class="list-group-item bg-color{{$index+1}}">
                         <span class="text menuItem" ng-class="{'imgOnly':imgOnly}">
                             <span ng-bind="menuItem.text"  class="menu-title"></span>

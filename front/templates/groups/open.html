@@ -1,7 +1,7 @@
 
 <div class="group-open-page">
     <div class="group-header">
-        <img src="1" class="group-header-img">
+        <img src="/images/shop-images/Xiaomi_Global.png" class="group-header-img">
         <div class="group-header-menu">
             <div class="group-header-menu-horizontal">
                 <div class="group-header-menu-horizontal-list row">
@@ -21,7 +21,7 @@
                     <div class="menu-item" ng-repeat="item in groupVerticalMenu" emit-last-repeater-element ng-mouseover="actItemF($index)" ng-class="{'active':actItem===$index}">
                         <div class="menu-item-block">
                             <a class="menu-item-sub-category" ng-repeat="subCateg in item.subCateg" ui-sref=".category">
-                                <img src="1">
+                                <img ng-src="/images/shop-images/{{subCateg.icon}}">
                                 <span ng-bind="subCateg.title"></span>
                             </a>
                         </div>
@@ -31,7 +31,31 @@
                     </div>
                 </div>
                 <div class="col-xs-9 group-header-menu-vertical-image resize-me" new-height="#groupMenuList">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        </ol>
 
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="/images/shop-images/mi-pad-2-banner_1452432246.png" >
+                            </div>
+                            <div class="item">
+                                <img src="/images/shop-images/mi-subwoofer-banner_1452435702.png" >
+                            </div>
+                            <div class="item">
+                                <img src="/images/shop-images/mi-tv-bar-banner_1452435656.png" >
+                            </div>
+                            <div class="item">
+                                <img src="/images/shop-images/amazfit-moon-beam-banner_1452434291.png" >
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,17 +67,23 @@
                     <div class="group-body-item col-xs-4">
                         <div class="group-body-item-head"><b>Товар недели</b></div>
                         <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
-                        <div class="group-body-item-image"></div>
+                        <div class="group-body-item-image">
+                            <img src="/images/shop-images/pvm_4_13307_1426463359_(1).png">
+                        </div>
                     </div>
                     <div class="group-body-item col-xs-4">
                         <div class="group-body-item-head"><b>Акция</b></div>
                         <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
-                        <div class="group-body-item-image"></div>
+                        <div class="group-body-item-image">
+                            <img src="/images/shop-images/pvm_1_13594_1429792606.png">
+                        </div>
                     </div>
                     <div class="group-body-item col-xs-4">
                         <div class="group-body-item-head"><b>Топ продаж</b></div>
                         <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
-                        <div class="group-body-item-image"></div>
+                        <div class="group-body-item-image">
+                            <img src="/images/shop-images/pvm_xiaomi-miheadphone-1_13292_1424338265.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,9 +96,12 @@
                     <div class="group-body-item col-xs-4">
                         <div class="group-body-item-head"><b>Товар недели</b></div>
                         <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
-                        <div class="group-body-item-image"></div>
+                        <div class="group-body-item-image">
+                            <img src="/images/shop-images/pvm_4_13307_1426463359_(1).png">
+                        </div>
                     </div>
-                    <div class="group-body-item col-xs-8">
+                    <div class="group-body-item col-xs-8 image-block">
+                        <img src="/images/shop-images/Xiaomi-Mi4-500-350_1431960675_1435136237.png">
                     </div>
                 </div>
             </div>
@@ -81,17 +114,23 @@
                     <div class="group-body-item col-xs-4">
                         <div class="group-body-item-head"><b>Товар недели</b></div>
                         <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
-                        <div class="group-body-item-image"></div>
+                        <div class="group-body-item-image">
+                            <img src="/images/shop-images/pvm_4_13307_1426463359_(1).png">
+                        </div>
                     </div>
                     <div class="group-body-item col-xs-4">
                         <div class="group-body-item-head"><b>Акция</b></div>
                         <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
-                        <div class="group-body-item-image"></div>
+                        <div class="group-body-item-image">
+                            <img src="/images/shop-images/pvm_xiaomi-redmi-note-3-silver-00_14263_1449052079.png">
+                        </div>
                     </div>
                     <div class="group-body-item col-xs-4">
                         <div class="group-body-item-head"><b>Топ продаж</b></div>
                         <div class="group-body-item-title">Смартфон Xiaomi MI 4 2GB/16GB 4G LTE White</div>
-                        <div class="group-body-item-image"></div>
+                        <div class="group-body-item-image">
+                            <img src="/images/shop-images/pvm_Mi4CCG1_14131_1446205888.png">
+                        </div>
                     </div>
                 </div>
             </div>

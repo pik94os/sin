@@ -1,4 +1,4 @@
-<div class="search-page">
+<div class="search-page sittings-page">
     <div class="row no-margin user_data">
         <div class="col-xs-8 no-padding ">
             <h2>Настройки</h2>
@@ -8,9 +8,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-10">
+        <div class="col-xs-12">
             <ul class="nav nav-tabs purchases-tabs">
-                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'main'}">Основное</a></li>
+                <li ui-sref-active="active" class="tab-with-map" ng-class="{'active':!tab}"><a ui-sref="{tab:'main'}">Основное</a></li>
                 <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'contacts'}">Контакты</a></li>
                 <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'interests'}">Интересы</a></li>
                 <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'education'}">Образование</a></li>

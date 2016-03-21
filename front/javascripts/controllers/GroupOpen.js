@@ -13,16 +13,16 @@ define(['./module','jquery'],function(controllers,$){
                 subCateg:[
                     {
                         title:"MI PAD",
-                        icon:"1"
+                        icon:"Mi-Pad-White_296_1426456449.png"
                     },
                     {
                         title:"MI PAD 2",
-                        icon:"1"
+                        icon:"xiaomi-mi-pad-2_330_1448536693__1449052268.png"
                     },
                     {
                         title:"Аксессуары",
-                        icon:"1"
-                    },
+                        icon:"Black_1_297_1427124064.png"
+                    }
                 ]
             },
             {title:'внешние аккумуляторы'},

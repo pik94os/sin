@@ -71,8 +71,9 @@
                 border-bottom: 1px solid gray;
                 min-height: 42px;
                 padding-right: 8px;
-                padding-left: 40px;
+                padding-left: 50px;
                 font-family: OpenSansBold;
+                background: white;
                 img{
                   height: 37px;
                   min-width: 20px;
@@ -90,6 +91,19 @@
         &-image{
           border: 1px solid orangered;
           border-top: none;
+          padding: 0;
+          #carousel-example-generic{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            .item{
+              padding: 0;
+              border:none;
+            }
+            img{
+              min-width: 100%;
+            }
+          }
         }
       }
       &-horizontal{
@@ -145,6 +159,15 @@
       border-left: none;
       text-align: center;
       height: 300px;
+      overflow: hidden;
+      &.image-block{
+        padding: 0;
+        overflow: hidden;
+        img{
+          width: 100%;
+          min-height: 100%;
+        }
+      }
       &:first-child{
         border-left: 1px solid black;
       }
@@ -156,6 +179,16 @@
       }
       &-title{
         font-family: OpenSansLightItalic;
+      }
+      &-image{
+        height: 237px;
+        position: relative;
+        text-align: center;
+        @include padding-vertical(15px);
+        img{
+          max-height: 100%;
+          margin: auto;
+        }
       }
     }
 

@@ -1,0 +1,78 @@
+.tab-content{
+  padding-top: 30px;
+}
+.main-sittings{
+  $color: #12465A;
+  a{
+    color: $color;
+  }
+
+  .input-group-addon{
+    border: none;
+    background: none;
+    padding: 6px;
+  };
+
+  .form-group{
+    line-height: 30px;
+    a{
+      font-family: OpenSansLight;
+      font-size: 13px;
+    }
+  }
+  .form-comment{
+    padding: 0;
+    font-family: OpenSansLight;
+  }
+  .control-span{
+   font-size: 16px;
+   font-family: OpenSansLight;
+  }
+  input,select,textarea{
+    border-radius: 0;
+  }
+  input{
+    padding-left: 15px;
+  }
+  .form-title{
+    width: 100%;
+    font-family: OpenSansSemiBold;
+    font-size: 15px;
+    border-bottom: 1px solid #A5BCD0;
+    color: $color;
+    margin-bottom: 15px;
+  }
+
+  .title-right{
+    font-family: OpenSansSemiBold;
+    color: $color;
+    line-height: normal;
+  }
+
+  .hiddendiv {
+    line-height: normal;
+    display: none;
+    white-space: pre-wrap;
+    min-height: 100px;
+    font-family: OpenSansRegular, Arial, sans-serif;
+    font-size: 13px;
+    padding: 5px;
+    word-wrap: break-word;
+  }
+
+  textarea {
+    line-height: normal;
+    min-height: 100px;
+    font-family: OpenSansRegular, Arial, sans-serif;
+    font-size: 13px;
+    color: #444;
+    padding: 5px;
+    resize: none;
+  }
+
+  .noscroll {
+    overflow: hidden;
+  }
+}
+
+
