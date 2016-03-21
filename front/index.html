@@ -12,11 +12,11 @@
     </header>
     <div id="wrap_browser" class="container-fluid bg-color13" ng-class="{'html100':html100}">
         <div class="row">
-            <div class="col-xs-2 wrap_menu" id="wrap_menu" ng-class="{'show':leftMenu,'col-md-3 col-lg-2':state.name!=='purchases','col-md-1':state.name==='purchases'}">
+            <div class="col-xs-2 wrap_menu" id="wrap_menu" ng-class="{'show':leftMenu,'col-md-3 col-lg-2':!imgOnly,'col-md-1':imgOnly}">
                 <div class="list-group list-menu">
                     <a href="#" class="settings"></a>
                     <a ng-repeat="menuItem in leftMenu" ui-sref="{{menuItem.state}}" href="#" class="list-group-item bg-color{{$index+1}}">
-                        <span class="text menuItem" ng-class="{'imgOnly':state.name=='purchases'}">
+                        <span class="text menuItem" ng-class="{'imgOnly':imgOnly}">
                             <span ng-bind="menuItem.text"  class="menu-title"></span>
                             <img ng-src="/images/menu/{{menuItem.icon}}" class="menu-icon" title="{{menuItem.text}}" alt="{{menuItem.text}}">
                             <span ng-show="menuItem.count" class="num" ng-bind="menuItem.count"></span>
@@ -24,7 +24,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-xs-10" ng-class="{'col-md-9 col-lg-10':state.name!=='purchases','col-md-11':state.name=='purchases'}">
+            <div class="col-xs-10" ng-class="{'col-md-9 col-lg-10':!imgOnly,'col-md-11':imgOnly}">
                 <div class="row bg-main">
                     <div class="col-md-11 col-sm-12 wrap_content" ui-view=""></div>
                 </div>

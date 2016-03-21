@@ -1,0 +1,49 @@
+<div class="search-page">
+    <div class="row no-margin user_data">
+        <div class="col-xs-8 no-padding ">
+            <h2>Настройки</h2>
+        </div>
+        <div class="col-xs-4 no-padding text-right ">
+            <p><i class="icon icon-clock"></i> <strong>18:15</strong> <i class="icon icon-line"></i> 15 января 2015</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-10">
+            <ul class="nav nav-tabs purchases-tabs">
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'main'}">Основное</a></li>
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'contacts'}">Контакты</a></li>
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'interests'}">Интересы</a></li>
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'education'}">Образование</a></li>
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'career'}">Карьера</a></li>
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'duty'}">Служба</a></li>
+                <li ui-sref-active="active" class="tab-with-map"><a ui-sref="{tab:'life_position'}">Жизненная позиция</a></li>
+            </ul>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 tab-content">
+            <div class="tab-pane fade" ng-class="{'in active':!tab||tab==='main'}">
+                <!--=include _main.html -->
+            </div>
+            <div class="row tab-pane fade" ng-class="{'in active':tab==='contacts'}">
+                <!--=include _contacts.html -->
+            </div>
+            <div class="row tab-pane fade" ng-class="{'in active':tab==='interests'}">
+                <!--=include _interests.html -->
+            </div>
+            <div class="row tab-pane fade" ng-class="{'in active':tab==='education'}">
+                <!--=include _education.html -->
+            </div>
+            <div class="row tab-pane fade" ng-class="{'in active':tab==='career'}">
+                <!--=include _career.html -->
+            </div>
+            <div class="row tab-pane fade" ng-class="{'in active':tab==='duty'}">
+                <!--=include _duty.html -->
+            </div>
+            <div class="row tab-pane fade" ng-class="{'in active':tab==='life_position'}">
+                <!--=include _life_position.html -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -125,7 +125,7 @@ define(['./app'], function (app) {
                 controller: 'Search'
             })
             .state('sittings', {
-                url: "/sittings",
+                url: "/sittings?tab",
                 templateUrl: "/templates/sittings/list.html",
                 controller: 'Sittings'
             })

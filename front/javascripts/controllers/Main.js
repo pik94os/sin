@@ -132,6 +132,7 @@ define(['./module','jquery'],function(controllers,$){
         $rootScope.$on('$viewContentLoaded',function(){
             wrap_soc();
             $scope.state = $state.current;
+            $scope.imgOnly = ($state.current.name=='purchases' || $state.current.name.indexOf('groupOpen')+1);
         });
         $scope.$on('LastRepeaterElement', function(){
             wrap_soc();
