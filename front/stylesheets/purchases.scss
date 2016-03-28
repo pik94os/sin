@@ -28,15 +28,6 @@
       margin-bottom: -1px;
       display: block;
       position: relative;
-      &.show{
-        position: relative;
-        z-index: 21;
-        @include border-no-bottom(1px solid black);
-        &>.categ-title{
-          margin-bottom: -1px;
-          z-index: 21;
-        }
-      }
       &>.categ-title{
         padding: 5px 15px;
         cursor: pointer;
@@ -50,6 +41,16 @@
           border-bottom: 1px dashed #458eb2;
           line-height: 1;
           color: black;
+        }
+      }
+      &.show{
+        position: relative;
+        z-index: 21;
+        @include border-no-bottom(1px solid black);
+        &>.categ-title{
+          margin-bottom: -1px;
+          z-index: 21;
+          padding: 4px 14px;
         }
       }
       .subCateg{
