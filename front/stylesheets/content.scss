@@ -1,3 +1,13 @@
+input,textarea,.btn,button{
+  &:not(.outline){
+    &:active, &:focus {
+      outline: none;
+    }
+    &::-moz-focus-inner {
+      border: 0;
+    }
+  }
+}
 #wrap_menu{
   display: none;
   .show{
