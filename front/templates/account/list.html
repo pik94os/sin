@@ -300,8 +300,8 @@
         <div>
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="wall">
-                    <div class="wrap_question wrap_wall question_hide">
-                        <textarea placeholder="Введите Ваше сообщение"></textarea>
+                    <div class="wrap_question wrap_wall" ng-class="{'question_hide':question_hide}">
+                        <textarea placeholder="Введите Ваше сообщение" ng-click="questionShow()"></textarea>
                         <div class="row btn-send">
                             <div class="col-xs-4">
                                 <div class="onoffswitch">

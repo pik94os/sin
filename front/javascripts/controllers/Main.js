@@ -116,6 +116,14 @@ define(['./module','jquery'],function(controllers,$){
             wrap_soc();
         });
 
+        $scope.question_hide = true;
+        $scope.questionHide = function () {
+            $scope.question_hide=true;
+        };
+        $scope.questionShow = function () {
+            $scope.question_hide=false;
+        };
+
 
         $(document).on('click', '#status', function(){
             $(this).css('width', '96%');
@@ -127,6 +135,12 @@ define(['./module','jquery'],function(controllers,$){
             $('#status').css('width', '180px');
             $('#status span').html('Изменить статус');
             $('#status input').addClass('hide');
+        }).on('click', 'body',function (e) {
+            var container = $(".wrap_question");
+            if (container.has(e.target).length === 0){
+                $scope.questionHide();
+                $scope.$apply();
+            }
         });
 
         $rootScope.$on('$viewContentLoaded',function(){
