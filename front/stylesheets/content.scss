@@ -95,7 +95,7 @@ header{
       width: 134px;
     }
     .new-count-container-inhead {
-      margin-right: 48px;
+      margin-right: 68px;
       a{
         display: block;
         cursor: pointer;
@@ -109,6 +109,9 @@ header{
         display: inline-block;
         margin-right: 55px;
       }
+    }
+    .dropdown-menu.account-menu{
+      width: 184px;
     }
   }
 }
@@ -995,8 +998,12 @@ header{
 }
 .for-arrow {
   height: 30px;
-  width: 9px;
+  width: 13px;
   display: inline-block;
+}
+span[aria-expanded=true] .for-arrow{
+  transform: scale(1, -1);
+  background-position: bottom left;
 }
 .account-menu{
   border: none;
