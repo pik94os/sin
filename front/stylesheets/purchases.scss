@@ -2,6 +2,11 @@
   @extend .btn-primary;
   width: 100%;
   margin: 3px 5px;
+  &:hover{
+    i{
+      filter: brightness(250%);
+    }
+  }
 }
 &-tabs {
   border-bottom: 1px solid #536177;
