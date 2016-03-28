@@ -94,6 +94,13 @@ header{
       cursor: pointer;
       width: 134px;
     }
+    .logoImgOnly{
+      padding: 0;
+      .logo{
+        background-position: center;
+        width: 90px;
+      }
+    }
     .new-count-container-inhead {
       margin-right: 68px;
       a{
@@ -130,9 +137,23 @@ header{
         left: 3px;
       }
     }
-    .menuItem:not(.imgOnly){
-      .menu-icon{
-        display: none;
+    .menuItem{
+      &:not(.imgOnly){
+        .menu-icon{
+          display: none;
+        }
+      }
+      &.imgOnly{
+        &:not(:hover){
+          .menu-icon.hover{
+            display: none;
+          }
+        }
+        &:hover{
+          .menu-icon:not(.hover){
+            display: none;
+          }
+        }
       }
     }
   }
@@ -510,8 +531,8 @@ header{
     font-family: OpenSansLight;
     color: #000;
     text-align: right;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
+    line-height: 40px;
     max-height: 42px;
     min-height: 42px;
     height: 42px;

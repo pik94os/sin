@@ -19,6 +19,7 @@
                         <span class="text menuItem" ng-class="{'imgOnly':imgOnly}">
                             <span ng-bind="menuItem.text"  class="menu-title"></span>
                             <img ng-src="/images/menu/{{menuItem.icon}}" class="menu-icon" title="{{menuItem.text}}" alt="{{menuItem.text}}">
+                            <img ng-src="/images/menu/active/{{menuItem.icon}}" class="menu-icon hover" title="{{menuItem.text}}" alt="{{menuItem.text}}">
                             <span ng-show="menuItem.count" class="num" ng-bind="menuItem.count"></span>
                         </span>
                     </a>
