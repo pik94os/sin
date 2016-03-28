@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default bg-blue">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-2 wrap_menu" ng-class="{'col-md-3 col-lg-2':state.name!=='purchases','col-md-1':state.name==='purchases'}">
-                <h2 class="logo" ui-sref="account"><span>Sin</span></h2>
+            <div class="col-xs-2 wrap_menu" ng-class="{'col-md-3 col-lg-2':!imgOnly,'col-md-1':imgOnly}">
+                <div class="logo" ui-sref="account"></div>
             </div>
-            <div class="col-xs-10 wrap_content"  ng-class="{'col-md-9 col-lg-10':state.name!=='purchases','col-md-11':state.name=='purchases'}">
+            <div class="col-xs-10 wrap_content"  ng-class="{'col-md-9 col-lg-10':!imgOnly,'col-md-11':imgOnly}">
                 <div class="row">
                     <div class="col-md-11 col-sm-12">
                         <div class="row">

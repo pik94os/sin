@@ -425,21 +425,6 @@ ol {
   margin-bottom: 5px;
 }
 
-.logo {
-  color: #ffffff;
-  font-family: OpenSansLight;
-  font-size: 48px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  text-align: right;
-  cursor: pointer;
-}
-.logo span {
-  display: inline-block;
-  text-align: left;
-  width: 150px;
-}
-
 .exit {
   text-decoration: none;
   font-family: OpenSansLightItalic;

@@ -86,18 +86,13 @@ header{
     border: none;
     border-radius: 0;
     .logo {
-      color: #ffffff;
-      font-family: OpenSansLight;
-      font-size: 48px;
-      margin-bottom: 5px;
-      margin-top: 5px;
-      text-align: right;
+      background: url(/images/logo.png) no-repeat;
+      display: inline-block;
+      float: right;
+      height: 60px;
+      background-position: left;
       cursor: pointer;
-      span {
-        display: inline-block;
-        text-align: left;
-        width: 150px;
-      }
+      width: 134px;
     }
     .new-count-container-inhead {
       margin-right: 48px;
