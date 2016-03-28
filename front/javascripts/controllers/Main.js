@@ -125,9 +125,15 @@ define(['./module','jquery'],function(controllers,$){
         };
         $scope.hiHide = function () {
             $scope.hi=false;
+            $('.wrap_soc').css('z-index',0);
         };
         $scope.hiTarget = function () {
             $scope.hi=!$scope.hi;
+            if($scope.hi){
+                $('.wrap_soc').css('z-index',200);
+            }else{
+                $('.wrap_soc').css('z-index',0);
+            }
         };
 
         $(document).on('click', '#status', function(){
