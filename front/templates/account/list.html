@@ -9,13 +9,13 @@
 
 <div class="row btn-panel">
     <div class="col-xs-3 col-md-12">
-        <div class="row no-margin wrap_header bg-header relative" ng-init="hi = false">
+        <div class="row no-margin wrap_header bg-header relative" ng-init="hiHide()">
             <div class="col-xs-12 col-md-3 bg-ava-big">
                 <div class="wrap_ava ava-big pull-left text-center" ng-class="{'network-on':(activeUser==user || activeUser.status), 'network-off':activeUser!=user && !activeUser.status}">
                     <div>
                         <img ng-src="images/500x500/{{activeUser==user?user.photo:activeUser.photo}}"  class="img-circle">
                     </div>
-                    <a class="btn btn-primary btn-block" id="btn_bot" ng-click="hi=!hi">
+                    <a class="btn btn-primary btn-block" id="btn_bot" ng-mouseup="hiTarget();" href="#">
                         <span ng-if="activeUser==user" ng-bind="hi?'Bye, Sin!':'Hi, Sin!'" ></span>
                         <span ng-if="activeUser!=user" ng-bind="hi?'Закрыть':'Написать'" ></span>
                         <div id="left_arrow" ng-show="hi"></div>
@@ -39,7 +39,7 @@
                             <p ng-if="activeUser!=user" ng-bind="activeUser.name"></p>
                         </div>
                         <div class="col-xs-4 text-right">
-                            <a href="#" id="close_bot" class=" pull-right"></a>
+                            <a href="#" id="close_bot" class=" pull-right" ng-click="hiHide()"></a>
                             <a href="#" class="icon icon-new-window pull-right"></a>
                         </div>
                     </div>
@@ -140,22 +140,24 @@
                             </div>
                         </div>
                     </div>
-                    <input type="text" />
-                    <div class="row btn-send no-margin">
-                        <div class="col-xs-4 link">
-                            <a href="#" class="pull-left" ng-if="activeUser==user"><i class="icon icon-new-window"></i> Перейти в поиск</a>
-                            <a href="#" class="pull-left" ng-if="activeUser!=user" ui-sref="chat({friendId:activeUser._id})"><i class="icon icon-link-mail"></i> Перейти в сообщение</a>
+                    <form ng-submit="activeUser==user?submitSearchForm(searchText):''">
+                        <input type="text" ng-model="searchText"/>
+                        <div class="row btn-send no-margin">
+                            <div class="col-xs-4 link">
+                                <a href="#" class="pull-left" ng-if="activeUser==user" ui-sref="search"><i class="icon icon-new-window"></i> Перейти в поиск</a>
+                                <a href="#" class="pull-left" ng-if="activeUser!=user" ui-sref="chat({friendId:activeUser._id})"><i class="icon icon-link-mail"></i> Перейти в сообщение</a>
+                            </div>
+                                <div class="col-xs-3 col-xs-offset-5" ng-if="activeUser==user">
+                                    <button type="submit" class="btn btn-block btn-primary pull-right">Найти</button>
+                                </div>
+                                <div class="col-xs-4 link" ng-if="activeUser!=user">
+                                    <a href="#" class="pull-right"><i class="icon icon-link"></i> Прикрепить</a>
+                                </div>
+                                <div class="col-xs-4 no-padding" ng-if="activeUser!=user">
+                                    <a class="btn btn-block btn-primary pull-right">Отправить</a>
+                                </div>
                         </div>
-                        <div class="col-xs-3 col-xs-offset-5" ng-if="activeUser==user">
-                            <a class="btn btn-block btn-primary pull-right">Найти</a>
-                        </div>
-                        <div class="col-xs-4 link" ng-if="activeUser!=user">
-                            <a href="#" class="pull-right"><i class="icon icon-link"></i> Прикрепить</a>
-                        </div>
-                        <div class="col-xs-4 no-padding" ng-if="activeUser!=user">
-                            <a class="btn btn-block btn-primary pull-right">Отправить</a>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
