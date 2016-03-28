@@ -37,6 +37,18 @@
   }
 }
 
+@mixin dinamic-height($screen-min-width, $height){
+  @media (min-width: $screen-min-width) {
+    height: $height;
+  }
+}
+
+@mixin dinamic-padding($screen-min-width, $padding ...){
+  @media (min-width: $screen-min-width) {
+    padding: $padding;
+  }
+}
+
 @mixin sm-or-less-display{
   @media (max-width: $screen-sm-max) {
     @content ;
