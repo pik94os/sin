@@ -50,8 +50,8 @@
                     </div>
                     <div class="col-xs-9 panel-title">
                         <div class="row">
-                            <a href="#" class="dialog-list pull-right"></a>
-                            <a href="#" class="dialog-grid pull-right active"></a>
+                            <a href="#" class="dialog-list pull-right" ng-class="{'active':type==='list'}" ng-click="type='list'"></a>
+                            <a href="#" class="dialog-grid pull-right" ng-class="{'active':type==='grid'}" ng-click="type='grid'"></a>
                             <div class="sort">
                                 <span>Сортировать:</span>
                                 <a href="#" class="sort-date active">По дате</a>
@@ -62,362 +62,95 @@
                     </div>
 
                     <!-- begin files-attached-list -->
-                    <div class="col-xs-9 files-attached-list grid-view">
+                    <div class="col-xs-9 files-attached-list {{type}}-view" id="my-files-attached-list">
 
-                        <div class="row no-margin each-attached-file doc-for-check doc-folder">
+                        <div ng-repeat="doc in documents" class="row no-margin each-attached-file doc-for-check doc-{{doc.type}}" ng-class="{'checked':doc.checked}" emit-last-repeater-element>
                             <div class="file-img">
-                                <img src="/images/icons2/file-folder.png" alt="">
+                                <img ng-src="images/icons2/file-{{doc.type}}.png" alt="">
                             </div>
-                            <div class="file-info">
-                                <div class="file-name">Фотографии за 2012 годФотографии за 2012 годФотографии за 2012 год</div>
-                                <div class="file-size">124 файла</div>
+                            <div class="file-info" ng-class="{'overflow':doc.name.length>35}">
+                                <div class="file-name" ng-bind="doc.name"></div>
+                                <div class="file-size" ng-bind="(doc | docSizeFilt)"></div>
+                                <span ng-if="doc.name.length>35">...</span>
                             </div>
                             <div class="clearfix"></div>
-                            <div class="file-type">Папка</div>
+                            <div class="file-type" ng-bind="(doc.type | DocTypeFilt)"></div>
                             <div class="file-date">12 февраля 09:34</div>
                             <div class="file-save">
                                 <a href="#"></a>
                             </div>
                             <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-book">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-book.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Книга Лорем ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <div class="file-type">Книга</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-book">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-book.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Книга Лорем ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Книга</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-archive">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-archive.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Архив Лорем ипсум текст-рыба ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Архив</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-doc">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-doc.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Документ Лорем ипсум текст-рыба ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Документ</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-text">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-text-big.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Текстовый файл Лорем ипсум текст-рыба ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Текстовый файл</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-pdf">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-pdf.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">ПДФ Лорем ипсум текст-рыба ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">PDF файл</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-img" data-img="img/bg.jpg" data-file-name="Рисунок Лорем ипсум текст-рыба ипсум текст-рыба ипсум текст-рыба" data-size="12 кБ" data-file-date="12 февраля 09:34" data-cnt-download="10">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-img.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">ТЕСТ! Рисунок Лорем ипсум текст-рыба ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Изображение</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-pdf">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-pdf.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">ПДФ Лорем ипсум текст-рыба ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">PDF файл</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-text">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-doc.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Документ Лорем ипсум текст-рыба ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Документ</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-text">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-text-big.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name" id="file-name">Документ Лорем ипсум текст-рыба ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Документ</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-text">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-doc.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Документ Лорем ипсум текст-рыба ипсум текст-рыба ипсум текст-рыба</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Документ</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-text">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-text-big.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Текстовый файл Лорем ипсум текст-рыба ипсум текст-рыба ипсум</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Текстовый файл</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-pdf">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-pdf.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">ПДФ</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">PDF файл</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-img">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-img.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Рисунок</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Изображение</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-pdf">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-pdf.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">ПДФ</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">PDF файл</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-text">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-doc.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Документ</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Документ</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-text">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-text-big.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Текстовый файл</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Текстовый файл</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
-                        </div>
-
-                        <div class="row no-margin each-attached-file doc-for-check doc-text">
-                            <div class="file-img">
-                                <img src="/images/icons2/file-doc.png" alt="">
-                            </div>
-                            <div class="file-info">
-                                <div class="file-name">Документ</div>
-                                <div class="file-size">12 кБ</div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="file-type">Документ</div>
-                            <div class="file-date">12 февраля 09:34</div>
-                            <div class="file-save">
-                                <a href="#"></a>
-                            </div>
-                            <a  href="#" class="close-file"></a>
-                            <span class="doc-checked"></span>
+                            <span class="doc-checked" ng-click="setChecked(doc.checked=!doc.checked,doc)" ng-class="{'show':checkedCount}"></span>
                         </div>
                     </div>
 
-                    <div class="col-xs-3 right-column">
+                    <div class="col-xs-3 right-column resize-me" new-height="#my-files-attached-list">
                         <div class="right-column-bg" id="right-column-bg">
                             <!-- begin first-view -->
-                            <div class="first-view">
+                            <div class="first-view" ng-show="!checkedCount">
                                 <div class="text-center">Загружайте и делитесь документами</div>
                                 <div class="quote text-center">Доступно 100 Мб</div>
                             </div>
                             <!-- end first-view -->
                             <!-- begin second-view -->
                             <div class="second-view">
+                                <div class="file-selected-menu" ng-if="checkedCount==1">
+                                    <div class="info-default clearfix">
+                                        <div class="file-name">
+                                            <span class="name" ng-bind="checkedDocument.name"></span>
+                                            <span class="ext">.rar</span>
+                                        </div>
+                                        <div class="col-xs-4 file-img">
+                                            <img ng-src="images/icons2/file-{{checkedDocument.type}}.png" alt="">
+                                        </div><div class="col-xs-8 right-info">
+                                        <p><span>Размер:</span><span ng-bind="(checkedDocument | docSizeFilt)"></span></p>
+                                        <p><span>Изменен:</span> 12 февраля 09:34</p>
+                                        <p>Скачан 1 раз</p>
+                                    </div>
+                                    </div>
+                                    <div class="clearfix">
+                                        <a href="#" class="pull-left btn-primary btn-view">Просмотреть</a>
+                                        <a href="#" class="pull-left save-file  btn-primary"></a>
+                                        <a href="#" class="pull-left trash-file btn-primary">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                        <div class="dropdown dots-dropdown">
+                                            <a href="#" class="pull-left dots  btn-primary dropdown-toggle" data-toggle="dropdown">...</a>
+                                            <ul class="dropdown-menu btn-dropdown">
+                                                <li class="copy-file"><a href="#">Копировать</a></li>
+                                                <li class="btn-replace"><a href="#">Переместить</a></li>
+                                                <li class="rename-file"><a href="#">Переименовать</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="text-share" ng-class="{'open':checkedDocument.open}" ng-click="checkedDocument.open=!checkedDocument.open">
+                                        <span class="eye-link"></span>
+                                        <span class="text-change">
+                                            <span ng-hide="checkedDocument.open">Не делиться ссылкой</span>
+                                            <span ng-show="checkedDocument.open">Поделиться ссылкой</span>
+                                        </span>
+                                    </p>
+                                    <div class="copy-dropdown dropdown">
+                                        <div class="share-link dropdown-toggle">https://fortawesome.github.io</div>
+                                        <ul class="dropdown-menu link-dropdown">
+                                            <li><a id="copy-button" data-clipboard-text="https://fortawesome.github.io">Копировать ссылку</a></li>
+                                        </ul>
+                                    </div>
+                                    <a class="copy-link">Копировать ссылку</a>
+                                </div>
+                                <div class="several-checks" ng-if="checkedCount>1"><p class="text-bold">2 документа </p>
+                                    <ul class="list-unstyled btns-list">
+                                        <li><a href="#" class="btn-copy">Копировать</a></li>
+                                        <li><a href="#" class="btn-save">Скачать</a></li>
+                                        <li><a href="#" class="btn-del">Удалить</a></li>
+                                        <li><a href="#" class="btn-rename">Переименовать</a></li>
+                                        <li><a href="#" class="btn-replace">Переместить</a></li>
+                                        <li><a href="#" class="btn-share">Делиться</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#" class="btn-deselect-all">Отменить выделение</a></li>
+                                        <li><a href="#" class="btn-select-all">Выделить все</a></li>
+                                    </ul>
+                                </div>
                             </div>
                             <!-- end second-view -->
                         </div>

@@ -1141,6 +1141,9 @@ i.alarm-clock{
   margin: 2px 0;
   cursor: pointer;
 }
+.text-bold {
+  font-family: "OpenSansBold";
+}
 
 @include sm-or-less-display{
   .wrap_header{
