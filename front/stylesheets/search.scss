@@ -271,4 +271,14 @@ div:last-child>.line-stop{
     width: 100%;
     text-align: left;
   }
+  input[type="checkbox"]:after {
+    position: absolute;
+    content: " ";
+    height: 15px;
+    width: 15px;
+    background: white;
+    top: -2px;
+    left: 0px;
+    border: 1px solid #91A6D6;
+  }
 }
