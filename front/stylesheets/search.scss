@@ -18,13 +18,19 @@
   }
 }
 
-.title-result>div{
-  @include margin-vertical(5px);
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid #91BFD6;
-  font-family: OpenSansSemiBold;
-  color: #91BFD6;
+.title-result{
+  &>div{
+    border-bottom: 1px solid #91BFD6;
+    overflow: auto;
+    width: 100%;
+  }
+  .open{
+    padding: 0;
+    text-align: center;
+    font-family: OpenSansSemiBold;
+    color: #91BFD6;
+    margin-top:5px;
+  }
 }
 
 .user{
@@ -184,10 +190,6 @@
       }
     }
   }
-}
-
-.title-result>.open{
-  margin-bottom: 0;
 }
 #people{
   .user-add{
