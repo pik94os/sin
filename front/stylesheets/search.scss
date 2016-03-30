@@ -238,6 +238,18 @@ div:last-child>.line-stop{
   left: 0;
   color: #6684B3;
   font-family: OpenSansLight;
+  &:after{
+    content: ' ';
+    background:{
+      image: url("/images/icons/down_mini.png");
+      position: 97% 50%;
+      repeat:  no-repeat;
+    }
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    right: -15px;
+  }
 }
 
 .see-all{
@@ -271,14 +283,57 @@ div:last-child>.line-stop{
     width: 100%;
     text-align: left;
   }
-  input[type="checkbox"]:after {
-    position: absolute;
-    content: " ";
-    height: 15px;
-    width: 15px;
-    background: white;
-    top: -2px;
-    left: 0px;
-    border: 1px solid #91A6D6;
+  .form-group>label{
+    font-family: OpenSansBold;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  input[type="checkbox"]{
+    font-family: 'Glyphicons Halflings';
+    &:after {
+      cursor: pointer;
+      position: absolute;
+      content: " ";
+      height: 15px;
+      width: 15px;
+      background: white;
+      top: -2px;
+      left: 0px;
+      border: 1px solid #91A6D6;
+    }
+    &:checked:after{
+      content: "\e013";
+      line-height: 12px;
+    }
+  }
+  .checkbox{
+    label{
+      font-family: OpenSansLight;
+      input[type=checkbox]{
+        margin-right: 15px;
+      }
+    }
+  }
+  input[type=text]{
+    border: 1px solid #A5A5A5;
+    border-radius: 0;
+    height: 25px;
+    @include padding-vertical(3px);
+    padding-left: 7px;
+    font-size: 13px;
+    @include placeholder-style{
+      color: #4e4e4e;
+    }
+    &.select{
+      @include placeholder-style{
+        font-family: OpenSansItalic;
+      }
+      padding-right: 20px;
+      background:{
+        image: url("/images/icons/down_mini.png");
+        position: 97% 50%;
+        repeat:  no-repeat;
+      }
+    }
   }
 }
