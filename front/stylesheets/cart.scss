@@ -36,7 +36,7 @@
   }
   &-body{
     &-name{
-      font-size: 16px;
+      font-size: 19px;
     }
     &-color{
       &-circle{
@@ -59,7 +59,7 @@
         text-align: center;
         &>div{
           display: inline-block;
-          width: 20px;
+          width: 24px;
           cursor: pointer;
           font-weight: bold;
           &.first{
@@ -117,13 +117,12 @@
     }
     #price-all-items{
       font-size: 17px;
+      margin-top: 7px;
     }
   }
 }
 #make-order{
-  position: absolute;
-  right: 14px;
-  top: -24px;
+  margin-top: 10px;
 }
 
 .btn.btn-warning-2{
