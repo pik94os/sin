@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<div class="row no-margin dialog-open">
+<div class="row no-margin dialog-open" ng-class="{'dialog-maxi':maxi}">
 
     <div class="col-xs-12 dialog-title">
         <div class="row">
@@ -24,7 +24,7 @@
                     <a href="message-doc.html" class="dialog-files">Файлы</a>
 
                     <a href="#" class="dialog-close pull-right"><i class="icon icon-close"></i></a>
-                    <a href="#" class="editor-window pull-right"></a>
+                    <a href="#" class="editor-window pull-right" ng-click="maxi=!maxi"></a>
                     <a href="#" class="dialog-favorites pull-right"><i class="icon icon-fav"></i> Избранное</a>
                     <a href="#" class="dialog-invite pull-right">Пригласить в чат</a>
                     <a href="#" class="dialog-cancel pull-right">Отменить</a>
@@ -106,11 +106,11 @@
                     </div>
 
                     <br></div>
-                <textarea name="" id="msg-textarea"></textarea>
+                <textarea name="" id="msg-textarea"  ng-model="messageText"></textarea>
 
                 <div class="add-message-wrapper">
 
-                    <textarea class="add-message" auto-grow></textarea>
+                    <textarea class="add-message" auto-grow ng-model="messageText"></textarea>
 
                     <div class="message-btns">
 

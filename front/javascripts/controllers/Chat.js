@@ -19,8 +19,9 @@ define(['./module','jquery'],function(controllers,$){
             });
         });
         $scope.$on('textareaNewSize',function(event,resize){
-            console.log(resize);
-            $('.wrapper-message-list').height($('.wrapper-message-list').height() - resize.difference);
+            if(resize.oldHeight){
+                $('.wrapper-message-list').css('height','calc(100% - '+($('.add-message-wrapper').height() + resize.difference + 21)+'px)');
+            }
         });
         $('title').text('Чат');
     }])

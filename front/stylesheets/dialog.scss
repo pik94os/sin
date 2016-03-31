@@ -67,6 +67,31 @@
       line-height: 50px;
       background: #dfebf1;
     }
+    &.dialog-maxi{
+      .add-message-wrapper{
+        padding-top: 1px !important;
+        .add-message{
+          display: none !important;
+        }
+      }
+      .wrapper-message-list{
+        height: 100% !important;
+        .slimScrollDiv{
+          display: none !important;
+        }
+      }
+      #msg-textarea{
+        display: block !important;
+        height: calc(100% - 116px) !important;
+        width: 100%;
+        resize: none;
+      }
+      .dialog{
+        &-files, &-invite, &-favorites{
+          display: none !important;
+        }
+      }
+    }
   }
   &-name {
     font-size: 14px;
