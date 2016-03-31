@@ -184,6 +184,10 @@
       &-shop{
         padding:5px 0;
         border-bottom: 1px solid #DCF0FB;
+        a:hover{
+          color: #337ab7;
+          text-decoration: underline;
+        }
       }
       &-price{
         padding: 5px 0;
@@ -236,7 +240,10 @@
           & > div{
             line-height: 14px;
             &:first-child{
-              font-family: OpenSansBold;
+              font:{
+                family: OpenSansBold;
+                size: 16px;
+              }
             }
             &:last-child{
               color: gray;

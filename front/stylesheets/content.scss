@@ -1140,12 +1140,12 @@ span[aria-expanded=true] .for-arrow{
 i.alarm-clock{
   @extend .icon;
   background: {
-    image: url("/images/svg/alarm_clock-26.svg");
+    image: url('/images/icons/alarm_clock.png');
     position: top center;
     repeat: no-repeat;
     size: 29px;
   };
-  filter: invert(100%);
+  filter: brightness(1000%);
   width: 31px;
   height: 35px;
   margin: 2px 0;
