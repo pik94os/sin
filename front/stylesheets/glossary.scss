@@ -305,13 +305,17 @@
   &-body{
     height: $body-height;
     padding-top: $body-paddind-top;
+    padding-bottom: 3px;
     &-title, &-price{
       height: $title-height;
     }
     &-title{
-      color: #0000AA;
-      text-decoration: underline;
       font-size: 20px;
+      cursor: pointer;
+      a:hover{
+        text-decoration: underline;
+        color: #337ab7 !important;
+      }
     }
     &-price{
       color: #181818;
@@ -351,8 +355,9 @@
       @include padding-vertical($buttons-padding-vertical);
     }
     &-vote{
-      padding: 0 5px;
+      padding-left: 0;
       .vote{
+        margin-top: -10px;
         padding: 4px;
         height: 100%;
         background-color: #6DAF53;

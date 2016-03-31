@@ -2889,59 +2889,7 @@ textarea {
 #newTag .btn:hover {
   background: #f7905d none repeat scroll 0 0;
 }*/
-.several-checks .text-bold{
-  margin: 5px 0 0 0;
-}
-.several-checks a{
-  position: relative;
-  display: inline-block;
-  padding-left: 40px;
-  margin-top: 15px;
-  font-family: "OpenSansLight";
-  color: #000;
-}
-.several-checks a:before{
-  position: absolute;
-  content: "";
-  top: 0;
-  display: inline-block;
-  height: 18px;
-}
-.several-checks .btn-copy:before{
-  left: 4px;
-  width: 15px;
-  background: url(/images/icons2/copypaste.png) 0 0 no-repeat;
-}
-.several-checks .btn-save:before{
-  left: 3px;
-  width: 18px;
-  background: url(/images/icons2/open-save.png) -12px 0 no-repeat;
-}
-.several-checks .btn-del:before{
-  left: 5px;
-  width: 15px;
-  background: url(/images/icons2/trash.png) 0 0 no-repeat
-}
-.several-checks .btn-rename:before{
-  left: 4px;
-  width: 15px;
-  height: 19px;
-  background: url(/images/icons2/social.png) -163px -21px no-repeat;
-}
-.several-checks .btn-replace:before{
-  left: 6px;
-  top: 3px;
-  width: 17px;
-  height: 15px;
-  background: url(/images/icons2/social.png) -148px -20px no-repeat;
-}
-.several-checks .btn-share:before{
-  left: 2px;
-  top: 1px;
-  width: 23px;
-  height: 17px;
-  background: url(/images/icons2/show.png) 0 0 no-repeat;
-}
+
 
 .each-attached-file:hover .file-info.overflow span, 
 .each-attached-file:hover .file-info.overflow .file-size,
