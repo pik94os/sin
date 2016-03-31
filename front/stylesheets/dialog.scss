@@ -311,14 +311,18 @@
   font-style: italic;
   font-size: 13px;
   height: 40px;
-  line-height: 36px;
+  line-height: normal;
+  overflow: hidden;
   display: block;
   border-radius: 4px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 9px 10px;
   width: calc(100% - 40px);
-  overflow: hidden;
-  resize: both;
+  resize: none;
+  word-wrap: break-word;
+  transition: 0.05s;
+  -moz-transition: 0.05s;
+  -webkit-transition: 0.05s;
+  -o-transition: 0.05s;
 }
 .message-btns {
   margin-left: 20px;

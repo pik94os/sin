@@ -18,6 +18,10 @@ define(['./module','jquery'],function(controllers,$){
                 start: 'bottom'
             });
         });
+        $scope.$on('textareaNewSize',function(event,resize){
+            console.log(resize);
+            $('.wrapper-message-list').height($('.wrapper-message-list').height() - resize.difference);
+        });
         $('title').text('Чат');
     }])
 });

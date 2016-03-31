@@ -1,3 +1,4 @@
 define([
     './emitLastRepeaterElement',
+    './autoGrow',
 ], function () {});
