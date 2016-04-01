@@ -149,6 +149,14 @@
     }
     .item-block{
       padding: 10px;
+      cursor: pointer;
+      &:hover{
+        box-shadow:
+                0 0 0 rgba(0,0,0,0), //top
+                0 0 10px rgba(0,0,0,0.1), //right
+                0 3px 10px rgba(0,0,0,0.5), //bottom
+                0 0 10px rgba(0,0,0,0.1); //left
+      }
       &-top{
         &-num{
           &-green{
@@ -195,6 +203,7 @@
         font-size: 16px;
       }
       &-buttons{
+        cursor: pointer;
         border: 1px solid #C9D2D6;
         background: #DFEBF1;
         padding: 3px;
@@ -202,6 +211,9 @@
         border-radius: 5px;
         height: 28px;
         overflow: hidden;
+        &:hover{
+          border-color: #a9cbdd;
+        }
         span{
           color: orangered;
           font-size: 12px;
@@ -256,6 +268,7 @@
           float: left;
         }
         &-prices{
+          cursor: pointer;
           border: 1px solid #C9D2D6;
           background: #DFEBF1;
           padding: 3px;
@@ -264,11 +277,15 @@
           height: 28px;
           overflow: hidden;
           width: calc(95% - 55px);
+          &:hover{
+            border-color: #a9cbdd;
+          }
           .p-count{
             color: gray;
           }
         }
         &-car{
+          cursor: pointer;
           width: 45px;
           position: absolute;
           right: 10px;
@@ -282,6 +299,9 @@
             repeat: no-repeat;
             size: 30px;
           };
+          &:hover{
+            background-color: #ff7a3f;
+          }
         }
       }
     }

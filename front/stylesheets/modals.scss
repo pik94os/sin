@@ -91,3 +91,62 @@
     text-align: center;
   }
 }
+
+#to-wishes{
+  font-family: OpenSansLight;
+  .modal-header{
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-body{
+    padding-top: 0px;
+    .find-user-form{
+      margin: 0;
+      width: 250px;
+      input{
+        background: #ECF7FF;
+      }
+    }
+    ul{
+      padding: 10px 0;
+      li{
+        font-size: 16px;
+        padding: 3px 0;
+        display: block;
+        .group-access{
+          color: gray;
+        }
+      }
+    }
+    .btn{
+      font-size: 20px;
+      padding: 5px 32px;
+    }
+    .new-tab-link{
+      font-size: 17px;
+      margin-top: 30px;
+      cursor: pointer;
+      &:after{
+        content: " ";
+        position: absolute;
+        left: 140px;
+        margin-top: 8px;
+        @include square-size(10px);
+        background: {
+          image: url('/images/icons/down_mini.png');
+          repeat: no-repeat;
+        };
+      }
+      &:not(.active):after{
+        transform: scale(1, -1)
+      }
+    }
+    .new-tab-block{
+      margin-top:10px;
+      input{
+        height: 37px;
+        margin: 1px 0;
+      }
+    }
+  }
+}

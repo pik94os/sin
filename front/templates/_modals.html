@@ -91,3 +91,33 @@
         </div>
     </div>
 </div>
+
+<div id="to-wishes" class="modal fade my-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                Мои желания
+            </div>
+            <div class="modal-body">
+                <div class="search-panel">
+                    <div class="find-user-form"><input type="text"> <button type="submit"></button></div>
+                </div>
+                <ul>
+                    <li>Для дома <span class="group-access">(Открыт для всех)</span></li>
+                    <li>Игорь <span class="group-access">(Личный)</span></li>
+                    <li>Детям <span class="group-access">(Личный)</span></li>
+                </ul>
+                <button class="btn btn-primary">Выбрать</button>
+                <div class="new-tab-link" ng-click="newTabShow=!newTabShow" ng-class="{'active':newTabShow}"><span>Новая вкладка</span></div>
+                <div class="new-tab-block row" ng-show="newTabShow">
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-sm-4">
+                        <button class="btn btn-primary">Добавить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
