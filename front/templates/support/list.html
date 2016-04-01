@@ -31,14 +31,14 @@
     <div class="row">
         <div class="col-md-5 supports">
             <span class="header">Часто задаваемые вопросы</span>
-            <table class="table table-bordered">
-                <tr class="supports-title">
-                    <td><span class="icon-btn-up"></span>Доступ к странице</td>
+            <table class="table table-bordered" ng-init="supports={show:true}">
+                <tr class="supports-title" ng-click="supports.show = !supports.show">
+                    <td><span class="icon-btn-up" ng-class="{'icon-btn-up':supports.show,'icon-btn-down':!supports.show}"></span>Доступ к странице</td>
                 </tr>
-                <tr>
+                <tr ng-show="supports.show">
                     <td>Мою страницу заблокировали</td>
                 </tr>
-                <tr><td>Мою страницу взломали!</td></tr>
+                <tr ng-show="supports.show"><td>Мою страницу взломали!</td></tr>
                 <tr class="supports-title"><td><span class="icon-btn-down"></span>Фотографии</td></tr>
             </table>
         </div>
