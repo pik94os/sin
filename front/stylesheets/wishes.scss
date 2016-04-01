@@ -359,9 +359,8 @@
   }
   .messages-user-list {
     padding-top: 10px;
-  }
-  .messages-user-list {
     border: none;
+    height: calc(100% - 51px);
   }
   .shop-item{
     $shop-item-height:190px;

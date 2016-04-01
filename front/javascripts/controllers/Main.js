@@ -109,6 +109,9 @@ define(['./module','jquery'],function(controllers,$){
                 if(info.attr('new-height') && !info.attr('new-height').indexOf('#') && info.attr('new-height').length>1 && $(info.attr('new-height')).length){
                     info.height($(info.attr('new-height')).height());
                 }
+                if(info.attr('auto-min-height')!=undefined && 0!==($('#wrap_browser').height() - $('.bg-main').height())){
+                    info.css('min-height', (info.height() + $('#wrap_browser').height() - $('.bg-main').height()) +'px');
+                }
             });
         }
 
@@ -164,6 +167,23 @@ define(['./module','jquery'],function(controllers,$){
             $scope.state = $state.current;
             $scope.hideFooter=$state.includes('chat');
             $scope.imgOnly = ($state.current.name=='purchases' || $state.current.name.indexOf('groupOpen')+1);
+            $('.messages-user-list > div').slimScroll({
+                height: '100%',
+                color: '#99c3d9',
+                wheelStep: '5'
+            });
+            $('#wrap-message-list').slimScroll({
+                height: '100%',
+                color: '#99c3d9',
+                wheelStep: '5',
+                start: 'bottom'
+            });
+            $('#dialog-list > div').slimScroll({
+                height: '100%',
+                color: '#99c3d9',
+                wheelStep: '5',
+                distance: '-5px'
+            });
         });
         $scope.$on('LastRepeaterElement', function(){
             wrap_soc();
