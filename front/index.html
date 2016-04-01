@@ -10,7 +10,7 @@
     <header>
         <!--=include templates/_header.html -->
     </header>
-    <div id="wrap_browser" class="container-fluid bg-color13" ng-class="{'html100':html100}">
+    <div id="wrap_browser" class="container-fluid bg-color13" ng-class="{'html100':html100,'hide-footer': hideFooter}" >
         <div class="row">
             <div class="col-xs-2 wrap_menu" id="wrap_menu" ng-class="{'show':leftMenu,'col-md-3 col-lg-2':!imgOnly,'col-md-1':imgOnly}">
                 <div class="list-group list-menu">
@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-    <footer class="bg-blue footer container-fluid">
+    <footer class="bg-blue footer container-fluid" ng-hide="hideFooter">
         <!--=include templates/_footer.html -->
         <!--=include templates/_modals.html -->
     </footer>

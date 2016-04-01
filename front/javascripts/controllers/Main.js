@@ -162,6 +162,7 @@ define(['./module','jquery'],function(controllers,$){
         $rootScope.$on('$viewContentLoaded',function(){
             wrap_soc();
             $scope.state = $state.current;
+            $scope.hideFooter=$state.includes('chat');
             $scope.imgOnly = ($state.current.name=='purchases' || $state.current.name.indexOf('groupOpen')+1);
         });
         $scope.$on('LastRepeaterElement', function(){
