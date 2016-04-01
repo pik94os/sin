@@ -85,14 +85,27 @@
       }
       padding-left: 27px;
     }
+    &-list{
+      .friend-comment{
+        color: #0f0f0f;
+        background: #F5F597;
+        display: inline-block;
+        padding: 2px 7px;
+      }
+    }
   }
   &-buttons{
     margin: 0;
     padding-left: 0;
     li{
+      padding: 5px;
+      width: 160px;
       cursor: pointer;
       display: block;
-      @include padding-vertical(5px);
+      margin-bottom: 2px;
+      &:hover{
+        background: #dfebf1;
+      }
     }
   }
   &-line{

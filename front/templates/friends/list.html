@@ -52,9 +52,14 @@
                             </div>
                         </div>
                         <div class="col-xs-5">
-                            <div class="friend-comment">
+                            <div class="friend-comment" ng-if="$index!==1">
                                 Вы можете оставить заметку о пользователе.<br/>
                                 Видеть написанное будете только вы и никто другой.
+                            </div>
+                            <div class="friend-comment-list" ng-if="$index===1">
+                                <div class="friend-comment">
+                                    Детский сад штаны на лямках
+                                </div>
                             </div>
                             <div class="friend-comment-edit">Написать заметку</div>
                         </div>
