@@ -68,7 +68,10 @@ body {
   #wrap_browser{
     min-height: calc(100% - 62px - 40px);// - header -footer
     &.html100{
+      height: calc( 100% - 62px - 40px); // - header -footer
+      &.hide-footer{
       height: calc( 100% - 62px); // - header
+      }
       & > .row{
         height: 100%;
         & > div{

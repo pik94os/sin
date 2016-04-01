@@ -227,13 +227,9 @@
   .calendar-tabs .doc-menu-on-right-side .new-tab{
     border-bottom: none;
     color: #FFF;
-    background: url(/images/icons2/plus.png) center center no-repeat #536177;
     height: 43px;
     width: 43px;
     border-radius: 0 !important;
-    &:hover, &:focus{
-      background-color: #F7905D;
-    }
   }
 }
 .doc-menu-on-right-side {
@@ -242,4 +238,10 @@
   float: right !important;
   margin: 0 !important;
   padding: 0 !important;
+  .new-tab{
+    background: url(/images/icons2/plus.png) center center no-repeat #536177;
+    &:hover, &:focus{
+      background-color: #F7905D;
+    }
+  }
 }
