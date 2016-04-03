@@ -104,6 +104,11 @@ define(['./app'], function (app) {
                 templateUrl: "/templates/purchases/list.html",
                 controller: 'Purchases'
             })
+            .state('purchases.item', {
+                url: "/item/:id?tab",
+                templateUrl: "/templates/purchases/item.html",
+                controller: 'PurchasesItem'
+            })
             .state('photos', {
                 url: "/photos",
                 templateUrl: "/templates/photos/list.html",

@@ -15,6 +15,7 @@ define([
     './Notebook',
     './Passwords',
     './Purchases',
+    './PurchasesItem',
     './Photos',
     './Search',
     './Sittings',

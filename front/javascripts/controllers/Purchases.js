@@ -3,7 +3,7 @@
  */
 define(['./module','jquery'],function(controllers,$){
     'use strict';
-    controllers.controller('Purchases',['$rootScope','$scope','$http', function($rootScope,$scope,$http){
+    controllers.controller('Purchases',['$rootScope','$scope','$http', '$stateParams',function($rootScope,$scope,$http,$stateParams){
         $('title').text('Покупки');
         $rootScope.$broadcast('html100', false);
         $scope.categories =[];
@@ -17,5 +17,6 @@ define(['./module','jquery'],function(controllers,$){
             // called asynchronously if an error occurs
             // or server returns response with an error status.
         });
+        $scope.tab = $stateParams.tab;
     }])
 });

@@ -147,127 +147,63 @@
         }
       }
     }
-    .item-block{
-      padding: 10px;
-      cursor: pointer;
-      &:hover{
-        box-shadow:
-                0 0 0 rgba(0,0,0,0), //top
-                0 0 10px rgba(0,0,0,0.1), //right
-                0 3px 10px rgba(0,0,0,0.5), //bottom
-                0 0 10px rgba(0,0,0,0.1); //left
-      }
-      &-top{
-        &-num{
-          &-green{
-            display: inline-block;
-            height: 23px;
-            width: 23px;
-            text-align: center;
-            border: 1px solid green;
-          }
-          &-red{
-            @extend .item-block-top-num-green;
-            border-color: red;
-          }
-          &-orange{
-            @extend .item-block-top-num-green;
-            border-color: orangered;
-          }
-        }
-      }
-      &-images{
-        padding: 15px 0;
-        text-align: center;
-        img{
-          height: 170px;
-          max-width: 100%;
-        }
-      }
-      &-title{
-        font-size: 16px;
-        height: 70px;
-        overflow: hidden;
-      }
-      &-shop{
-        padding:5px 0;
-        border-bottom: 1px solid #DCF0FB;
-        a:hover{
-          color: #337ab7;
-          text-decoration: underline;
-        }
-      }
-      &-price{
-        padding: 5px 0;
-        font-family: OpenSansBold;
-        font-size: 16px;
-      }
-      &-buttons{
+    &,&2{
+      .item-block{
+        padding: 10px;
         cursor: pointer;
-        border: 1px solid #C9D2D6;
-        background: #DFEBF1;
-        padding: 3px;
-        text-align: center;
-        border-radius: 5px;
-        height: 28px;
-        overflow: hidden;
         &:hover{
-          border-color: #a9cbdd;
+          box-shadow:
+                  0 0 0 rgba(0,0,0,0), //top
+                  0 0 10px rgba(0,0,0,0.1), //right
+                  0 3px 10px rgba(0,0,0,0.5), //bottom
+                  0 0 10px rgba(0,0,0,0.1); //left
         }
-        span{
-          color: orangered;
-          font-size: 12px;
-        }
-      }
-      &-time{
-        $bord-color:#536177;
-        height: 38px;
-        text-align: center;
-        @include border-radius(5px,1px solid $bord-color);
-        @include margin-vertical(10px);
-        width: 100%;
-        &>div{
-          float: left;
-          height: 100%;
-          @include padding-vertical(5px);
-          width: 20%;
-          &:first-child{
-            background-color: $bord-color;
-            padding: 0;
-          }
-          &:last-child{
-            float: right;
-            background: #DFEBF1;
-            border-left:1px solid $bord-color;
-            margin-right: -1px;
-            @include border-radius-right(5px,1px solid $bord-color)
-          }
-          &:nth-child(3):before,&:nth-child(4):before{
-            content: ":";
-            position: absolute;
-            display: block;
-            font-family: OpenSansBold;
-            margin-left: -1px;
-          }
-          & > div{
-            line-height: 14px;
-            &:first-child{
-              font:{
-                family: OpenSansBold;
-                size: 16px;
-              }
+        &-top{
+          &-num{
+            &-green{
+              display: inline-block;
+              height: 23px;
+              width: 23px;
+              text-align: center;
+              border: 1px solid green;
             }
-            &:last-child{
-              color: gray;
+            &-red{
+              @extend .item-block-top-num-green;
+              border-color: red;
+            }
+            &-orange{
+              @extend .item-block-top-num-green;
+              border-color: orangered;
             }
           }
         }
-      }
-      &-bottom{
-        &>div{
-          float: left;
+        &-images{
+          padding: 15px 0;
+          text-align: center;
+          img{
+            height: 170px;
+            max-width: 100%;
+          }
         }
-        &-prices{
+        &-title{
+          font-size: 16px;
+          height: 70px;
+          overflow: hidden;
+        }
+        &-shop{
+          padding:5px 0;
+          border-bottom: 1px solid #DCF0FB;
+          a:hover{
+            color: #337ab7;
+            text-decoration: underline;
+          }
+        }
+        &-price{
+          padding: 5px 0;
+          font-family: OpenSansBold;
+          font-size: 16px;
+        }
+        &-buttons{
           cursor: pointer;
           border: 1px solid #C9D2D6;
           background: #DFEBF1;
@@ -276,33 +212,135 @@
           border-radius: 5px;
           height: 28px;
           overflow: hidden;
-          width: calc(95% - 55px);
           &:hover{
             border-color: #a9cbdd;
           }
-          .p-count{
-            color: gray;
+          span{
+            color: orangered;
+            font-size: 12px;
           }
         }
-        &-car{
-          cursor: pointer;
-          width: 45px;
-          position: absolute;
-          right: 10px;
-          margin-top: -10px;
-          border-radius: 5px;
-          height: 40px;
-          background: {
-            color: #f54;
-            image: url(/images/icons/car.png);
-            position: center;
-            repeat: no-repeat;
-            size: 30px;
-          };
-          &:hover{
-            background-color: #ff7a3f;
+        &-time{
+          $bord-color:#536177;
+          height: 38px;
+          text-align: center;
+          @include border-radius(5px,1px solid $bord-color);
+          @include margin-vertical(10px);
+          width: 100%;
+          &>div{
+            float: left;
+            height: 100%;
+            @include padding-vertical(5px);
+            width: 20%;
+            &:first-child{
+              background-color: $bord-color;
+              padding: 0;
+            }
+            &:last-child{
+              float: right;
+              background: #DFEBF1;
+              border-left:1px solid $bord-color;
+              margin-right: -1px;
+              @include border-radius-right(5px,1px solid $bord-color)
+            }
+            &:nth-child(3):before,&:nth-child(4):before{
+              content: ":";
+              position: absolute;
+              display: block;
+              font-family: OpenSansBold;
+              margin-left: -1px;
+            }
+            & > div{
+              line-height: 14px;
+              &:first-child{
+                font:{
+                  family: OpenSansBold;
+                  size: 16px;
+                }
+              }
+              &:last-child{
+                color: gray;
+              }
+            }
           }
         }
+        &-bottom{
+          &>div{
+            float: left;
+          }
+          &-prices{
+            cursor: pointer;
+            border: 1px solid #C9D2D6;
+            background: #DFEBF1;
+            padding: 3px;
+            text-align: center;
+            border-radius: 5px;
+            height: 28px;
+            overflow: hidden;
+            width: calc(95% - 55px);
+            &:hover{
+              border-color: #a9cbdd;
+            }
+            .p-count{
+              color: gray;
+            }
+          }
+          &-car{
+            cursor: pointer;
+            width: 45px;
+            position: absolute;
+            right: 10px;
+            margin-top: -10px;
+            border-radius: 5px;
+            height: 40px;
+            background: {
+              color: #f54;
+              image: url(/images/icons/car.png);
+              position: center;
+              repeat: no-repeat;
+              size: 30px;
+            };
+            &:hover{
+              background-color: #ff7a3f;
+            }
+          }
+        }
+      }
+    }
+    &2{
+      font-family: OpenSansLight;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      .item-head{
+        .item-num{
+          margin-left: 30px;
+        }
+        b{
+
+          font-size: 17px;
+        }
+        margin-bottom: 10px;
+      }
+      .item-shop{
+        font-size: 17px;
+        margin-bottom: 30px;
+      }
+      .item-descriptions{
+        height: 220px;
+      }
+      .item-img-block{
+        height: 240px;
+        img{
+          max-height: 100%;
+          max-width: 100%;
+        }
+      }
+      .item-block-price{
+        height: 220px - 28px;
+        text-align: center;
+      }
+      .item-block-buttons{
+        font-family: OpenSansRegular;
       }
     }
   }
@@ -385,5 +423,123 @@
         text-align: left;
       }
     }
+  }
+}
+
+.row-tabs{
+  font-family: OpenSansLight;
+  font-size: 17px;
+  li{
+    cursor: pointer;
+  }
+}
+
+.shop{
+  &:first-child{
+    background: white;
+  }
+  border-bottom: 1px solid #d5e0f5;
+  padding: 5px 0;
+  height: 40px;
+  font-family: OpenSansLight;
+  &-delivery,&-price{
+    @include padding-vertical(5px);
+    text-align: center;
+  }
+  &-title{
+    padding-top: 4px;
+    font-size: 16px;
+    &>.stars{
+      @include margin-vertical(4px);
+    }
+  }
+  &-price{
+    font-family: OpenSansBold;
+    font-size: 16px;
+  }
+  &-vote .vote{
+    padding: 4px;
+    height: 100%;
+    border: 1px solid #A5A5A5;
+    border-radius: 3px;
+    text-align: center;
+  }
+}
+.item-open-tabs{
+  ._characteristics{
+    margin: 20px 0;
+  }
+  ._reviews{
+    margin-top: 10px;
+  }
+  padding: 0 15px;
+  border-bottom: 1px solid #DAD6D6;
+  background-color: #e6e6e6;
+  pre{
+    border: none;
+  }
+  .text{
+    display: block;
+    font-family: OpenSansLight;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}
+.rev-container{
+  width: 50%;
+  min-height: 200px;
+  float: left;
+  margin: -5px;
+  padding: 5px;
+  &>div{
+    background: white;
+  }
+  .rev-body{
+    padding: 10px;
+    .dignity,.limitations,.comments{
+      overflow: hidden;
+      height: 40px;
+      margin-bottom: 10px;
+      b:before{
+        margin-right: 5px;
+      }
+    }
+    .dignity{
+      b:before{
+        content: "+";
+        color: green;
+      }
+    }
+    .limitations{
+      b:before{
+        content: "−";
+        color: red;
+      }
+    }
+    .comments{
+      b:before{
+        content: "=";
+      }
+    }
+    .rev-after{
+      position: absolute;
+      width: 50%;
+      text-align: end;
+      margin-top: -30px;
+      padding-right: 50px;
+      &:before {
+        content: "...";
+        width: 10px;
+        height: 20px;
+        background: white;
+        position: absolute;
+      }
+    }
+    .date{
+      text-align: end;
+    }
+  }
+  .rev-img{
+    width: 100%;
   }
 }

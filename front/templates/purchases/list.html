@@ -1,4 +1,4 @@
-<div class="purchases">
+<div class="purchases" ui-view="">
     <div class="row no-margin user_data purchases-title">
         <div class="col-xs-8 col-lg-9 no-padding ">
             <ul class="nav nav-tabs purchases-tabs">
@@ -134,15 +134,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-sm-3 item-block">
+                                <div class="col-xs-6 col-sm-3 item-block" ui-sref=".item">
                                     <div class="item-block-top">
-                                        <div class="pull-right"><i class="icon icon-hide-love" data-toggle="modal" data-target="#to-wishes"></i></div><div class="item-block-top-num-orange">4</div>
+                                        <div class="pull-right" onclick="$('#to-wishes').modal();event.stopPropagation();"><i class="icon icon-hide-love"></i></div><div class="item-block-top-num-orange">4</div>
                                     </div>
                                     <div class="item-block-images"><img src="/images/market/3.jpg"></div>
                                     <div class="item-block-title">Комп большой вэртикалный нэ дорого.</div>
-                                    <div class="item-block-shop"><a>Мэ-видео</a></div>
+                                    <div class="item-block-shop"  ng-click="$event.stopPropagation();"><a>Мэ-видео</a></div>
                                     <div class="item-block-price">6 072 099 руб.</div>
-                                    <div class="item-block-buttons"> Учавствовать | <span>20 заказов</span></div>
+                                    <div class="item-block-buttons"  ng-click="$event.stopPropagation();"> Учавствовать | <span>20 заказов</span></div>
                                     <div class="item-block-time">
                                         <div><i class="alarm-clock"></i></div>
                                         <div>
