@@ -7,7 +7,7 @@ define(['./module','jquery'],function(controllers,$){
         $rootScope.$broadcast('getChat',$scope.currentFriendId);
         $scope.$on('textareaNewSize',function(event,resize){
             if(resize.oldHeight){
-                $('.wrapper-message-list').css('height','calc(100% - '+($('.add-message-wrapper').height() + resize.difference + 21)+'px)');
+                $('.wrapper-message-list').css('height','calc(100% - '+($('.add-message-wrapper').height() + resize.difference + 41)+'px)');
             }
         });
         $('title').text('Чат');

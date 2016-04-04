@@ -466,13 +466,14 @@
   }
 }
 .item-open-tabs{
+  padding: 0 15px;
   ._characteristics{
     margin: 20px 0;
   }
   ._reviews{
-    margin-top: 10px;
+    margin-top: 5px;
+    padding-top: 5px;
   }
-  padding: 0 15px;
   border-bottom: 1px solid #DAD6D6;
   background-color: #e6e6e6;
   pre{
@@ -489,10 +490,39 @@
   width: 50%;
   min-height: 200px;
   float: left;
-  margin: -5px;
-  padding: 5px;
+  padding: 10px;
+  font-family: OpenSansLight;
   &>div{
     background: white;
+  }
+  .rev-header{
+    padding: 10px;
+    overflow: auto;
+    .purchases-block-body2{
+      margin: 0;
+    }
+    &-user{
+      overflow: auto;
+      &>div{
+        float: left;
+      }
+      .wrap_ava{
+        margin: 0;
+      }
+      &-info{
+        padding: 10px;
+      }
+      &-name{
+        font-size: 16px;
+      }
+      &-status{
+        font-size: 13px;
+      }
+    }
+    &-title{
+      width: 100%;
+      display: none;
+    }
   }
   .rev-body{
     padding: 10px;
@@ -526,7 +556,7 @@
       width: 50%;
       text-align: end;
       margin-top: -30px;
-      padding-right: 50px;
+      padding-right: 57px;
       &:before {
         content: "...";
         width: 10px;
@@ -538,8 +568,47 @@
     .date{
       text-align: end;
     }
+    .view-all{
+      cursor: pointer;
+      &:hover{
+        color: gray;
+      }
+    }
   }
   .rev-img{
     width: 100%;
+    max-height: 250px;
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
+  }
+  .item-head .item-num {
+    margin-left: 30px;
+  }
+  &.modal-content{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    float: none;
+    .rev-header{
+      &-title{
+        display: block;
+        font-size: 18px;
+      }
+    }
+    .rev-body {
+      padding: 10px;
+      .dignity, .limitations, .comments {
+        overflow: visible;
+        height: inherit;
+      }
+      .rev-after{
+        display: none;
+      }
+      .view-all{
+        display: none;
+      }
+    }
   }
 }
