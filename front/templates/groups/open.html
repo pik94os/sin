@@ -2,7 +2,7 @@
 <div class="group-open-page">
     <div class="group-header">
         <img src="/images/shop-images/Xiaomi_Global.png" class="group-header-img">
-        <div class="group-header-menu">
+        <div class="group-header-menu" ng-class="{'hide-vertical':$state.current.name!=='groupOpen'}">
             <div class="group-header-menu-horizontal">
                 <div class="group-header-menu-horizontal-list row">
                     <div class="col-xs-3" ng-style="{color:'white',background:'orangered'}">КАТЕГОРИИ ТОВАРОВ</div>
@@ -17,19 +17,7 @@
                 </div>
             </div>
             <div class="group-header-menu-vertical" ui-view="header">
-                <div class="group-header-menu-vertical-list col-xs-3" id="groupMenuList" ng-mouseleave="actItemF(-1)">
-                    <div class="menu-item" ng-repeat="item in groupVerticalMenu" emit-last-repeater-element ng-mouseover="actItemF($index)" ng-class="{'active':actItem===$index}">
-                        <div class="menu-item-block">
-                            <a class="menu-item-sub-category" ng-repeat="subCateg in item.subCateg" ui-sref=".category">
-                                <img ng-src="/images/shop-images/{{subCateg.icon}}">
-                                <span ng-bind="subCateg.title"></span>
-                            </a>
-                        </div>
-                        <span ng-bind="item.title"  ui-sref=".category" class="link">
-
-                        </span>
-                    </div>
-                </div>
+                <!--=include _menu-vertical.html -->
                 <div class="col-xs-9 group-header-menu-vertical-image resize-me" new-height="#groupMenuList">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->

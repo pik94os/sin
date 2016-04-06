@@ -66,7 +66,7 @@ define(['./app'], function (app) {
                 controller: 'Groups'
             })
             .state('groupOpen', {
-                url: "/groups/{id}",
+                url: "/groups/id{id}",
                 templateUrl: "/templates/groups/open.html",
                 controller: 'GroupOpen'
             })
@@ -78,7 +78,7 @@ define(['./app'], function (app) {
                         controller: 'GroupCategory'
                     },
                     'header':{
-                        template: "<div></div>"
+                        templateUrl: "/templates/groups/header-menu-vertical.html"
                     }
                 }
             })
@@ -90,7 +90,7 @@ define(['./app'], function (app) {
                         controller: 'GroupItem'
                     },
                     'header':{
-                        template: "<div></div>"
+                        templateUrl: "/templates/groups/header-menu-vertical.html"
                     }
                 }
             })

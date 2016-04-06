@@ -105,6 +105,36 @@
             }
           }
         }
+        &-hidden{
+          width: 100%;
+          .group-header-menu-vertical{
+            &-list{
+              border-right: 1px solid gray;
+            }
+          }
+          .arrow{
+            height: 42px;
+            margin-top: -42px;
+            background:{
+              image: url(/images/icons/down_mini.png);
+              position: 97% 50%;
+              repeat: no-repeat;
+            }
+            position: absolute;
+          }
+          .actMenu{
+            position: absolute;
+            z-index: 9;
+            background: white;
+            padding: 0;
+            &>div{
+              width: 100%;
+            }
+          }
+          &.active{
+            transform: scale(1, -1);
+          }
+        }
       }
       &-horizontal{
         .btn{

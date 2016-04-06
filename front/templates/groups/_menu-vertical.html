@@ -1,0 +1,13 @@
+<div class="group-header-menu-vertical-list col-xs-3" id="groupMenuList" ng-mouseleave="actItemF(-1)">
+    <div class="menu-item" ng-repeat="item in groupVerticalMenu" emit-last-repeater-element ng-mouseover="actItemF($index)" ng-class="{'active':actItem===$index}">
+        <div class="menu-item-block">
+            <a class="menu-item-sub-category" ng-repeat="subCateg in item.subCateg" ui-sref="groupOpen.category">
+                <img ng-src="/images/shop-images/{{subCateg.icon}}">
+                <span ng-bind="subCateg.title"></span>
+            </a>
+        </div>
+        <span ng-bind="item.title"  ui-sref="groupOpen.category" class="link">
+
+        </span>
+    </div>
+</div>
