@@ -7,5 +7,11 @@ define(['./module','jquery'],function(controllers,$){
         $('title').text('Покупки');
         $rootScope.$broadcast('html100', false);
         $scope.tab = $stateParams.tab;
+        $scope.collapsedItem = false;
+        $rootScope.$on('$viewContentLoaded',function(){
+            if($scope.tab && $scope.tab!=='prices'){
+                $scope.collapsedItem = true;
+            }
+        });
     }])
 });

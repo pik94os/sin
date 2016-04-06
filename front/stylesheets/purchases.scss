@@ -465,6 +465,36 @@
     text-align: center;
   }
 }
+.collapsedItem{
+  background: #D9F2FF;
+  &>div{
+    line-height: 50px;
+    height: 50px;
+    margin: 0;
+  }
+  .item-head{
+    .arrow{
+      display: block;
+      float: left;
+      @include square-size(48px);
+      background:{
+        image: url(/images/icons/cirle-down.png);
+        position: center;
+        repeat: no-repeat;
+        size: 25px;
+      }
+      opacity: .5;
+      cursor: pointer;
+      &:hover{
+        background-image: url(/images/icons/cirle-down-active.png);
+        opacity: 1;
+      }
+    }
+    img{
+      @include square-size(48px);
+    }
+  }
+}
 .item-open-tabs{
   padding: 0 15px;
   ._characteristics{
