@@ -31,6 +31,7 @@
     "imagemin-pngquant": "^4.2.0",
     "requirejs": "^2.1.22",
     "run-sequence": "^1.1.5",
+    "spa-server": "^1.0.0",
     "tiny-lr": "^0.2.1"
   },
   "dependencies": {

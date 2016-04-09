@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     browserSync = require("browser-sync"),
     rjs = require('./r'),
+    serverFactory = require('spa-server'),
     reload = browserSync.reload;
 
 var path = {
@@ -43,7 +44,16 @@ var path = {
     }
 };
 
-gulp.task('sass', function () {
+gulp.task('webserver', () => {
+    var server = serverFactory.create({
+        path: './public',
+        port: 8888
+    });
+
+    server.start();
+});
+
+gulp.task('sass', () => {
     gulp.src(path.src.style) //Выберем наш main.scss
         .pipe(sourcemaps.init()) //То же самое что и с js
         .pipe(sass()) //Скомпилируем
@@ -53,7 +63,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(path.build.css))
 });
 
-gulp.task("js", function () {
+gulp.task("js", () => {
     gulp.src(path.src.js)
         .pipe(rjs({
             baseUrl:'front/javascripts/',
@@ -85,17 +95,17 @@ gulp.task("js", function () {
         }))
 });
 
-gulp.task("js_copy", function () {
+gulp.task("js_copy", () => {
     gulp.src(path.src.js_copy)
         .pipe(gulp.dest(path.build.js))
 });
 
-gulp.task("json", function () {
+gulp.task("json", () => {
     gulp.src(path.src.json)
         .pipe(gulp.dest(path.build.json))
 });
 
-gulp.task('image', function() {
+gulp.task('image',() => {
     return gulp.src(path.src.img)
         .pipe(imagemin({
             progressive: true,
@@ -105,14 +115,14 @@ gulp.task('image', function() {
         .pipe(gulp.dest(path.build.img));
 });
 
-gulp.task("fonts", function () {
+gulp.task("fonts", () => {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts));
     gulp.src('front/fonts/**/*.*')
         .pipe(gulp.dest(path.build.fonts));
 });
 
-gulp.task('html', function () {
+gulp.task('html',() => {
     gulp.src(path.src.html) //Выберем файлы по нужному пути
         .pipe(include())//Объединим с шаблонами
         .pipe(htmlmin({collapseWhitespace: true}))//минимизируем
@@ -120,29 +130,30 @@ gulp.task('html', function () {
 });
 
 gulp.task('watch', function(){
-    watch([path.watch.html], function(event, cb) {
+    watch([path.watch.html], () => {
         gulp.start('html');
     });
-    watch([path.watch.style], function(event, cb) {
+    watch([path.watch.style], () => {
         gulp.start('sass');
     });
-    watch([path.watch.js], function(event, cb) {
+    watch([path.watch.js], () => {
         gulp.start('js');
     });
-    watch([path.watch.img], function(event, cb) {
+    watch([path.watch.img], () => {
         gulp.start('image');
     });
-    watch([path.watch.fonts], function(event, cb) {
+    watch([path.watch.fonts], () => {
         gulp.start('fonts');
     });
-    watch([path.watch['json']], function(event, cb) {
+    watch([path.watch['json']], () => {
         gulp.start('json');
     });
 });
 
-gulp.task('start', function(cb) {
+gulp.task('start',(cb) => {
     runSequence(['fonts', 'js', 'js_copy', 'sass', 'image', 'html', 'json'], cb);
 });
-gulp.task('default', function(cb) {
-    runSequence(['start','watch'], cb);
+
+gulp.task('default',(cb) => {
+    runSequence(['start','webserver','watch'], cb);
 });
