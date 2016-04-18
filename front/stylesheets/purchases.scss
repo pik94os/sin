@@ -313,7 +313,7 @@
       margin-bottom: 20px;
       .item-head{
         .item-num{
-          margin-left: 30px;
+          float: right;
         }
         b{
 
@@ -330,6 +330,7 @@
       }
       .item-img-block{
         height: 240px;
+        text-align: center;
         img{
           max-height: 100%;
           max-width: 100%;
@@ -435,7 +436,7 @@
 }
 
 .shop{
-  &:first-child{
+  &:not(:hover){
     background: white;
   }
   border-bottom: 1px solid #d5e0f5;
@@ -466,7 +467,7 @@
   }
 }
 .collapsedItem{
-  background: #D9F2FF;
+  background: #dfebf1;
   &>div{
     line-height: 50px;
     height: 50px;
@@ -492,6 +493,7 @@
     }
     img{
       @include square-size(48px);
+      margin-right: 10px;
     }
   }
 }
@@ -499,6 +501,7 @@
   padding: 0 15px;
   ._characteristics{
     margin: 20px 0;
+    font-size: 16px;
   }
   ._reviews{
     margin-top: 5px;
@@ -567,7 +570,14 @@
     }
   }
   .rev-body{
-    padding: 10px;
+    font-size: 16px;
+    padding: 13px;
+    .list-inline{
+      li{
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
     .dignity,.limitations,.comments{
       overflow: hidden;
       height: 40px;
@@ -580,8 +590,8 @@
       position: absolute;
       width: 50%;
       text-align: end;
-      margin-top: -30px;
-      padding-right: 57px;
+      margin-top: -28px;
+      padding-right: 65px;
       &:before {
         content: "...";
         width: 10px;
@@ -601,29 +611,40 @@
     }
   }
   .rev-img{
+    cursor: pointer;
+    text-align: center;
     width: 100%;
     max-height: 250px;
     overflow: hidden;
     img{
-      width: 100%;
+      max-width: 100%;
+      max-height: 250px;
     }
   }
   .item-head .item-num {
     margin-left: 30px;
   }
   &.modal-content{
+    border-radius: 10px;
     width: 100%;
     margin: 0;
     padding: 0;
     float: none;
     .rev-header{
+      border-radius: 5px;
       &-title{
         display: block;
         font-size: 18px;
       }
     }
+    .rev-img{
+      max-height: 500px;
+      img{
+        max-height: 500px;
+      }
+    }
     .rev-body {
-      padding: 10px;
+      border-radius: 5px;
       .dignity, .limitations, .comments {
         overflow: visible;
         height: inherit;
@@ -634,6 +655,20 @@
       .view-all{
         display: none;
       }
+    }
+  }
+}
+.photo-modal{
+  @extend #photo-preview;
+  margin-top: 15px;
+  border-radius: 5px !important;
+  .modal-comments{
+    border-top: 1px solid #a8a8a8;
+    text-align: center;
+    @include margin-horizontal(15px);
+    i{
+      color: gray;
+      line-height: 100px;
     }
   }
 }
