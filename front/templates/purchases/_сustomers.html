@@ -1,0 +1,32 @@
+<div class="row friend" ng-repeat="friend in friends">
+    <div class="col-xs-4">
+        <div class="friend-ava" ui-sref="friend({id:friend._id})" ng-class="{'online':friend.status, 'offline':!friend.status}">
+            <img ng-src="/images/500x500/{{friend.photo}}" class="img-circle">
+        </div>
+        <div class="friend-info">
+            <div class="friend-name" ng-bind="friend.name" ui-sref="friend({id:friend._id})"></div>
+            <div class="friend-status" ng-bind="friend.status?'Онлайн':'Офлайн'"></div>
+            <div class="friend-action">Покупка: 22.03.2016</div>
+        </div>
+    </div>
+    <div class="col-xs-5">
+        <div class="friend-comment" ng-if="$index!==1">
+            Данный пользователь пока не оставил комментарий об этом товаре.
+        </div>
+        <div class="friend-comment-list" ng-if="$index===1">
+            <div class="dignity">
+                <b>Достоинства:</b> удобный джойстик
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3">
+        <ul class="friend-buttons">
+            <li ui-sref="chat({friendId:friend._id})">Написать сообщение</li>
+            <li>Посмотреть отзывы</li>
+            <li>Убрать из друзей</li>
+        </ul>
+    </div>
+    <div class="col-xs-12 friend-line">
+        <div></div>
+    </div>
+</div>

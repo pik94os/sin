@@ -504,6 +504,18 @@
     margin-top: 5px;
     padding-top: 5px;
   }
+  ._customers{
+    @extend .friends-page;
+    background-color: white;
+    margin: 0 -15px;
+    padding: 0 15px;
+    overflow: auto;
+    .friend-comment-list{
+      b:before{
+        margin-right: 5px;
+      }
+    }
+  }
   border-bottom: 1px solid #DAD6D6;
   background-color: #e6e6e6;
   pre{
@@ -562,23 +574,6 @@
       margin-bottom: 10px;
       b:before{
         margin-right: 5px;
-      }
-    }
-    .dignity{
-      b:before{
-        content: "+";
-        color: green;
-      }
-    }
-    .limitations{
-      b:before{
-        content: "−";
-        color: red;
-      }
-    }
-    .comments{
-      b:before{
-        content: "=";
       }
     }
     .rev-after{
@@ -640,5 +635,22 @@
         display: none;
       }
     }
+  }
+}
+.dignity{
+  b:before{
+    content: "+";
+    color: green;
+  }
+}
+.limitations{
+  b:before{
+    content: "−";
+    color: red;
+  }
+}
+.comments{
+  b:before{
+    content: "=";
   }
 }
