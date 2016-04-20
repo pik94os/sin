@@ -1,0 +1,7 @@
+{
+  "directory": "front/bower_components/",
+  "analytics": false,
+  "scripts": {
+    "postinstall": "gulp start"
+  }
+}
