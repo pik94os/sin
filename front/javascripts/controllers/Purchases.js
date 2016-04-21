@@ -3,7 +3,7 @@
  */
 define(['./module','jquery'],function(controllers,$){
     'use strict';
-    controllers.controller('Purchases',['$rootScope','$scope','$http', '$stateParams',function($rootScope,$scope,$http,$stateParams){
+    controllers.controller('Purchases',['$rootScope','$scope','$http','$state','$stateParams',function($rootScope,$scope,$http,$state,$stateParams){
         $('title').text('Покупки');
         $rootScope.$broadcast('html100', false);
         $scope.categories =[];
@@ -18,5 +18,10 @@ define(['./module','jquery'],function(controllers,$){
             // or server returns response with an error status.
         });
         $scope.tab = $stateParams.tab;
+        $scope.isMainPage=true;
+
+        $rootScope.$on('$viewContentLoaded',function(){
+            $scope.isMainPage = $state.current.name=='purchases';
+        });
     }])
 });

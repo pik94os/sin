@@ -2,7 +2,7 @@
     <div class="col-xs-4">
         <div class="item-head">
             <b>Название товара</b>
-            <div class="item-num item-block-top-num-green ">4,5</div>
+            <div class="item-num item-block-top-num-green ">4</div>
         </div>
         <div class="item-img-block">
             <img src="/images/market/3.jpg">
@@ -63,7 +63,7 @@
         </div>
     </div>
     <!-- Купили-->
-    <div class="tab-pane fade"  ng-class="{'in active':tab==='сustomers'}">
+    <div class="tab-pane fade _customers"  ng-class="{'in active':tab==='сustomers'}">
         <!--=include _сustomers.html -->
     </div>
     <!-- Характеристики-->
@@ -75,11 +75,72 @@
         <!--=include _vote.html -->
     </div>
 </div>
+<!--Недавно смотрели -->
+<div class="pbb-title">Вы недавно смотрели</div>
+<div class="row purchases-block-body">
+    <div class="col-xs-6 col-sm-3 item-block" ng-repeat="r in [1,2,3,4]">
+        <div class="item-block-top">
+            <div class="pull-right" ><a class="icon icon-show-love"></a></div><div class="item-block-top-num-green">5</div>
+        </div>
+        <div class="item-block-images"><img src="/images/market/1.jpg"></div>
+        <div class="item-block-title">Обэктив для камера хороший! Покупай, брат!</div>
+        <div class="item-block-shop"><a href="#">Мэ-видео</a></div>
+        <div class="item-block-price">1 000 000 руб.</div>
+        <div class="item-block-buttons"> Учавствовать | <span>15 заказов</span></div>
+        <div class="item-block-time">
+            <div><i class="icon alarm-clock"></i></div>
+            <div>
+                <div>20</div>
+                <div>дн</div>
+            </div>
+            <div>
+                <div>15</div>
+                <div>час</div>
+            </div>
+            <div>
+                <div>13</div>
+                <div>мин</div>
+            </div>
+            <div>
+                <div>30</div>
+                <div>шт</div>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
+
 
 <div class="modal fade my-modal" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content rev-container">
             <!--=include _review.html -->
+        </div>
+        <div class="modal-content photo-modal">
+
+            <div class="modal-body editor">
+                <div class="editor-header"><p>Ваш комментарий</p></div>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <div class="editor-body"></div>
+                        <div class="editor-footer">
+                            <button type="button" class="btn btn-link">Прикрепить</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Отправить</button>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 ">
+                        <div class="user-info-mini">
+                            <img src="/images/75x75/{{user.photo}}">
+                            <div ng-bind="user.name"></div>
+                        </div>
+                        <div><a>Поделиться</a></div>
+                        <div><a>Сохранить в блокнот</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-comments">
+                <i>Пользователи пока не оставили комментарии к данному отзыву</i>
+            </div>
         </div>
     </div>
 </div>

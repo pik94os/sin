@@ -15,15 +15,26 @@
         <div class="col-xs-12">
             <div class="tab-content clearfix row">
                 <div id="panel1" class="tab-pane fade in active">
-
                     <div class="col-xs-12">
-
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="row">
                                     <div class="col-xs-8 col-lg-9">
-                                        <div class=" purchases-search">
+                                        <div class=" purchases-search" ng-class="{'in categ':!isMainPage}">
                                             <input type="text" class="outline"/>
+                                            <div class="btn categ-dropdown">
+                                                <ul>
+                                                    <li>Категории <a>Смотреть все></a></li>
+                                                    <li  ng-repeat="categ in categories">
+                                                        <a ng-bind="categ.title"></a>
+                                                        <ul>
+                                                            <li ng-repeat="subCateg in categ.subCategories">
+                                                                <a ng-bind="subCateg.title"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                             <div class="btn btn-primary">Найти</div>
                                         </div>
                                     </div>
@@ -31,7 +42,12 @@
                                 </div>
                             </div>
                         </div>
-
+                        <br/>
+                        <ol class="breadcrumb" ng-hide="isMainPage">
+                            <li><a ui-sref="purchases">Покупки</a></li>
+                            <li><a href="#">Каталог</a></li>
+                            <li class="active">Товар</li>
+                        </ol>
                         <div ui-view="">
                             <div class="row categories">
                                 <div class="col-xs-12">
@@ -165,7 +181,7 @@
                                     </div>
                                     <div class="col-xs-6 col-sm-3 item-block">
                                         <div class="item-block-top">
-                                            <div class="pull-right"><i class="icon icon-hide-love" data-toggle="modal" data-target="#to-wishes"></i></div><div class="item-block-top-num-red">3,5</div>
+                                            <div class="pull-right"><i class="icon icon-hide-love" data-toggle="modal" data-target="#to-wishes"></i></div><div class="item-block-top-num-red">3</div>
                                         </div>
                                         <div class="item-block-images"><img src="/images/market/4.jpg"></div>
                                         <div class="item-block-title">Камера гоупро с креплением и чехлом</div>
@@ -279,7 +295,7 @@
                                     </div>
                                     <div class="col-xs-6 col-sm-3 item-block">
                                         <div class="item-block-top">
-                                            <div class="pull-right"><i class="icon icon-hide-love" data-toggle="modal" data-target="#to-wishes"></i></div><div class="item-block-top-num-red">3,5</div>
+                                            <div class="pull-right"><i class="icon icon-hide-love" data-toggle="modal" data-target="#to-wishes"></i></div><div class="item-block-top-num-red">3</div>
                                         </div>
                                         <div class="item-block-images"><img src="/images/market/4.jpg"></div>
                                         <div class="item-block-title">Камера гоупро с креплением и чехлом</div>
@@ -347,7 +363,7 @@
                                     </div>
                                     <div class="col-xs-6 col-sm-3 item-block">
                                         <div class="item-block-top">
-                                            <div class="pull-right"><i class="icon icon-hide-love" data-toggle="modal" data-target="#to-wishes"></i></div><div class="item-block-top-num-red">3,5</div>
+                                            <div class="pull-right"><i class="icon icon-hide-love" data-toggle="modal" data-target="#to-wishes"></i></div><div class="item-block-top-num-red">3</div>
                                         </div>
                                         <div class="item-block-images"><img src="/images/market/4.jpg"></div>
                                         <div class="item-block-title">Камера гоупро с креплением и чехлом</div>
