@@ -362,6 +362,112 @@
     width: 100px;
     margin: 0 5px;
   }
+  .categ-dropdown{
+    $border:1px solid lightgray;
+    float: left;
+    background:{
+      image: url("/images/icons/categ_button.png");
+      position: center;
+      repeat: no-repeat;
+    }
+    height: 32px;
+    width: 50px;
+    border: 1px solid white;
+    border-radius: 2px;
+    margin: 0 0 0 15px;
+    display: none;
+    ul{
+      border: $border;
+      display: none;
+      position: absolute;
+      background: white;
+      padding: 0;
+      z-index: 9;
+      li{
+        padding: {
+          left: 5px;
+          right: 5px;
+        };
+        font-size: 14px;
+        display: block;
+        line-height: 30px;
+        a{
+          color: #0f0f0f;
+          font-family: OpenSansBold;
+        }
+        &:hover{
+          border: {
+            top: $border;
+            bottom: $border;
+          };
+          margin: {
+            top: -1px;
+            bottom: -1px;
+          };
+          &:after{
+            content: " ";
+            position: absolute;
+            right: -1px;
+            width: 1px;
+            z-index: 10;
+            height: 30px;
+            background: white;
+          }
+        }
+        > ul{
+          left: 100%;
+          top: -1px;
+          min-height: 100%;
+        }
+      }
+    }
+    > ul{
+      top: 43px;
+      left: 15px;
+
+      > li:first-child{
+        color: #0f0f0f;
+        font-family: OpenSansBold;
+        background: #EAEAEA;
+        padding-left: 10px;
+        line-height: 38px;
+        a{
+          color: gray;
+          text-decoration: underline;
+        }
+      }
+      &:before {
+        content: " ";
+        position: absolute;
+        background: #EAEAEA;
+        width: 10px;
+        height: 10px;
+        top: -6px;
+        left: 44px;
+        transform: rotate(45deg);
+        border:{
+          top: $border;
+          left: $border;
+        }
+      }
+    }
+  }
+  &.in.categ{
+    .categ-dropdown{
+      display: inline-block;
+      &:hover>ul, li:hover>ul{
+        display: block;
+      }
+    }
+    input{
+      width: calc(100% - 150px - 65px);
+    }
+  }
+}
+.breadcrumb{
+  padding: 0;
+  background: white;
+  margin: 0;
 }
 .all-items-btn{
   margin: 0;
