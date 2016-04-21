@@ -18,12 +18,12 @@ var gulp = require('gulp'),
 
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
-        html: 'public/',
-        js: 'public/javascripts/',
-        css: 'public/stylesheets/',
-        img: 'public/images/',
-        fonts: 'public/fonts/',
-        json: 'public/ajax/'
+        html: 'server/public/',
+        js: 'server/public/javascripts/',
+        css: 'server/public/stylesheets/',
+        img: 'server/public/images/',
+        fonts: 'server/public/fonts/',
+        json: 'server/public/ajax/'
     },
     src: { //Пути откуда брать исходники
         html: ['front/**/*.html','!front/templates/**/_*.html','!front/bower_components/**/*.*'],
@@ -46,7 +46,7 @@ var path = {
 
 gulp.task('webserver', () => {
     var server = serverFactory.create({
-        path: './public',
+        path: './server/public',
         port: 8888
     });
 
