@@ -1,11 +1,20 @@
 # Development #
 
+Install gulp & bower
+
+```
+#!shell
+
+npm install -g bower gulp
+```
+
+
 Install dependencies via 
 
 ```
 #!shell
 
-npm install && cd front && bower install
+npm install
 ```
 
 
