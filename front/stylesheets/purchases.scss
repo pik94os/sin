@@ -214,6 +214,7 @@
           overflow: hidden;
           &:hover{
             border-color: #a9cbdd;
+            background: #B8DAEA;
           }
           span{
             color: orangered;
@@ -294,11 +295,11 @@
             border-radius: 5px;
             height: 40px;
             background: {
-              color: #f54;
+              color: #EA340A;
               image: url(/images/icons/car.png);
               position: center;
               repeat: no-repeat;
-              size: 30px;
+              size: 25px;
             };
             &:hover{
               background-color: #ff7a3f;
@@ -309,7 +310,7 @@
     }
     &2{
       font-family: OpenSansLight;
-      margin-top: 30px;
+      margin-top: 15px;
       margin-bottom: 20px;
       .item-head{
         .item-num{
@@ -383,17 +384,17 @@
       background: white;
       padding: 0;
       z-index: 9;
+      text-align: left;
       li{
         padding: {
-          left: 5px;
-          right: 5px;
+          left: 20px;
+          right: 20px;
         };
         font-size: 14px;
         display: block;
         line-height: 30px;
         a{
           color: #0f0f0f;
-          font-family: OpenSansBold;
         }
         &:hover{
           border: {
@@ -404,6 +405,36 @@
             top: -1px;
             bottom: -1px;
           };
+        }
+        > ul{
+          left: 100%;
+          top: -1px;
+          min-height: 100%;
+          padding-top: 8px;
+        }
+      }
+    }
+    > ul{
+      top: 43px;
+      left: 15px;
+
+      > li{
+        padding: {
+          left: 40px;
+        };
+        &:first-child{
+          color: #0f0f0f;
+          background: #DFEBF1;
+          padding: {
+            left: 20px;
+          };
+          line-height: 38px;
+          a{
+            color: gray;
+            text-decoration: underline;
+          }
+        }
+        &:hover{
           &:after{
             content: " ";
             position: absolute;
@@ -414,32 +445,11 @@
             background: white;
           }
         }
-        > ul{
-          left: 100%;
-          top: -1px;
-          min-height: 100%;
-        }
-      }
-    }
-    > ul{
-      top: 43px;
-      left: 15px;
-
-      > li:first-child{
-        color: #0f0f0f;
-        font-family: OpenSansBold;
-        background: #EAEAEA;
-        padding-left: 10px;
-        line-height: 38px;
-        a{
-          color: gray;
-          text-decoration: underline;
-        }
       }
       &:before {
         content: " ";
         position: absolute;
-        background: #EAEAEA;
+        background: #DFEBF1;
         width: 10px;
         height: 10px;
         top: -6px;
@@ -464,10 +474,17 @@
     }
   }
 }
+&-item-block{
+  @extend .purchases-block;
+  padding-top: 14px;
+}
 .breadcrumb{
   padding: 0;
   background: white;
   margin: 0;
+  a:hover{
+    color: #FD925C;
+  }
 }
 .all-items-btn{
   margin: 0;
@@ -574,15 +591,17 @@
 }
 .collapsedItem{
   background: #dfebf1;
-  &>div{
+  padding-left: 40px;
+  >div{
     line-height: 50px;
     height: 50px;
     margin: 0;
   }
   .item-head{
     .arrow{
+      position: absolute;
       display: block;
-      float: left;
+      left: -30px;
       @include square-size(48px);
       background:{
         image: url(/images/icons/cirle-down.png);
@@ -592,16 +611,28 @@
       }
       opacity: .5;
       cursor: pointer;
-      &:hover{
-        background-image: url(/images/icons/cirle-down-active.png);
-        opacity: 1;
-      }
     }
     img{
       @include square-size(48px);
       margin-right: 10px;
     }
   }
+  &:hover{
+    .item-head .arrow{
+      background-image: url(/images/icons/cirle-down-active.png);
+      opacity: 1;
+    }
+  }
+  @include xs-display{
+    > div:not(:first-child){
+      line-height: 30px;
+      height: 30px;
+      .item-block-price{
+        text-align: left;
+        padding: 0;
+      }
+    }
+  };
 }
 .item-open-tabs{
   padding: 0 15px;
@@ -794,7 +825,4 @@
   b:before{
     content: "=";
   }
-}
-.pbb-title{
-  line-height: 40px;
 }

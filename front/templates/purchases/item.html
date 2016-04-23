@@ -28,18 +28,18 @@
     </div>
 
 </div>
-<div ng-show="collapsedItem" class="row purchases-block-body2 collapsedItem">
-    <div class="col-xs-4">
+<div ng-show="collapsedItem" class="row purchases-block-body2 collapsedItem" ng-click="collapsedItem=false">
+    <div class="col-lg-4 col-md-5">
         <div class="item-head">
-            <div class="arrow" ng-click="collapsedItem=false"></div>
+            <div class="arrow"></div>
             <img src="/images/market/3.jpg">
             <b>Название товара</b>
         </div>
     </div>
-    <div class="item-shop col-xs-5">
+    <div class="item-shop col-lg-5 col-md-4 col-sm-6">
         Мэ-видео&nbsp;&nbsp;<span class="stars"><span class="stars-active-4"></span></span>
     </div>
-    <div class="col-xs-3">
+    <div class="col-md-3 col-sm-6">
         <div class="item-block-price">6 072 099 руб.</div>
     </div>
 
@@ -76,34 +76,43 @@
     </div>
 </div>
 <!--Недавно смотрели -->
-<div class="pbb-title">Вы недавно смотрели</div>
-<div class="row purchases-block-body">
-    <div class="col-xs-6 col-sm-3 item-block" ng-repeat="r in [1,2,3,4]">
-        <div class="item-block-top">
-            <div class="pull-right" ><a class="icon icon-show-love"></a></div><div class="item-block-top-num-green">5</div>
+<div class="row purchases-item-block">
+    <div class="row purchases-block-header">
+        <div class="col-xs-12">
+            <div class="purchases-block-header-row purchases-block-green">
+                <div class=" purchases-block-header-title">Вы недавно смотрели</div>
+                <div class="purchases-block-header-count"></div>
+            </div>
         </div>
-        <div class="item-block-images"><img src="/images/market/1.jpg"></div>
-        <div class="item-block-title">Обэктив для камера хороший! Покупай, брат!</div>
-        <div class="item-block-shop"><a href="#">Мэ-видео</a></div>
-        <div class="item-block-price">1 000 000 руб.</div>
-        <div class="item-block-buttons"> Учавствовать | <span>15 заказов</span></div>
-        <div class="item-block-time">
-            <div><i class="icon alarm-clock"></i></div>
-            <div>
-                <div>20</div>
-                <div>дн</div>
+    </div>
+    <div class="row purchases-block-body">
+        <div class="col-sm-6 col-sm-3 item-block" ng-repeat="r in [1,2,3,4]">
+            <div class="item-block-top">
+                <div class="pull-right" ><a class="icon icon-show-love"></a></div><div class="item-block-top-num-green">5</div>
             </div>
-            <div>
-                <div>15</div>
-                <div>час</div>
-            </div>
-            <div>
-                <div>13</div>
-                <div>мин</div>
-            </div>
-            <div>
-                <div>30</div>
-                <div>шт</div>
+            <div class="item-block-images"><img src="/images/market/1.jpg"></div>
+            <div class="item-block-title">Обэктив для камера хороший! Покупай, брат!</div>
+            <div class="item-block-shop"><a href="#">Мэ-видео</a></div>
+            <div class="item-block-price">1 000 000 руб.</div>
+            <div class="item-block-buttons"> Учавствовать | <span>15 заказов</span></div>
+            <div class="item-block-time">
+                <div><i class="icon alarm-clock"></i></div>
+                <div>
+                    <div>20</div>
+                    <div>дн</div>
+                </div>
+                <div>
+                    <div>15</div>
+                    <div>час</div>
+                </div>
+                <div>
+                    <div>13</div>
+                    <div>мин</div>
+                </div>
+                <div>
+                    <div>30</div>
+                    <div>шт</div>
+                </div>
             </div>
         </div>
     </div>
@@ -130,7 +139,7 @@
                     </div>
                     <div class="col-xs-3 ">
                         <div class="user-info-mini">
-                            <img src="/images/75x75/{{user.photo}}">
+                            <img src="/images/75x75/{{user.photo}}" class="img-circle">
                             <div ng-bind="user.name"></div>
                         </div>
                         <div><a>Поделиться</a></div>
