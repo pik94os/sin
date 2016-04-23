@@ -68,7 +68,7 @@ gulp.task("js", () => {
     gulp.src(path.src.js)
         .pipe(rjs({
             baseUrl:'front/javascripts/',
-            outPath:'public/javascripts/',
+            outPath: path.build.js,
             paths: {
                 'domReady': '../bower_components/domReady/domReady',
                 'angular': '../bower_components/angular/angular.min',

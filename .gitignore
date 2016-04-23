@@ -1,4 +1,4 @@
 node_modules
-public
+server/public
 front/bower_components
 .idea
