@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
+                        <br  ng-hide="isMainPage"/>
                         <ol class="breadcrumb" ng-hide="isMainPage">
                             <li><a ui-sref="purchases">Покупки</a></li>
                             <li><a href="#">Каталог</a></li>
@@ -52,9 +52,9 @@
                             <div class="row categories">
                                 <div class="col-xs-12">
                                     <ul class="categ">
-                                        <li ng-repeat="categ in categories" ng-mouseleave="categ.show=false" ng-class="{'show':categ.show}">
-                                            <div class="categ-title"><a ng-bind="categ.title" ng-mousemove="categ.show=true" ></a></div>
-                                            <div ng-show="categ.show" class="subCateg">
+                                        <li ng-repeat="categ in categories" class="categ-tab">
+                                            <div class="categ-title"><a ng-bind="categ.title"></a></div>
+                                            <div class="subCateg">
                                                 <ul>
                                                     <li ng-repeat="subCateg in categ.subCategories">
                                                         <a ng-bind="subCateg.title"></a>

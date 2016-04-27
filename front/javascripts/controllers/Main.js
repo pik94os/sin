@@ -160,8 +160,19 @@ define(['./module','jquery'],function(controllers,$){
                 $scope.hiHide();
                 $scope.$apply();
             }
+        }).on('mouseover','.categ-tab', function (e) {
+            var container = $(this).parent();
+            container.show();
+            var wCont = container.width(),
+                wTab = $(this).width()+2,
+                wTabBody = $(this).find('.subCateg').width()+2,
+                rToTab =$(this).position().left-15;
+            var r = 1+((rToTab/wCont)*wTabBody);
+            if(r > (wTabBody-wTab)){
+                r = wTabBody-wTab;
+            }
+            $(this).find('.subCateg').css('margin-left',-r+'px');
         });
-
         $rootScope.$on('$viewContentLoaded',function(){
             wrap_soc();
             $scope.state = $state.current;
