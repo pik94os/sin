@@ -177,7 +177,7 @@ define(['./module','jquery'],function(controllers,$){
             wrap_soc();
             $scope.state = $state.current;
             $scope.hideFooter=$state.includes('chat');
-            $scope.imgOnly = ($state.current.name=='purchases' || $state.current.name.indexOf('groupOpen')+1);
+            $scope.imgOnly = ($state.includes('purchases') || $state.includes('groupOpen'));
             $('.messages-user-list > div').slimScroll({
                 height: '100%',
                 color: '#99c3d9',
