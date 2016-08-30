@@ -1,7 +1,7 @@
 {
   "name": "sin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Install gulp & bower",
   "main": "index.js",
   "scripts": {
     "postinstall": "bower install",
@@ -35,6 +35,7 @@
     "tiny-lr": "^0.2.1"
   },
   "dependencies": {
+    "bower": "^1.7.9",
     "express": "^4.13.4"
   }
 }
